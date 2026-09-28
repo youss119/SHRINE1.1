@@ -1,0 +1,89 @@
+{% comment %}KUKS — 3 problèmes, onglets modifiables.{% endcomment %}
+<section id="kuks-problems-{{ section.id }}" class="kuks-problems">
+  <div class="kuks-problems__inner">
+    <h2>{{ section.settings.heading }}</h2>
+    <p class="kuks-problems__intro">{{ section.settings.intro }}</p>
+
+    <div class="kuks-problems__tabs" role="tablist">
+      {% for block in section.blocks %}
+        <button type="button" class="{% if forloop.first %}is-active{% endif %}" data-problem-tab="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+          {{ block.settings.label }}
+        </button>
+      {% endfor %}
+    </div>
+
+    <div class="kuks-problems__panels">
+      {% for block in section.blocks %}
+        <article class="kuks-problems__panel{% if forloop.first %} is-active{% endif %}" data-problem-panel="{{ forloop.index0 }}">
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 900 | image_tag: loading:'lazy', widths:'420,620,900', sizes:'(max-width:749px) 100vw, 620px', alt:block.settings.title }}
+          {% endif %}
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+#kuks-problems-{{ section.id }}{background:#fff;padding:24px 0}
+#kuks-problems-{{ section.id }} .kuks-problems__inner{width:min(100%,760px);margin:0 auto;padding:0 16px;text-align:center}
+#kuks-problems-{{ section.id }} h2{margin:0 auto 8px;max-width:620px;font-size:28px;line-height:1.1;letter-spacing:-.03em;font-weight:760;color:#111}
+#kuks-problems-{{ section.id }} .kuks-problems__intro{margin:0 auto 16px;max-width:560px;font-size:13px;line-height:1.5;color:#454b53}
+#kuks-problems-{{ section.id }} .kuks-problems__tabs{display:grid;grid-template-columns:repeat(3,1fr);border:1.4px solid #113d6b;border-radius:10px;overflow:hidden;margin-bottom:14px}
+#kuks-problems-{{ section.id }} .kuks-problems__tabs button{border:0;background:#fff;color:#113d6b;padding:10px 8px;font-size:11px;font-weight:700;cursor:pointer}
+#kuks-problems-{{ section.id }} .kuks-problems__tabs button.is-active{background:#113d6b;color:#fff}
+#kuks-problems-{{ section.id }} .kuks-problems__panel{display:none}
+#kuks-problems-{{ section.id }} .kuks-problems__panel.is-active{display:block}
+#kuks-problems-{{ section.id }} .kuks-problems__panel img{display:block;width:100%;max-height:430px;object-fit:cover;border-radius:10px;margin:0 auto 14px}
+#kuks-problems-{{ section.id }} .kuks-problems__panel h3{margin:0 0 8px;font-size:24px;line-height:1.15;letter-spacing:-.02em;color:#111}
+#kuks-problems-{{ section.id }} .kuks-problems__panel p{margin:0 auto;max-width:610px;font-size:13px;line-height:1.55;color:#3f444c}
+@media(max-width:749px){
+  #kuks-problems-{{ section.id }}{padding:18px 0 22px}
+  #kuks-problems-{{ section.id }} .kuks-problems__inner{padding:0 13px}
+  #kuks-problems-{{ section.id }} h2{font-size:22px}
+  #kuks-problems-{{ section.id }} .kuks-problems__intro{font-size:11.5px;margin-bottom:13px}
+  #kuks-problems-{{ section.id }} .kuks-problems__tabs button{font-size:9.8px;padding:8px 4px}
+  #kuks-problems-{{ section.id }} .kuks-problems__panel h3{font-size:19px}
+  #kuks-problems-{{ section.id }} .kuks-problems__panel p{font-size:11.5px;line-height:1.48}
+  #kuks-problems-{{ section.id }} .kuks-problems__panel img{max-height:330px}
+}
+</style>
+
+<script>
+(() => {
+  const root=document.getElementById('kuks-problems-{{ section.id }}');
+  if(!root) return;
+  const tabs=[...root.querySelectorAll('[data-problem-tab]')];
+  const panels=[...root.querySelectorAll('[data-problem-panel]')];
+  tabs.forEach((tab,i)=>tab.addEventListener('click',()=>{
+    tabs.forEach((t,j)=>t.classList.toggle('is-active',i===j));
+    panels.forEach((p,j)=>p.classList.toggle('is-active',i===j));
+  }));
+})();
+</script>
+
+{% schema %}
+{
+  "name":"3 problèmes - KUKS",
+  "max_blocks":3,
+  "settings":[
+    {"type":"text","id":"heading","label":"Titre","default":"Cette formule a été conçue pour répondre à ces trois problèmes."},
+    {"type":"textarea","id":"intro","label":"Introduction","default":"Pendant des années, il n’y avait pas de réponse simple. L’urée à 40 % change l’approche."}
+  ],
+  "blocks":[
+    {
+      "type":"problem",
+      "name":"Problème",
+      "settings":[
+        {"type":"text","id":"label","label":"Nom de l’onglet","default":"Problème 1"},
+        {"type":"image_picker","id":"image","label":"Image"},
+        {"type":"text","id":"title","label":"Titre","default":"Titre du problème"},
+        {"type":"textarea","id":"text","label":"Texte","default":"Expliquez ce problème en quelques lignes simples."}
+      ]
+    }
+  ],
+  "presets":[{"name":"3 problèmes - KUKS","blocks":[{"type":"problem"},{"type":"problem"},{"type":"problem"}]}]
+}
+{% endschema %}

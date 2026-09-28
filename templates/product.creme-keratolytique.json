@@ -270,11 +270,194 @@
         "padding_top": 20,
         "padding_bottom": 24
       }
+    },
+    "kuks_problems_tabs": {
+      "type": "kuks-problems-tabs",
+      "blocks": {
+        "p1": {
+          "type": "problem",
+          "settings": {
+            "label": "Problème 1",
+            "image": "shopify://shop_images/kuks-problem-sk.png",
+            "title": "Kératoses séborrhéiques / zones rugueuses en relief",
+            "text": "Des excroissances rugueuses et saillantes peuvent apparaître sur le cou, la poitrine, le dos ou les bras. Leur texture est souvent épaisse, sèche ou cireuse au toucher."
+          }
+        },
+        "p2": {
+          "type": "problem",
+          "settings": {
+            "label": "Problème 2",
+            "image": "shopify://shop_images/kuks-problem-kp.png",
+            "title": "Kératose pilaire",
+            "text": "De petits boutons rugueux apparaissent souvent à l’arrière des bras, sur les cuisses ou les joues. Une simple crème hydratante ne suffit pas toujours à lisser cette texture."
+          }
+        },
+        "p3": {
+          "type": "problem",
+          "settings": {
+            "label": "Problème 3",
+            "image": "shopify://shop_images/kuks-problem-rough.png",
+            "title": "Peau rugueuse et épaissie",
+            "text": "Des plaques sèches, épaisses et craquelées peuvent s’installer sur les talons, les coudes ou les genoux et rester très dures malgré l’hydratation classique."
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "heading": "Cette formule a été conçue pour répondre à ces trois problèmes.",
+        "intro": "Pendant des années, il n’y avait pas de réponse simple. L’urée à 40 % change l’approche."
+      }
+    },
+    "kuks_change_story": {
+      "type": "kuks-change-story",
+      "settings": {
+        "image": "shopify://shop_images/kuks-social-proof-4.png",
+        "eyebrow": "UNE PEAU QUI RETROUVE UN ASPECT PLUS NET",
+        "heading": "Qu’est-ce qui change lorsque vous commencez à utiliser la Crème Kératolytique Intensive ?",
+        "text": "<p>Le retrait professionnel peut coûter entre 150 € et 300 € par zone, et les imperfections peuvent revenir. Une routine à domicile permet de traiter plusieurs zones chaque soir avec un seul pot, sans multiplier les rendez-vous.</p>"
+      }
+    },
+    "kuks_science": {
+      "type": "kuks-science",
+      "settings": {
+        "media": "shopify://shop_images/kuks-diagram-salicylic.png",
+        "heading": "L’acide salicylique termine le travail.",
+        "body": "<p>L’urée à 40 % commence par assouplir la kératine compacte. L’acide salicylique aide ensuite à détacher les cellules ramollies afin qu’elles puissent s’éliminer progressivement. Deux actifs, deux niveaux d’action sur le même problème.</p>"
+      }
+    },
+    "kuks_timeline": {
+      "type": "kuks-timeline",
+      "blocks": {
+        "t1": {
+          "type": "step",
+          "settings": {
+            "period": "Semaine 1–2",
+            "title": "Vous ressentez la différence",
+            "text": "La texture rugueuse et granuleuse commence à s’adoucir. Les zones dures paraissent moins rigides au toucher."
+          }
+        },
+        "t2": {
+          "type": "step",
+          "settings": {
+            "period": "Semaines 3 et 4",
+            "title": "Vous voyez le changement",
+            "text": "Les petites imperfections commencent à s’aplanir et les zones les plus rugueuses deviennent plus lisses et moins visibles."
+          }
+        },
+        "t3": {
+          "type": "step",
+          "settings": {
+            "period": "Semaines 5 à 8",
+            "title": "Vous cessez de vous cacher",
+            "text": "Les zones traitées paraissent plus uniformes. Vous pensez moins à les couvrir et vous commencez à retrouver confiance."
+          }
+        },
+        "t4": {
+          "type": "step",
+          "settings": {
+            "period": "Semaines 9 à 12",
+            "title": "Vous vous sentez à nouveau vous-même",
+            "text": "Avec une routine régulière, la peau paraît plus lisse et les zones en relief prennent moins de place dans votre quotidien."
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {
+        "heading": "À quoi peut ressembler une utilisation quotidienne"
+      }
+    },
+    "kuks_numbers": {
+      "type": "kuks-numbers",
+      "blocks": {
+        "n1": {
+          "type": "number",
+          "settings": {
+            "number": "40 %",
+            "title": "Concentration d’urée à usage intensif.",
+            "text": "À cette concentration, l’urée agit comme kératolytique et aide à ramollir la kératine compacte."
+          }
+        },
+        "n2": {
+          "type": "number",
+          "settings": {
+            "number": "6",
+            "title": "Six composants, chacun avec un rôle précis.",
+            "text": "Assouplir, libérer, calmer, hydrater, uniformiser et protéger la peau."
+          }
+        },
+        "n3": {
+          "type": "number",
+          "settings": {
+            "number": "60 jours",
+            "title": "Garantie de remboursement intégral.",
+            "text": "Vous disposez de temps pour intégrer la routine avant d’évaluer vos résultats."
+          }
+        }
+      },
+      "block_order": [
+        "n1",
+        "n2",
+        "n3"
+      ],
+      "settings": {}
+    },
+    "kuks_survey": {
+      "type": "kuks-survey",
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "percent": 87,
+            "text": "La texture rugueuse leur semblait nettement adoucie au toucher."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "percent": 90,
+            "text": "Les zones en relief paraissaient moins visibles et plus lisses."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "percent": 90,
+            "text": "Ils déclaraient moins vérifier ou cacher les zones qui les gênaient."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "heading": "Les résultats qui les ont incités à repasser commande",
+        "intro": "Nous avons recueilli les retours de clients afin de mieux comprendre l’impact d’une routine à l’urée 40 % sur leur quotidien.",
+        "image": "shopify://shop_images/kuks-survey-couple.png",
+        "subheading": "Statistiques de satisfaction",
+        "note": "*Données à remplacer par vos propres résultats avant publication."
+      }
     }
   },
   "order": [
     "main",
+    "kuks_social_carousel",
     "kuks_testimonials",
-    "kuks_social_carousel"
+    "kuks_problems_tabs",
+    "kuks_change_story",
+    "kuks_science",
+    "kuks_timeline",
+    "kuks_numbers",
+    "kuks_survey"
   ]
 }

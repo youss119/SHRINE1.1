@@ -1,0 +1,34 @@
+{% comment %}KUKS — Schéma/GIF scientifique modifiable.{% endcomment %}
+<section id="kuks-science-{{ section.id }}" class="kuks-science">
+  <div class="kuks-science__inner">
+    {% if section.settings.media != blank %}
+      {{ section.settings.media | image_url: width: 1100 | image_tag: loading:'lazy', widths:'420,720,1100', sizes:'(max-width:749px) 100vw, 720px', alt:section.settings.heading }}
+    {% endif %}
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="kuks-science__body">{{ section.settings.body }}</div>
+  </div>
+</section>
+<style>
+#kuks-science-{{ section.id }}{background:#fff;padding:18px 0 24px}
+#kuks-science-{{ section.id }} .kuks-science__inner{width:min(100%,720px);margin:0 auto;padding:0 16px}
+#kuks-science-{{ section.id }} img{display:block;width:100%;height:auto;border-radius:8px;margin:0 0 14px}
+#kuks-science-{{ section.id }} h2{margin:0 0 10px;font-size:30px;line-height:1.08;letter-spacing:-.03em;color:#111}
+#kuks-science-{{ section.id }} .kuks-science__body{font-size:13px;line-height:1.62;color:#30363d}
+@media(max-width:749px){
+  #kuks-science-{{ section.id }}{padding:14px 0 20px}
+  #kuks-science-{{ section.id }} .kuks-science__inner{padding:0 13px}
+  #kuks-science-{{ section.id }} h2{font-size:22px}
+  #kuks-science-{{ section.id }} .kuks-science__body{font-size:11.6px;line-height:1.52}
+}
+</style>
+{% schema %}
+{
+  "name":"Schéma / GIF - KUKS",
+  "settings":[
+    {"type":"image_picker","id":"media","label":"Image ou GIF"},
+    {"type":"text","id":"heading","label":"Titre","default":"L’acide salicylique termine le travail."},
+    {"type":"richtext","id":"body","label":"Texte","default":"<p>L’urée à 40 % commence par assouplir la kératine compacte. L’acide salicylique aide ensuite à détacher les cellules ramollies afin qu’elles puissent s’éliminer progressivement. Deux actifs, deux niveaux d’action sur le même problème.</p>"}
+  ],
+  "presets":[{"name":"Schéma / GIF - KUKS"}]
+}
+{% endschema %}

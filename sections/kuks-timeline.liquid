@@ -1,0 +1,62 @@
+{% comment %}KUKS — Timeline d'utilisation modifiable.{% endcomment %}
+<section id="kuks-timeline-{{ section.id }}" class="kuks-timeline">
+  <div class="kuks-timeline__inner">
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="kuks-timeline__list">
+      {% for block in section.blocks %}
+        <article class="kuks-timeline__step" {{ block.shopify_attributes }}>
+          <div class="kuks-timeline__rail"><span>✓</span></div>
+          <div class="kuks-timeline__content">
+            <span class="kuks-timeline__badge">{{ block.settings.period }}</span>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.text }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<style>
+#kuks-timeline-{{ section.id }}{background:#fff;padding:22px 0 26px}
+#kuks-timeline-{{ section.id }} .kuks-timeline__inner{width:min(100%,760px);margin:0 auto;padding:0 16px}
+#kuks-timeline-{{ section.id }} h2{margin:0 auto 24px;max-width:650px;text-align:center;font-size:30px;line-height:1.12;letter-spacing:-.03em;color:#111}
+#kuks-timeline-{{ section.id }} .kuks-timeline__list{position:relative}
+#kuks-timeline-{{ section.id }} .kuks-timeline__step{display:grid;grid-template-columns:34px minmax(0,1fr);gap:14px;position:relative;padding-bottom:25px}
+#kuks-timeline-{{ section.id }} .kuks-timeline__step:not(:last-child)::before{content:"";position:absolute;left:16px;top:31px;bottom:-2px;width:1.5px;background:#1a2e4e}
+#kuks-timeline-{{ section.id }} .kuks-timeline__rail span{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#113d6b;color:#fff;font-size:14px;font-weight:800;box-shadow:0 0 0 4px #fff}
+#kuks-timeline-{{ section.id }} .kuks-timeline__badge{display:inline-flex;border:1px solid #1c1c1c;border-radius:999px;padding:5px 12px;margin-bottom:8px;font-size:11px;line-height:1;color:#111}
+#kuks-timeline-{{ section.id }} h3{margin:0 0 7px;color:#113d6b;font-size:24px;line-height:1.15;font-weight:500}
+#kuks-timeline-{{ section.id }} p{margin:0;font-size:13px;line-height:1.55;color:#333941}
+@media(max-width:749px){
+  #kuks-timeline-{{ section.id }}{padding:18px 0 22px}
+  #kuks-timeline-{{ section.id }} .kuks-timeline__inner{padding:0 13px}
+  #kuks-timeline-{{ section.id }} h2{font-size:24px;margin-bottom:18px}
+  #kuks-timeline-{{ section.id }} .kuks-timeline__step{grid-template-columns:30px minmax(0,1fr);gap:10px;padding-bottom:21px}
+  #kuks-timeline-{{ section.id }} .kuks-timeline__step:not(:last-child)::before{left:14px;top:29px}
+  #kuks-timeline-{{ section.id }} .kuks-timeline__rail span{width:28px;height:28px;font-size:12px}
+  #kuks-timeline-{{ section.id }} .kuks-timeline__badge{font-size:10px;padding:4px 10px}
+  #kuks-timeline-{{ section.id }} h3{font-size:19px}
+  #kuks-timeline-{{ section.id }} p{font-size:11.5px;line-height:1.48}
+}
+</style>
+{% schema %}
+{
+  "name":"Timeline résultats - KUKS",
+  "max_blocks":6,
+  "settings":[
+    {"type":"text","id":"heading","label":"Titre","default":"À quoi peut ressembler une utilisation quotidienne"}
+  ],
+  "blocks":[
+    {
+      "type":"step",
+      "name":"Étape",
+      "settings":[
+        {"type":"text","id":"period","label":"Période","default":"Semaine 1–2"},
+        {"type":"text","id":"title","label":"Titre","default":"Vous ressentez la différence"},
+        {"type":"textarea","id":"text","label":"Texte","default":"La texture rugueuse commence à s’adoucir et les zones les plus dures deviennent moins rigides."}
+      ]
+    }
+  ],
+  "presets":[{"name":"Timeline résultats - KUKS","blocks":[{"type":"step"},{"type":"step"},{"type":"step"},{"type":"step"}]}]
+}
+{% endschema %}
