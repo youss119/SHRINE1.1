@@ -109,6 +109,12 @@
             "margin_top": 15,
             "margin_bottom": 15
           }
+        },
+        "kuks_post_atc": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'kuks-post-atc-trust' %}"
+          }
         }
       },
       "block_order": [
@@ -119,7 +125,7 @@
         "variant_picker",
         "kuks_bundle_gap",
         "buy_buttons",
-        "payment_badges"
+        "kuks_post_atc"
       ],
       "settings": {
         "display_id": false,
