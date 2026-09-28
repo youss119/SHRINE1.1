@@ -12,6 +12,28 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "kuks_rating": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"kuks-pdp-rating\" aria-label=\"Note 4,8 sur 5, 5 460 avis\">\n  <span class=\"kuks-pdp-rating__stars\" aria-hidden=\"true\">★★★★★</span>\n  <span class=\"kuks-pdp-rating__text\"><strong>4,8/5</strong> Très bien <span>(5 460 avis)</span></span>\n</div>\n<style>\n  .kuks-pdp-rating{display:flex;align-items:center;gap:8px;margin:2px 0 8px;color:#111;font-family:inherit;line-height:1}\n  .kuks-pdp-rating__stars{color:#f4c542;font-size:19px;letter-spacing:1px;line-height:1;white-space:nowrap}\n  .kuks-pdp-rating__text{font-size:14px;font-weight:500;letter-spacing:-.15px;white-space:nowrap}\n  .kuks-pdp-rating__text strong{font-weight:700}\n  @media(max-width:390px){\n    .kuks-pdp-rating{gap:7px;margin-bottom:7px}\n    .kuks-pdp-rating__stars{font-size:17px;letter-spacing:.5px}\n    .kuks-pdp-rating__text{font-size:12.7px}\n  }\n</style>"
+          }
+        },
+        "kuks_title": {
+          "type": "title",
+          "settings": {
+            "text_size": "h2",
+            "title_alignment": "left",
+            "uppercase_title": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "kuks_benefits": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"kuks-pdp-benefits\" aria-label=\"Bénéfices du produit\">\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Adoucit &amp; aplatit les excroissances en 60 jours</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Votre peau cesse de paraître 10 ans plus vieille</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Toutes les zones, un seul pot — au lieu de 250 € par traitement</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Sans brûler, sans congeler, sans croûte ni cicatrice</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Fini de cacher votre peau et de vérifier chaque nouvelle bosse</span></div>\n</div>\n<style>\n  .kuks-pdp-benefits{display:flex;flex-direction:column;gap:7px;margin:9px 0 14px}\n  .kuks-pdp-benefit{display:grid;grid-template-columns:18px minmax(0,1fr);align-items:start;column-gap:8px;color:#1d1d1f;font-family:inherit;font-size:13.2px;font-weight:600;line-height:1.28;letter-spacing:-.12px}\n  .kuks-pdp-check{display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:#113d6b;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;line-height:1}\n  @media(max-width:390px){\n    .kuks-pdp-benefits{gap:6px;margin-top:8px;margin-bottom:12px}\n    .kuks-pdp-benefit{grid-template-columns:17px minmax(0,1fr);column-gap:7px;font-size:12.4px;line-height:1.25}\n    .kuks-pdp-check{width:16px;height:16px;font-size:10px}\n  }\n</style>"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -49,6 +71,12 @@
             "margin_bottom": 12
           }
         },
+        "kuks_bundle_gap": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"kuks-bundle-atc-gap\" aria-hidden=\"true\"></div>\n<style>\n  .kuks-bundle-atc-gap{height:8px}\n  @media(max-width:390px){.kuks-bundle-atc-gap{height:7px}}\n</style>"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -82,34 +110,6 @@
             "margin_top": 15,
             "margin_bottom": 15
           }
-        },
-        "kuks_rating": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"kuks-pdp-rating\" aria-label=\"Note 4,8 sur 5, 5 460 avis\">\n  <span class=\"kuks-pdp-rating__stars\" aria-hidden=\"true\">★★★★★</span>\n  <span class=\"kuks-pdp-rating__text\"><strong>4,8/5</strong> Très bien <span>(5 460 avis)</span></span>\n</div>\n<style>\n  .kuks-pdp-rating{display:flex;align-items:center;gap:8px;margin:2px 0 8px;color:#111;font-family:inherit;line-height:1}\n  .kuks-pdp-rating__stars{color:#f4c542;font-size:19px;letter-spacing:1px;line-height:1;white-space:nowrap}\n  .kuks-pdp-rating__text{font-size:14px;font-weight:500;letter-spacing:-.15px;white-space:nowrap}\n  .kuks-pdp-rating__text strong{font-weight:700}\n  @media(max-width:390px){\n    .kuks-pdp-rating{gap:7px;margin-bottom:7px}\n    .kuks-pdp-rating__stars{font-size:17px;letter-spacing:.5px}\n    .kuks-pdp-rating__text{font-size:12.7px}\n  }\n</style>"
-          }
-        },
-        "kuks_title": {
-          "type": "title",
-          "settings": {
-            "text_size": "h1",
-            "title_alignment": "left",
-            "uppercase_title": false,
-            "margin_top": 0,
-            "margin_bottom": 0
-          }
-        },
-        "kuks_benefits": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"kuks-pdp-benefits\" aria-label=\"Bénéfices du produit\">\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Adoucit &amp; aplatit les excroissances en 60 jours</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Votre peau cesse de paraître 10 ans plus vieille</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Toutes les zones, un seul pot — au lieu de 250 € par traitement</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Sans brûler, sans congeler, sans croûte ni cicatrice</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Fini de cacher votre peau et de vérifier chaque nouvelle bosse</span></div>\n</div>\n<style>\n  .kuks-pdp-benefits{display:flex;flex-direction:column;gap:7px;margin:9px 0 14px}\n  .kuks-pdp-benefit{display:grid;grid-template-columns:18px minmax(0,1fr);align-items:start;column-gap:8px;color:#1d1d1f;font-family:inherit;font-size:13.2px;font-weight:600;line-height:1.28;letter-spacing:-.12px}\n  .kuks-pdp-check{display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:#113d6b;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;line-height:1}\n  @media(max-width:390px){\n    .kuks-pdp-benefits{gap:6px;margin-top:8px;margin-bottom:12px}\n    .kuks-pdp-benefit{grid-template-columns:17px minmax(0,1fr);column-gap:7px;font-size:12.4px;line-height:1.25}\n    .kuks-pdp-check{width:16px;height:16px;font-size:10px}\n  }\n</style>"
-          }
-        },
-        "kuks_bundle_gap": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"kuks-bundle-atc-gap\" aria-hidden=\"true\"></div>\n<style>\n  .kuks-bundle-atc-gap{height:8px}\n  @media(max-width:390px){.kuks-bundle-atc-gap{height:7px}}\n</style>"
-          }
         }
       },
       "block_order": [
@@ -126,10 +126,10 @@
         "display_id": false,
         "enable_sticky_info": false,
         "display_variant_image_first": false,
-        "disable_prepend": true,
+        "disable_prepend": false,
         "hide_variants": false,
         "variant_image_filtering": "none",
-        "image_zoom": "lightbox",
+        "image_zoom": "none",
         "thumbnails_ratio": "original",
         "arrows_color_scheme": "inverse",
         "transparent_arrows": true,
