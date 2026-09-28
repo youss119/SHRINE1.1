@@ -451,8 +451,8 @@
   },
   "order": [
     "main",
-    "kuks_social_carousel",
     "kuks_testimonials",
+    "kuks_social_carousel",
     "kuks_problems_tabs",
     "kuks_change_story",
     "kuks_science",
