@@ -212,10 +212,56 @@
       "settings": {
         "heading": "AVIS CLIENTS"
       }
+    },
+    "kuks_social_carousel": {
+      "type": "kuks-social-carousel",
+      "blocks": {
+        "social_1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-1.png",
+            "alt": "Cliente tenant le produit"
+          }
+        },
+        "social_2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-2.png",
+            "alt": "Cliente tenant le produit"
+          }
+        },
+        "social_3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-before-after.png",
+            "alt": "Avant après"
+          }
+        },
+        "social_4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-4.png",
+            "alt": "Cliente tenant le produit"
+          }
+        }
+      },
+      "block_order": [
+        "social_1",
+        "social_2",
+        "social_3",
+        "social_4"
+      ],
+      "settings": {
+        "heading": "Approuvé par plus de 10 892 personnes qui ont refusé de « se résigner à cela » ❤️",
+        "mobile_heading_size": 30,
+        "padding_top": 20,
+        "padding_bottom": 24
+      }
     }
   },
   "order": [
     "main",
-    "kuks_testimonials"
+    "kuks_testimonials",
+    "kuks_social_carousel"
   ]
 }
