@@ -1,0 +1,249 @@
+{% comment %}
+  Standalone testimonial reference section placed after the main product/FAQ section.
+{% endcomment %}
+
+<section class="kuks-testimonials-section" id="kuks-testimonials-{{ section.id }}">
+  <div class="kuks-testimonials-inner">
+    <p class="kuks-testimonials-kicker">TÉMOIGNAGES DE RÉFÉRENCE</p>
+
+    <div class="kuks-testimonials-track" role="list">
+      <article class="kuks-testimonial-card" role="listitem">
+        <div class="kuks-testimonial-rating">
+          <span class="kuks-green-stars" aria-label="5 étoiles">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </span>
+          <span class="kuks-testimonial-source">Habsters</span>
+        </div>
+
+        <p class="kuks-testimonial-quote">« J'ai passé des décennies à les enlever une par une. Les patients revenaient sans cesse avec de nouvelles imperfections. SK Renewal 40 a changé ma façon d'aborder le problème. L'urée à 40 % ramollit la kératine compactée de l'intérieur. J'ai vu des patients passer de dizaines de zones rugueuses à une peau visiblement plus lisse en deux ou trois mois. C'est désormais mon premier choix. »</p>
+
+        <div class="kuks-testimonial-author">
+          <img src="https://cdn.shopify.com/s/files/1/1085/1844/1285/files/kuks-review-therese.png?v=1790623535" alt="" width="38" height="38" loading="lazy">
+          <div>
+            <strong>Thérèse Ceron</strong>
+            <span>États-Unis</span>
+          </div>
+          <span class="kuks-yellow-stars" aria-label="5 étoiles">★★★★★</span>
+        </div>
+      </article>
+
+      <article class="kuks-testimonial-card" role="listitem">
+        <div class="kuks-testimonial-rating">
+          <span class="kuks-green-stars" aria-label="5 étoiles">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </span>
+          <span class="kuks-testimonial-source">Habsters</span>
+        </div>
+
+        <p class="kuks-testimonial-quote">« J'en découvrais une nouvelle toutes les quelques semaines. Cou, poitrine, dos. J'ai arrêté de compter après 40. Mon médecin m'a dit qu'elles étaient inoffensives. Ça ne m'empêchait pas de détester la sensation qu'elles procuraient à chaque fois que je touchais ma peau. J'ai commencé à utiliser SK Renewal 40 tous les soirs. Au bout de six semaines environ, les boutons rugueux sur mon cou se sont adoucis. Au bout de trois mois, j'ai passé la main sur ma poitrine et j'ai enfin senti une peau lisse. J'ai pleuré dans la salle de bain. Mon mari m'a demandé ce qui n'allait pas. Il n'y avait rien d'anormal. Enfin, quelque chose allait bien. »</p>
+
+        <div class="kuks-testimonial-author">
+          <img src="https://cdn.shopify.com/s/files/1/1085/1844/1285/files/kuks-review-rachel.png?v=1790623542" alt="" width="38" height="38" loading="lazy">
+          <div>
+            <strong>Rachel A.</strong>
+            <span>États-Unis</span>
+          </div>
+          <span class="kuks-yellow-stars" aria-label="5 étoiles">★★★★★</span>
+        </div>
+      </article>
+
+      <article class="kuks-testimonial-card" role="listitem">
+        <div class="kuks-testimonial-rating">
+          <span class="kuks-green-stars" aria-label="5 étoiles">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </span>
+          <span class="kuks-testimonial-source">Habsters</span>
+        </div>
+
+        <p class="kuks-testimonial-quote">« J'ai dépensé plus de 2 000 $ en cryothérapie en deux ans. Ils les ont fait disparaître par le froid. Ils sont réapparus. De nouveaux sont même apparus juste à côté. J'avais l'impression de jeter mon argent par les fenêtres. Une amie m'a parlé de SK Renewal 40. Je ne croyais pas qu'une crème puisse faire plus que ce que mon dermatologue avait réussi à faire. Mais après huit semaines, les boutons sur ma poitrine étaient moins visibles, plus lisses. Le mois dernier, j'ai porté un débardeur au match de foot de ma fille. Pour la première fois en quatre ans, je n'ai pas eu besoin d'enfiler un gilet en sortant. »</p>
+
+        <div class="kuks-testimonial-author">
+          <img src="https://cdn.shopify.com/s/files/1/1085/1844/1285/files/kuks-review-sarah.png?v=1790623549" alt="" width="38" height="38" loading="lazy">
+          <div>
+            <strong>Sarah L.</strong>
+            <span>États-Unis</span>
+          </div>
+          <span class="kuks-yellow-stars" aria-label="5 étoiles">★★★★★</span>
+        </div>
+      </article>
+    </div>
+
+    <p class="kuks-testimonials-note">Témoignages reproduits comme références de maquette à partir de Habsters.</p>
+  </div>
+</section>
+
+<style>
+  #kuks-testimonials-{{ section.id }}{
+    background:#fff;
+    padding:16px 0 24px;
+    overflow:hidden;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonials-inner{
+    width:min(100%, 1180px);
+    margin:0 auto;
+    padding:0 16px;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonials-kicker{
+    margin:0 0 10px;
+    color:#8a9099;
+    font-size:9px;
+    line-height:1;
+    font-weight:650;
+    letter-spacing:.12em;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonials-track{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+    padding:1px 0 5px;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonials-track::-webkit-scrollbar{
+    display:none;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-card{
+    flex:0 0 84%;
+    min-width:0;
+    display:flex;
+    flex-direction:column;
+    scroll-snap-align:start;
+    padding:14px 14px 13px;
+    border:1px solid #eceef1;
+    border-radius:6px;
+    background:#f7f8f9;
+    color:#20242b;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-rating{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:12px;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-green-stars{
+    display:inline-flex;
+    gap:2px;
+    line-height:1;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-green-stars span{
+    display:grid;
+    place-items:center;
+    width:18px;
+    height:18px;
+    background:#00b67a;
+    color:#fff;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:13px;
+    line-height:1;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-source{
+    color:#767d89;
+    font-size:9.6px;
+    font-weight:500;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-quote{
+    margin:0 0 14px;
+    color:#22262c;
+    font-size:11.2px;
+    line-height:1.5;
+    font-weight:500;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-author{
+    display:grid;
+    grid-template-columns:38px minmax(0,1fr) auto;
+    align-items:center;
+    gap:8px;
+    margin-top:auto;
+    padding-top:10px;
+    border-top:1px solid #e2e5e8;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-author img{
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:left center;
+    background:#eceff2;
+    border:1px solid #dfe3e7;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-author strong,
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-author div > span{
+    display:block;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-author strong{
+    color:#5a6069;
+    font-size:10.8px;
+    line-height:1.15;
+    font-weight:700;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-author div > span{
+    margin-top:2px;
+    color:#9298a1;
+    font-size:9.5px;
+    line-height:1.1;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-yellow-stars{
+    color:#ffc400;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:12px;
+    letter-spacing:.5px;
+    white-space:nowrap;
+  }
+
+  #kuks-testimonials-{{ section.id }} .kuks-testimonials-note{
+    margin:7px 0 0;
+    color:#9aa0a8;
+    font-size:8.5px;
+    line-height:1.25;
+    text-align:left;
+  }
+
+  @media screen and (min-width:750px){
+    #kuks-testimonials-{{ section.id }}{
+      padding:24px 0 34px;
+    }
+
+    #kuks-testimonials-{{ section.id }} .kuks-testimonials-inner{
+      padding:0 28px;
+    }
+
+    #kuks-testimonials-{{ section.id }} .kuks-testimonials-track{
+      overflow:visible;
+      gap:14px;
+    }
+
+    #kuks-testimonials-{{ section.id }} .kuks-testimonial-card{
+      flex:1 1 0;
+      min-height:330px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Avis clients - KUKS",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Avis clients - KUKS"
+    }
+  ]
+}
+{% endschema %}
