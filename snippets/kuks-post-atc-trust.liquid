@@ -59,7 +59,11 @@
   <div class="kuks-faq" aria-label="Questions fréquentes">
     <details class="kuks-faq-item">
       <summary>
-        <span class="kuks-faq-qmark">?</span>
+        <span class="kuks-faq-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3c2.6 3.2 5 6.1 5 9.2A5 5 0 1 1 7 12.2C7 9.1 9.4 6.2 12 3Z"></path>
+          </svg>
+        </span>
         <span>Comment utiliser la crème à l’urée 40 % ?</span>
         <span class="kuks-faq-chevron" aria-hidden="true"></span>
       </summary>
@@ -83,7 +87,14 @@
 
     <details class="kuks-faq-item">
       <summary>
-        <span class="kuks-faq-qmark">?</span>
+        <span class="kuks-faq-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 7h11v8H3z"></path>
+            <path d="M14 10h3l2 2v3h-5z"></path>
+            <circle cx="8" cy="18" r="1.8"></circle>
+            <circle cx="17" cy="18" r="1.8"></circle>
+          </svg>
+        </span>
         <span>Combien de temps prend la livraison ?</span>
         <span class="kuks-faq-chevron" aria-hidden="true"></span>
       </summary>
@@ -94,7 +105,12 @@
 
     <details class="kuks-faq-item">
       <summary>
-        <span class="kuks-faq-qmark">?</span>
+        <span class="kuks-faq-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3l7 3v5c0 5-3.4 8.6-7 10-3.6-1.4-7-5-7-10V6l7-3Z"></path>
+            <path d="M9 12.3l2 2 4-4"></path>
+          </svg>
+        </span>
         <span>Et si ça ne fonctionne pas pour moi ?</span>
         <span class="kuks-faq-chevron" aria-hidden="true"></span>
       </summary>
@@ -105,7 +121,13 @@
 
     <details class="kuks-faq-item">
       <summary>
-        <span class="kuks-faq-qmark">?</span>
+        <span class="kuks-faq-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 18h16"></path>
+            <path d="M7 15l3-3 3 2 4-5"></path>
+            <path d="M17 9h2v2"></path>
+          </svg>
+        </span>
         <span>En combien de temps verrai-je des résultats ?</span>
         <span class="kuks-faq-chevron" aria-hidden="true"></span>
       </summary>
@@ -339,7 +361,7 @@
     display:grid;
     grid-template-columns:20px minmax(0,1fr) 14px;
     align-items:center;
-    gap:9px;
+    gap:11px;
     padding:15px 2px;
     cursor:pointer;
     color:#171a1f;
@@ -350,17 +372,22 @@
 
   #MainProduct-{{ section.id }} .kuks-faq-item summary::-webkit-details-marker{display:none}
 
-  #MainProduct-{{ section.id }} .kuks-faq-qmark{
+  #MainProduct-{{ section.id }} .kuks-faq-icon{
     display:grid;
     place-items:center;
-    width:18px;
-    height:18px;
-    border:1.4px solid #171a1f;
-    border-radius:50%;
-    font-family:Arial,Helvetica,sans-serif;
-    font-size:11px;
-    font-weight:700;
-    line-height:1;
+    width:20px;
+    height:20px;
+    color:#171a1f;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-faq-icon svg{
+    width:20px;
+    height:20px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
   }
 
   #MainProduct-{{ section.id }} .kuks-faq-chevron{
