@@ -107,11 +107,37 @@
     <details class="kuks-faq-item">
       <summary>
         <span class="kuks-faq-qmark">?</span>
-        <span>Comment annuler mon abonnement ?</span>
+        <span>En combien de temps verrai-je des résultats ?</span>
         <span class="kuks-faq-chevron" aria-hidden="true"></span>
       </summary>
-      <div class="kuks-faq-content">
-        <p>Vous pouvez annuler votre abonnement à tout moment avant le prochain renouvellement en contactant notre service client.</p>
+      <div class="kuks-faq-content kuks-results-timeline">
+        <p class="kuks-results-intro">Les changements sont progressifs et varient selon les personnes. Les témoignages publiés autour de SK Renewal 40 parlent surtout d’une évolution sur plusieurs semaines.</p>
+
+        <div class="kuks-result-step">
+          <span class="kuks-result-dot"></span>
+          <div>
+            <strong>Vers 4 à 6 semaines</strong>
+            <p>La texture peut commencer à paraître plus souple et moins rugueuse au toucher.</p>
+          </div>
+        </div>
+
+        <div class="kuks-result-step">
+          <span class="kuks-result-dot"></span>
+          <div>
+            <strong>Vers 8 à 10 semaines</strong>
+            <p>Les zones peuvent sembler plus lisses, plus plates et moins visibles.</p>
+          </div>
+        </div>
+
+        <div class="kuks-result-step">
+          <span class="kuks-result-dot"></span>
+          <div>
+            <strong>Après 2 à 3 mois</strong>
+            <p>Chez certaines personnes, les changements deviennent plus marqués avec une utilisation régulière.</p>
+          </div>
+        </div>
+
+        <p class="kuks-faq-note">Les résultats individuels peuvent varier.</p>
       </div>
     </details>
   </div>
@@ -428,6 +454,41 @@
     margin-top:9px !important;
     color:#667085;
     font-size:10.4px;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-results-intro{
+    margin-bottom:11px !important;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-result-step{
+    display:grid;
+    grid-template-columns:10px minmax(0,1fr);
+    gap:8px;
+    align-items:start;
+    margin:0 0 10px;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-result-dot{
+    width:7px;
+    height:7px;
+    margin-top:4px;
+    border-radius:50%;
+    background:#113d6b;
+    box-shadow:0 0 0 3px rgba(17,61,107,.09);
+  }
+
+  #MainProduct-{{ section.id }} .kuks-result-step strong{
+    display:block;
+    margin-bottom:2px;
+    color:#171a1f;
+    font-size:11.2px;
+    line-height:1.2;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-result-step p{
+    color:#4f5661;
+    font-size:10.7px;
+    line-height:1.4;
   }
 
   @keyframes kuksPulse{
