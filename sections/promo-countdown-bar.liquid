@@ -1,8 +1,8 @@
 {% liquid
   assign bg = section.settings.background
   assign text = section.settings.text_color
-  assign margin_top = section.settings.margin_top
-  assign padding_top = section.settings.padding_top
+  assign padding_top = section.settings.padding_top | default: 4
+  assign padding_bottom = section.settings.padding_bottom | default: 4
 %}
 
 <style>
@@ -13,7 +13,6 @@
 
   #shopify-section-{{ section.id }} .kuks-promo-timer {
     width: 100%;
-    margin-top: {{ margin_top }}px;
     background: {{ bg }};
     color: {{ text }};
     overflow: hidden;
@@ -21,12 +20,11 @@
 
   #shopify-section-{{ section.id }} .kuks-promo-timer__inner {
     width: 100%;
-    min-height: 66px;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 10px;
-    padding: {{ padding_top }}px 10px 8px;
+    padding: {{ padding_top }}px 10px {{ padding_bottom }}px;
     box-sizing: border-box;
   }
 
@@ -99,9 +97,8 @@
 
   @media (max-width: 390px) {
     #shopify-section-{{ section.id }} .kuks-promo-timer__inner {
-      min-height: 62px;
       gap: 7px;
-      padding: {{ padding_top }}px 8px 7px;
+      padding: {{ padding_top }}px 8px {{ padding_bottom }}px;
     }
 
     #shopify-section-{{ section.id }} .kuks-promo-timer__title {
@@ -138,8 +135,7 @@
     #shopify-section-{{ section.id }} .kuks-promo-timer__inner {
       max-width: 920px;
       margin: 0 auto;
-      min-height: 72px;
-      padding: {{ padding_top }}px 18px 9px;
+      padding: {{ padding_top }}px 18px {{ padding_bottom }}px;
       gap: 16px;
     }
 
@@ -266,23 +262,23 @@
     },
     {
       "type": "range",
-      "id": "margin_top",
-      "label": "Marge supérieure",
+      "id": "padding_top",
+      "label": "Espace intérieur haut",
       "min": 0,
-      "max": 60,
+      "max": 20,
       "step": 1,
       "unit": "px",
-      "default": 0
+      "default": 4
     },
     {
       "type": "range",
-      "id": "padding_top",
-      "label": "Padding supérieur",
+      "id": "padding_bottom",
+      "label": "Espace intérieur bas",
       "min": 0,
-      "max": 40,
+      "max": 20,
       "step": 1,
       "unit": "px",
-      "default": 8
+      "default": 4
     },
     {
       "type": "color",
