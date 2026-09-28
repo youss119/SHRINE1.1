@@ -104,51 +104,14 @@
         "padding_bottom": 20
       }
     },
-    "fe1c8c67-b84c-4466-a515-70df3134c1c0": {
-      "type": "announcement-bar",
-      "blocks": {
-        "sections--21450414096679__fe1c8c67-b84c-4466-a515-70df3134c1c0-announcement-1": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "text_alignment": "center",
-            "mobile_text_size": 16,
-            "desktop_text_size": 20,
-            "icon": "storefront",
-            "filled_icon": false,
-            "mobile_icon_size": 20,
-            "desktop_icon_size": 26,
-            "desktop_layout": "horizontal",
-            "mobile_layout": "horizontal",
-            "hidden_products": "",
-            "enable_specific_display": false,
-            "displayed_products": ""
-          }
-        }
-      },
-      "block_order": [
-        "sections--21450414096679__fe1c8c67-b84c-4466-a515-70df3134c1c0-announcement-1"
-      ],
+    "promo-countdown-bar": {
+      "type": "promo-countdown-bar",
       "settings": {
-        "columns_desktop": 1,
-        "columns_mobile": 1,
-        "desktop_spacing": 28,
-        "mobile_spacing": 16,
-        "show_separator": false,
-        "color_scheme": "accent-1",
-        "slider_mobile": true,
-        "slider_desktop": false,
-        "type": "loop",
-        "autoplay": false,
-        "autoplay_speed": 3,
-        "hidden_products": "",
-        "enable_specific_display": false,
-        "displayed_products": "",
-        "padding_top": 16,
-        "padding_bottom": 16,
-        "custom_colors_background": "#dd1d1d",
-        "custom_gradient_background": "",
-        "custom_colors_text": "#ffffff"
+        "heading": "ACHETEZ-EN 2, RECEVEZ 1 CADEAU 🎁",
+        "subheading": "Commandez maintenant : jusqu’à -50 % + cadeaux offerts",
+        "timer_hours": 7,
+        "background": "#113D6B",
+        "text_color": "#FFFFFF"
       }
     }
   },
@@ -156,6 +119,6 @@
     "goda-trust-bar",
     "2c2ec774-3430-481f-b927-e9c035b9d24e",
     "header",
-    "fe1c8c67-b84c-4466-a515-70df3134c1c0"
+    "promo-countdown-bar"
   ]
 }
