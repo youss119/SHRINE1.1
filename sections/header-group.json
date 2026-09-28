@@ -17,8 +17,9 @@
         "left_text": "Livraison offerte",
         "center_text": "Déjà +95 000 clients",
         "right_text": "Retours faciles",
+        "right_subtext": "60 jours",
         "background": "#000000",
-        "text_color": "#FFFFFF"
+        "text_color": "#ffffff"
       }
     },
     "2c2ec774-3430-481f-b927-e9c035b9d24e": {
@@ -82,7 +83,7 @@
       "type": "header",
       "settings": {
         "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
+        "show_line_separator": false,
         "color_scheme": "background-1",
         "logo_link": "/",
         "logo_position": "middle-center",
@@ -110,8 +111,8 @@
         "heading": "2 ACHETÉS = 1 OFFERT 🎁",
         "subheading": "Commandez maintenant : jusqu’à -50 % + cadeaux offerts",
         "timer_hours": 7,
-        "background": "#113D6B",
-        "text_color": "#FFFFFF"
+        "background": "#113d6b",
+        "text_color": "#ffffff"
       }
     }
   },
