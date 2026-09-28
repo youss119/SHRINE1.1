@@ -107,7 +107,7 @@
     "promo-countdown-bar": {
       "type": "promo-countdown-bar",
       "settings": {
-        "heading": "ACHETEZ-EN 2, RECEVEZ 1 CADEAU 🎁",
+        "heading": "2 ACHETÉS = 1 OFFERT 🎁",
         "subheading": "Commandez maintenant : jusqu’à -50 % + cadeaux offerts",
         "timer_hours": 7,
         "background": "#113D6B",
