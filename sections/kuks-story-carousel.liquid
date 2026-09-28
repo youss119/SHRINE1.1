@@ -1,0 +1,152 @@
+{% comment %}KUKS — Témoignages longs, carousel indépendant à hauteur active.{% endcomment %}
+<section id="kuks-story-{{ section.id }}" class="kuks-story">
+  <div class="kuks-story__inner">
+    {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
+    {% if section.settings.intro != blank %}<p class="kuks-story__intro">{{ section.settings.intro }}</p>{% endif %}
+
+    <div class="kuks-story__viewport" data-kuks-story-viewport>
+      <div class="kuks-story__track" data-kuks-story-track>
+        {% for block in section.blocks %}
+          <article class="kuks-story__card{% if forloop.first %} is-active{% endif %}" data-kuks-story-card {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              <div class="kuks-story__media">
+                {{ block.settings.image | image_url: width: 1100 | image_tag: loading:'lazy', widths:'420,700,900,1100', sizes:'(max-width:749px) 84vw, 620px', alt:block.settings.author }}
+              </div>
+            {% endif %}
+            <div class="kuks-story__body">
+              <div class="kuks-story__stars" aria-label="{{ block.settings.rating }} étoiles">
+                {% for i in (1..5) %}<span class="{% if i > block.settings.rating %}is-empty{% endif %}">★</span>{% endfor %}
+              </div>
+              {% if block.settings.title != blank %}<h3>{{ block.settings.title }}</h3>{% endif %}
+              <div class="kuks-story__review">{{ block.settings.review }}</div>
+              <div class="kuks-story__author">
+                <strong>{{ block.settings.author }}</strong>
+                {% if block.settings.meta != blank %}<span>{{ block.settings.meta }}</span>{% endif %}
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      {% if section.blocks.size > 1 %}
+        <button type="button" class="kuks-story__arrow kuks-story__arrow--prev" data-kuks-story-prev aria-label="Témoignage précédent">‹</button>
+        <button type="button" class="kuks-story__arrow kuks-story__arrow--next" data-kuks-story-next aria-label="Témoignage suivant">›</button>
+      {% endif %}
+    </div>
+
+    {% if section.blocks.size > 1 %}
+      <div class="kuks-story__dots" data-kuks-story-dots>
+        {% for block in section.blocks %}
+          <button type="button" class="{% if forloop.first %}is-active{% endif %}" data-kuks-story-dot="{{ forloop.index0 }}" aria-label="Témoignage {{ forloop.index }}"></button>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+#kuks-story-{{ section.id }}{background:#fff;padding:20px 0 26px;overflow:hidden}
+#kuks-story-{{ section.id }} .kuks-story__inner{width:min(100%,760px);margin:0 auto;padding:0 16px}
+#kuks-story-{{ section.id }} h2{max-width:650px;margin:0 auto 8px;text-align:center;color:#111;font-size:28px;line-height:1.12;letter-spacing:-.03em;font-weight:700}
+#kuks-story-{{ section.id }} .kuks-story__intro{max-width:590px;margin:0 auto 15px;text-align:center;color:#5d646e;font-size:12.5px;line-height:1.45}
+#kuks-story-{{ section.id }} .kuks-story__viewport{position:relative;overflow:hidden;transition:height .3s ease}
+#kuks-story-{{ section.id }} .kuks-story__track{display:flex;align-items:flex-start;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 56px 2px 0}
+#kuks-story-{{ section.id }} .kuks-story__track::-webkit-scrollbar{display:none}
+#kuks-story-{{ section.id }} .kuks-story__card{flex:0 0 88%;scroll-snap-align:start;align-self:flex-start;border:1px solid #e8ebef;border-radius:12px;background:#f8f9fa;overflow:hidden;color:#222;opacity:.78;transition:opacity .2s ease}
+#kuks-story-{{ section.id }} .kuks-story__card.is-active{opacity:1}
+#kuks-story-{{ section.id }} .kuks-story__media{aspect-ratio:1.28;background:#eef1f4;overflow:hidden}
+#kuks-story-{{ section.id }} .kuks-story__media img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
+#kuks-story-{{ section.id }} .kuks-story__body{padding:14px 15px 15px}
+#kuks-story-{{ section.id }} .kuks-story__stars{display:flex;gap:2px;margin-bottom:8px;color:#f2b800;font-size:15px;line-height:1}
+#kuks-story-{{ section.id }} .kuks-story__stars .is-empty{opacity:.18}
+#kuks-story-{{ section.id }} h3{margin:0 0 9px;color:#17202b;font-size:18px;line-height:1.2;font-weight:700;letter-spacing:-.02em}
+#kuks-story-{{ section.id }} .kuks-story__review{color:#343a42;font-size:11.5px;line-height:1.5}
+#kuks-story-{{ section.id }} .kuks-story__review p{margin:0 0 8px}
+#kuks-story-{{ section.id }} .kuks-story__review p:last-child{margin-bottom:0}
+#kuks-story-{{ section.id }} .kuks-story__author{display:flex;flex-wrap:wrap;gap:5px 8px;align-items:baseline;margin-top:12px;padding-top:10px;border-top:1px solid #e3e6ea}
+#kuks-story-{{ section.id }} .kuks-story__author strong{font-size:10.8px;color:#3c424a}
+#kuks-story-{{ section.id }} .kuks-story__author span{font-size:9.6px;color:#858c95}
+#kuks-story-{{ section.id }} .kuks-story__arrow{position:absolute;top:42%;z-index:3;width:34px;height:34px;padding:0;border:0;border-radius:50%;background:rgba(31,37,44,.74);color:#fff;display:grid;place-items:center;font-size:27px;line-height:1;cursor:pointer;transform:translateY(-50%)}
+#kuks-story-{{ section.id }} .kuks-story__arrow--prev{left:7px}
+#kuks-story-{{ section.id }} .kuks-story__arrow--next{right:7px}
+#kuks-story-{{ section.id }} .kuks-story__dots{display:flex;justify-content:center;gap:6px;margin-top:10px}
+#kuks-story-{{ section.id }} .kuks-story__dots button{width:6px;height:6px;padding:0;border:0;border-radius:50%;background:#c7ccd3;cursor:pointer}
+#kuks-story-{{ section.id }} .kuks-story__dots button.is-active{width:17px;border-radius:999px;background:#26313f}
+@media(max-width:749px){
+  #kuks-story-{{ section.id }}{padding:18px 0 22px}
+  #kuks-story-{{ section.id }} .kuks-story__inner{padding:0 13px}
+  #kuks-story-{{ section.id }} h2{font-size:22px;line-height:1.14}
+  #kuks-story-{{ section.id }} .kuks-story__intro{font-size:11.2px;margin-bottom:13px}
+  #kuks-story-{{ section.id }} .kuks-story__card{flex-basis:86%}
+  #kuks-story-{{ section.id }} .kuks-story__body{padding:13px}
+  #kuks-story-{{ section.id }} h3{font-size:17px}
+  #kuks-story-{{ section.id }} .kuks-story__review{font-size:10.8px;line-height:1.47}
+}
+@media(min-width:750px){
+  #kuks-story-{{ section.id }} .kuks-story__card{flex-basis:72%}
+}
+</style>
+
+<script>
+(() => {
+  const root=document.getElementById('kuks-story-{{ section.id }}');
+  if(!root) return;
+  const viewport=root.querySelector('[data-kuks-story-viewport]');
+  const track=root.querySelector('[data-kuks-story-track]');
+  const cards=[...root.querySelectorAll('[data-kuks-story-card]')];
+  const dots=[...root.querySelectorAll('[data-kuks-story-dot]')];
+  const prev=root.querySelector('[data-kuks-story-prev]');
+  const next=root.querySelector('[data-kuks-story-next]');
+  if(!viewport || !track || !cards.length) return;
+
+  const nearest=()=>{
+    const left=track.getBoundingClientRect().left;
+    let best=0,dist=Infinity;
+    cards.forEach((card,i)=>{const d=Math.abs(card.getBoundingClientRect().left-left);if(d<dist){dist=d;best=i}});
+    return best;
+  };
+  const activate=(i)=>{
+    cards.forEach((card,j)=>card.classList.toggle('is-active',i===j));
+    dots.forEach((dot,j)=>dot.classList.toggle('is-active',i===j));
+    requestAnimationFrame(()=>{viewport.style.height=Math.ceil(cards[i].getBoundingClientRect().height+2)+'px'});
+  };
+  const go=(i)=>{
+    i=Math.max(0,Math.min(cards.length-1,i));
+    track.scrollTo({left:cards[i].offsetLeft,behavior:'smooth'});
+    activate(i);
+  };
+  let raf;
+  track.addEventListener('scroll',()=>{if(raf) cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>activate(nearest()))},{passive:true});
+  dots.forEach((dot,i)=>dot.addEventListener('click',()=>go(i)));
+  if(prev) prev.addEventListener('click',()=>go(nearest()-1));
+  if(next) next.addEventListener('click',()=>go(nearest()+1));
+  window.addEventListener('resize',()=>activate(nearest()));
+  if(document.fonts?.ready){document.fonts.ready.then(()=>activate(0))}else{activate(0)}
+})();
+</script>
+
+{% schema %}
+{
+  "name":"Témoignages longs - KUKS",
+  "max_blocks":10,
+  "settings":[
+    {"type":"textarea","id":"heading","label":"Titre","default":"Des histoires réelles, une routine régulière"},
+    {"type":"textarea","id":"intro","label":"Introduction","default":"Découvrez les retours de personnes qui ont intégré la crème à leur routine."}
+  ],
+  "blocks":[
+    {
+      "type":"story",
+      "name":"Témoignage long",
+      "settings":[
+        {"type":"image_picker","id":"image","label":"Photo"},
+        {"type":"range","id":"rating","label":"Note","min":1,"max":5,"step":1,"default":5},
+        {"type":"text","id":"title","label":"Titre","default":"Titre du témoignage"},
+        {"type":"richtext","id":"review","label":"Témoignage","default":"<p>Ajoutez le témoignage ici.</p>"},
+        {"type":"text","id":"author","label":"Nom","default":"Prénom N."},
+        {"type":"text","id":"meta","label":"Âge / pays / statut","default":"France"}
+      ]
+    }
+  ],
+  "presets":[{"name":"Témoignages longs - KUKS","blocks":[{"type":"story"},{"type":"story"},{"type":"story"}]}]
+}
+{% endschema %}

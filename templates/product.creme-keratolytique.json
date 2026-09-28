@@ -447,16 +447,109 @@
         "subheading": "Statistiques de satisfaction",
         "note": "*Données à remplacer par vos propres résultats avant publication."
       }
+    },
+    "kuks_story_carousel": {
+      "type": "kuks-story-carousel",
+      "blocks": {
+        "story_rachel": {
+          "type": "story",
+          "settings": {
+            "title": "« J’ai enfin senti une peau plus lisse. »",
+            "rating": 5,
+            "review": "<p>J’en découvrais une nouvelle toutes les quelques semaines : cou, poitrine, dos. J’ai arrêté de compter après 40.</p><p>J’ai commencé à utiliser la Crème Kératolytique Intensive tous les soirs. Au bout de six semaines environ, les zones rugueuses sur mon cou se sont adoucies. Au bout de trois mois, j’ai passé la main sur ma poitrine et j’ai enfin senti une peau lisse.</p>",
+            "author": "Rachel A.",
+            "meta": "États-Unis"
+          }
+        },
+        "story_sarah": {
+          "type": "story",
+          "settings": {
+            "title": "« J’ai enfin arrêté de tout couvrir. »",
+            "rating": 5,
+            "review": "<p>J’ai dépensé plus de 2 000 $ en cryothérapie en deux ans. Certaines zones disparaissaient, puis d’autres apparaissaient.</p><p>Après huit semaines de routine, les zones sur ma poitrine me semblaient moins visibles et plus lisses. Le mois dernier, j’ai porté un débardeur au match de foot de ma fille, sans ajouter de gilet.</p>",
+            "author": "Sarah L.",
+            "meta": "États-Unis"
+          }
+        },
+        "story_therese": {
+          "type": "story",
+          "settings": {
+            "title": "« La texture peut réellement évoluer avec une routine régulière. »",
+            "rating": 5,
+            "review": "<p>J’ai passé des décennies à les enlever une par une. Avec une routine régulière à l’urée à 40 %, j’ai vu des zones rugueuses devenir progressivement plus souples et plus lisses au fil des semaines.</p>",
+            "author": "Thérèse Ceron",
+            "meta": "États-Unis"
+          }
+        }
+      },
+      "block_order": [
+        "story_rachel",
+        "story_sarah",
+        "story_therese"
+      ],
+      "settings": {
+        "heading": "Rejoignez plus de 10 000 personnes qui ont décidé de ne plus se résigner à une peau rugueuse",
+        "intro": "Des expériences différentes, une même routine régulière."
+      }
+    },
+    "kuks_feature_cards": {
+      "type": "kuks-feature-cards",
+      "blocks": {
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "number": "01",
+            "title": "Assouplir",
+            "text": "L’urée à 40 % aide à assouplir la kératine compacte."
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "number": "02",
+            "title": "Libérer",
+            "text": "L’acide salicylique aide à détacher les cellules déjà ramollies."
+          }
+        },
+        "card_3": {
+          "type": "card",
+          "settings": {
+            "number": "03",
+            "title": "Toutes les zones",
+            "text": "Une seule routine peut s’appliquer aux différentes zones rugueuses du corps."
+          }
+        },
+        "card_4": {
+          "type": "card",
+          "settings": {
+            "number": "04",
+            "title": "Régularité",
+            "text": "Une fine couche, une fois par jour, pour garder une routine simple."
+          }
+        }
+      },
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
+      "settings": {
+        "heading": "Une routine simple, pensée en quatre étapes",
+        "intro": "L’essentiel de la formule et de son utilisation, en un coup d’œil."
+      }
     }
   },
   "order": [
     "main",
     "kuks_testimonials",
     "kuks_social_carousel",
+    "kuks_story_carousel",
     "kuks_problems_tabs",
     "kuks_change_story",
     "kuks_science",
     "kuks_timeline",
+    "kuks_feature_cards",
     "kuks_numbers",
     "kuks_survey"
   ]
