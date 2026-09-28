@@ -1,6 +1,5 @@
 {% comment %}
   KUKS — Post add-to-cart trust / shipping / stock / FAQ
-  Designed for mobile-first product pages.
 {% endcomment %}
 
 <div class="kuks-after-atc" aria-label="Informations de confiance et livraison">
@@ -32,11 +31,11 @@
   </div>
 
   <div class="kuks-value-box">
-    <strong>Une séance de cryothérapie : 250 € pour 7 zones.</strong>
-    <span>Un seul pot : 39,90 € pour traiter toutes vos zones, chez vous.</span>
+    <span>Une séance de cryothérapie coûte 250 € pour 7 zones.</span>
+    <span>Un seul pot à 39,90 € permet de traiter toutes vos zones chez vous.</span>
   </div>
 
-  <div class="kuks-shipping-box">
+  <div class="kuks-shipping-line">
     <span class="kuks-beacon kuks-beacon--green" aria-hidden="true"></span>
     <div>
       <strong>LIVRAISON EXPRESS OFFERTE</strong>
@@ -111,8 +110,7 @@
         <span class="kuks-faq-chevron" aria-hidden="true"></span>
       </summary>
       <div class="kuks-faq-content kuks-results-timeline">
-        <p class="kuks-results-intro">Les changements sont progressifs et varient selon les personnes. Les témoignages publiés autour de SK Renewal 40 parlent surtout d’une évolution sur plusieurs semaines.</p>
-
+        <p class="kuks-results-intro">Les changements sont progressifs et varient selon les personnes.</p>
         <div class="kuks-result-step">
           <span class="kuks-result-dot"></span>
           <div>
@@ -120,7 +118,6 @@
             <p>La texture peut commencer à paraître plus souple et moins rugueuse au toucher.</p>
           </div>
         </div>
-
         <div class="kuks-result-step">
           <span class="kuks-result-dot"></span>
           <div>
@@ -128,7 +125,6 @@
             <p>Les zones peuvent sembler plus lisses, plus plates et moins visibles.</p>
           </div>
         </div>
-
         <div class="kuks-result-step">
           <span class="kuks-result-dot"></span>
           <div>
@@ -136,7 +132,6 @@
             <p>Chez certaines personnes, les changements deviennent plus marqués avec une utilisation régulière.</p>
           </div>
         </div>
-
         <p class="kuks-faq-note">Les résultats individuels peuvent varier.</p>
       </div>
     </details>
@@ -147,8 +142,8 @@
   #MainProduct-{{ section.id }} .kuks-after-atc{
     display:flex;
     flex-direction:column;
-    gap:10px;
-    margin-top:4px;
+    gap:11px;
+    margin-top:2px;
     color:#171a1f;
     font-family:inherit;
   }
@@ -158,36 +153,36 @@
     align-items:center;
     justify-content:center;
     gap:8px;
-    min-height:20px;
+    min-height:18px;
     margin:0;
-    color:#475467;
+    color:#667085;
   }
 
   #MainProduct-{{ section.id }} .kuks-mini-trust{
     display:flex;
     align-items:center;
-    gap:5px;
-    font-size:10.5px;
-    font-weight:600;
+    gap:4px;
+    font-size:9.4px;
+    font-weight:500;
     line-height:1;
     white-space:nowrap;
   }
 
   #MainProduct-{{ section.id }} .kuks-mini-trust svg{
-    width:14px;
-    height:14px;
+    width:12px;
+    height:12px;
     fill:none;
     stroke:#113d6b;
     stroke-width:1.7;
     stroke-linecap:round;
     stroke-linejoin:round;
-    flex:0 0 14px;
+    flex:0 0 12px;
   }
 
   #MainProduct-{{ section.id }} .kuks-mini-sep{
     width:1px;
-    height:14px;
-    background:#d7dde5;
+    height:12px;
+    background:#dce2e8;
   }
 
   #MainProduct-{{ section.id }} .kuks-payment-icons{
@@ -196,70 +191,60 @@
     justify-content:center;
     gap:5px;
     flex-wrap:nowrap;
-    margin-top:-6px;
+    margin-top:-4px;
     margin-bottom:1px;
   }
 
   #MainProduct-{{ section.id }} .kuks-payment-icons svg{
     width:auto;
-    height:24px;
-    max-width:42px;
+    height:22px;
+    max-width:39px;
     border-radius:4px;
   }
 
   #MainProduct-{{ section.id }} .kuks-value-box{
+    width:100%;
     border:1.5px solid #113d6b;
-    border-radius:7px;
-    padding:10px 13px;
+    border-radius:0;
+    padding:7px 11px;
     text-align:center;
     color:#113d6b;
     background:#fff;
-    font-size:11.5px;
-    line-height:1.35;
-  }
-
-  #MainProduct-{{ section.id }} .kuks-value-box strong{
-    display:block;
-    margin-bottom:2px;
-    font-size:12.5px;
+    font-size:10.6px;
     line-height:1.28;
     font-weight:700;
+    letter-spacing:-.03px;
   }
 
   #MainProduct-{{ section.id }} .kuks-value-box span{
     display:block;
-    color:#314b68;
-    font-weight:500;
   }
 
-  #MainProduct-{{ section.id }} .kuks-value-box + .kuks-shipping-box{
-    margin-top:-7px;
-  }
-
-  #MainProduct-{{ section.id }} .kuks-shipping-box{
+  #MainProduct-{{ section.id }} .kuks-shipping-line{
     display:grid;
-    grid-template-columns:15px minmax(0,1fr);
+    grid-template-columns:12px minmax(0,1fr);
     align-items:start;
-    gap:9px;
-    padding:10px 12px;
-    border:1px solid rgba(32,135,79,.22);
-    border-radius:9px;
-    background:rgba(32,135,79,.07);
+    gap:8px;
+    padding:1px 2px 0;
+    border:0;
+    border-radius:0;
+    background:transparent;
   }
 
-  #MainProduct-{{ section.id }} .kuks-shipping-box strong{
+  #MainProduct-{{ section.id }} .kuks-shipping-line strong{
     display:block;
     margin-bottom:2px;
     color:#17693d;
-    font-size:11.5px;
+    font-size:10.8px;
     line-height:1.1;
     font-weight:700;
+    letter-spacing:.08px;
   }
 
-  #MainProduct-{{ section.id }} .kuks-shipping-box span:not(.kuks-beacon){
+  #MainProduct-{{ section.id }} .kuks-shipping-line span:not(.kuks-beacon){
     display:block;
-    color:#3f5e4c;
-    font-size:10.5px;
+    color:#50645a;
+    font-size:10px;
     line-height:1.3;
     font-weight:500;
   }
@@ -283,17 +268,10 @@
     animation:kuksPulse 1.8s ease-out infinite;
   }
 
-  #MainProduct-{{ section.id }} .kuks-beacon::after{
-    animation-delay:.65s;
-  }
-
-  #MainProduct-{{ section.id }} .kuks-beacon--green{
-    background:#1f9d55;
-  }
+  #MainProduct-{{ section.id }} .kuks-beacon::after{animation-delay:.65s}
+  #MainProduct-{{ section.id }} .kuks-beacon--green{background:#1f9d55}
   #MainProduct-{{ section.id }} .kuks-beacon--green::before,
-  #MainProduct-{{ section.id }} .kuks-beacon--green::after{
-    border:1px solid #1f9d55;
-  }
+  #MainProduct-{{ section.id }} .kuks-beacon--green::after{border:1px solid #1f9d55}
 
   #MainProduct-{{ section.id }} .kuks-stock-box{
     position:relative;
@@ -325,7 +303,6 @@
     font-size:11.5px;
     line-height:1.15;
     font-weight:750;
-    letter-spacing:.05px;
   }
 
   #MainProduct-{{ section.id }} .kuks-stock-box p{
@@ -337,13 +314,9 @@
     font-weight:500;
   }
 
-  #MainProduct-{{ section.id }} .kuks-beacon--red{
-    background:#e13030;
-  }
+  #MainProduct-{{ section.id }} .kuks-beacon--red{background:#e13030}
   #MainProduct-{{ section.id }} .kuks-beacon--red::before,
-  #MainProduct-{{ section.id }} .kuks-beacon--red::after{
-    border:1px solid #e13030;
-  }
+  #MainProduct-{{ section.id }} .kuks-beacon--red::after{border:1px solid #e13030}
   #MainProduct-{{ section.id }} .kuks-beacon--corner{
     position:absolute;
     right:11px;
@@ -355,9 +328,7 @@
     margin-top:2px;
   }
 
-  #MainProduct-{{ section.id }} .kuks-faq-item{
-    border-bottom:1px solid #e8ebef;
-  }
+  #MainProduct-{{ section.id }} .kuks-faq-item{border-bottom:1px solid #e8ebef}
 
   #MainProduct-{{ section.id }} .kuks-faq-item summary{
     list-style:none;
@@ -373,9 +344,7 @@
     line-height:1.25;
   }
 
-  #MainProduct-{{ section.id }} .kuks-faq-item summary::-webkit-details-marker{
-    display:none;
-  }
+  #MainProduct-{{ section.id }} .kuks-faq-item summary::-webkit-details-marker{display:none}
 
   #MainProduct-{{ section.id }} .kuks-faq-qmark{
     display:grid;
@@ -407,22 +376,10 @@
     transition:transform .2s ease;
   }
 
-  #MainProduct-{{ section.id }} .kuks-faq-chevron::before{
-    left:0;
-    transform:rotate(45deg);
-  }
-
-  #MainProduct-{{ section.id }} .kuks-faq-chevron::after{
-    right:0;
-    transform:rotate(-45deg);
-  }
-
-  #MainProduct-{{ section.id }} details[open] .kuks-faq-chevron::before{
-    transform:rotate(-45deg);
-  }
-  #MainProduct-{{ section.id }} details[open] .kuks-faq-chevron::after{
-    transform:rotate(45deg);
-  }
+  #MainProduct-{{ section.id }} .kuks-faq-chevron::before{left:0;transform:rotate(45deg)}
+  #MainProduct-{{ section.id }} .kuks-faq-chevron::after{right:0;transform:rotate(-45deg)}
+  #MainProduct-{{ section.id }} details[open] .kuks-faq-chevron::before{transform:rotate(-45deg)}
+  #MainProduct-{{ section.id }} details[open] .kuks-faq-chevron::after{transform:rotate(45deg)}
 
   #MainProduct-{{ section.id }} .kuks-faq-content{
     padding:0 4px 15px 31px;
@@ -439,32 +396,13 @@
     font-weight:700;
   }
 
-  #MainProduct-{{ section.id }} .kuks-faq-content h4:not(:first-child){
-    margin-top:12px;
-  }
-
-  #MainProduct-{{ section.id }} .kuks-faq-content p{
-    margin:0;
-  }
-
-  #MainProduct-{{ section.id }} .kuks-faq-content ol{
-    margin:6px 0 0;
-    padding-left:18px;
-  }
-
-  #MainProduct-{{ section.id }} .kuks-faq-content li{
-    margin:0 0 4px;
-  }
-
-  #MainProduct-{{ section.id }} .kuks-faq-note{
-    margin-top:9px !important;
-    color:#667085;
-    font-size:10.4px;
-  }
-
-  #MainProduct-{{ section.id }} .kuks-results-intro{
-    margin-bottom:11px !important;
-  }
+  #MainProduct-{{ section.id }} .kuks-faq-content h4:not(:first-child){margin-top:12px}
+  #MainProduct-{{ section.id }} .kuks-faq-content p{margin:0}
+  #MainProduct-{{ section.id }} .kuks-faq-content ol{margin:6px 0 0;padding-left:18px}
+  #MainProduct-{{ section.id }} .kuks-faq-content ul{margin:6px 0 0;padding-left:18px}
+  #MainProduct-{{ section.id }} .kuks-faq-content li{margin:0 0 4px}
+  #MainProduct-{{ section.id }} .kuks-faq-note{margin-top:9px!important;color:#667085;font-size:10.4px}
+  #MainProduct-{{ section.id }} .kuks-results-intro{margin-bottom:11px!important}
 
   #MainProduct-{{ section.id }} .kuks-result-step{
     display:grid;
@@ -503,12 +441,11 @@
   }
 
   @media screen and (max-width:390px){
-    #MainProduct-{{ section.id }} .kuks-after-atc{gap:9px;margin-top:3px}
-    #MainProduct-{{ section.id }} .kuks-mini-trust{font-size:9.8px}
-    #MainProduct-{{ section.id }} .kuks-payment-icons{gap:4px}
-    #MainProduct-{{ section.id }} .kuks-payment-icons svg{height:22px;max-width:38px}
-    #MainProduct-{{ section.id }} .kuks-value-box{padding:9px 10px;font-size:10.5px}
-    #MainProduct-{{ section.id }} .kuks-value-box strong{font-size:11.5px}
+    #MainProduct-{{ section.id }} .kuks-after-atc{gap:10px;margin-top:1px}
+    #MainProduct-{{ section.id }} .kuks-mini-trust{font-size:9px}
+    #MainProduct-{{ section.id }} .kuks-payment-icons{gap:4px;margin-top:-3px}
+    #MainProduct-{{ section.id }} .kuks-payment-icons svg{height:21px;max-width:36px}
+    #MainProduct-{{ section.id }} .kuks-value-box{padding:7px 9px;font-size:10.1px;line-height:1.25}
     #MainProduct-{{ section.id }} .kuks-faq-item summary{font-size:11.8px;padding:14px 1px}
     #MainProduct-{{ section.id }} .kuks-faq-content{font-size:10.8px;padding-left:29px}
   }
