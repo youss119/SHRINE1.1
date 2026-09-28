@@ -1,327 +1,53 @@
-{% comment %}
-  KUKS — Carousel preuve sociale, inspiré du rythme visuel Habsters.
-{% endcomment %}
-
-<section id="kuks-social-{{ section.id }}" class="kuks-social-proof">
-  <div class="kuks-social-proof__inner">
-    {% if section.settings.heading != blank %}
-      <h2 class="kuks-social-proof__heading">{{ section.settings.heading }}</h2>
-    {% endif %}
-
-    <div class="kuks-social-proof__viewport" data-kuks-social-viewport>
-      <div class="kuks-social-proof__track" data-kuks-social-track>
+{% comment %}KUKS — preuve sociale, 2 photos visibles comme la référence mobile.{% endcomment %}
+<section id="kuks-social-{{ section.id }}" class="kuks-social">
+  <div class="kuks-social__inner">
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="kuks-social__viewport" data-viewport>
+      <div class="kuks-social__track" data-track>
         {% for block in section.blocks %}
-          <figure class="kuks-social-proof__slide" data-kuks-social-slide {{ block.shopify_attributes }}>
+          <figure class="kuks-social__item" data-slide {{ block.shopify_attributes }}>
             {% if block.settings.image != blank %}
-              {{ block.settings.image
-                | image_url: width: 900
-                | image_tag:
-                  loading: 'lazy',
-                  widths: '360,540,720,900',
-                  sizes: '(max-width: 749px) 44vw, 320px',
-                  alt: block.settings.alt
-              }}
+              {{ block.settings.image | image_url: width:900 | image_tag: loading:'lazy', widths:'360,540,720,900', sizes:'(max-width:749px) 45vw, 320px', alt:block.settings.alt }}
             {% else %}
-              <div class="kuks-social-proof__placeholder">Ajoutez une image</div>
+              <div class="kuks-social__placeholder">Ajoutez une image</div>
             {% endif %}
           </figure>
         {% endfor %}
       </div>
-
       {% if section.blocks.size > 2 %}
-        <button class="kuks-social-proof__arrow kuks-social-proof__arrow--prev" type="button" data-kuks-social-prev aria-label="Image précédente">
-          <span aria-hidden="true">‹</span>
-        </button>
-        <button class="kuks-social-proof__arrow kuks-social-proof__arrow--next" type="button" data-kuks-social-next aria-label="Image suivante">
-          <span aria-hidden="true">›</span>
-        </button>
+        <button class="kuks-social__arrow kuks-social__arrow--prev" type="button" data-prev aria-label="Précédent">‹</button>
+        <button class="kuks-social__arrow kuks-social__arrow--next" type="button" data-next aria-label="Suivant">›</button>
       {% endif %}
     </div>
-
     {% if section.blocks.size > 2 %}
-      <div class="kuks-social-proof__dots" data-kuks-social-dots>
+      <div class="kuks-social__dots">
         {% for block in section.blocks %}
-          {% assign mod = forloop.index0 | modulo: 2 %}
-          {% if mod == 0 %}
-            <button
-              type="button"
-              class="{% if forloop.first %}is-active{% endif %}"
-              data-kuks-social-dot="{{ forloop.index0 | divided_by: 2 }}"
-              aria-label="Voir le groupe {{ forloop.index0 | divided_by: 2 | plus: 1 }}"
-            ></button>
-          {% endif %}
+          <button type="button" class="{% if forloop.first %}is-active{% endif %}" data-dot="{{ forloop.index0 }}" aria-label="Image {{ forloop.index }}"></button>
         {% endfor %}
       </div>
     {% endif %}
   </div>
 </section>
-
 <style>
-  #kuks-social-{{ section.id }}{
-    background:#fff;
-    padding:{{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
-    overflow:hidden;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__inner{
-    width:min(100%, 760px);
-    margin:0 auto;
-    padding:0 16px;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__heading{
-    margin:0 auto 16px;
-    max-width:660px;
-    text-align:center;
-    color:#111;
-    font-size:clamp(24px,6.2vw,38px);
-    line-height:1.14;
-    letter-spacing:-.035em;
-    font-weight:760;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__viewport{
-    position:relative;
-    overflow:hidden;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__track{
-    display:grid;
-    grid-auto-flow:column;
-    grid-auto-columns:calc(50% - 7px);
-    gap:14px;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    scroll-padding-left:0;
-    scrollbar-width:none;
-    -webkit-overflow-scrolling:touch;
-    padding:0;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__track::-webkit-scrollbar{
-    display:none;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__slide{
-    margin:0;
-    scroll-snap-align:start;
-    overflow:hidden;
-    background:#f6f6f6;
-    aspect-ratio:0.56;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__slide img{
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:cover;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__placeholder{
-    width:100%;
-    height:100%;
-    display:grid;
-    place-items:center;
-    background:#f1f2f4;
-    color:#7b8189;
-    font-size:12px;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__arrow{
-    position:absolute;
-    top:50%;
-    z-index:3;
-    width:38px;
-    height:38px;
-    transform:translateY(-50%);
-    border:0;
-    border-radius:50%;
-    background:rgba(35,35,35,.72);
-    color:#fff;
-    display:grid;
-    place-items:center;
-    cursor:pointer;
-    padding:0;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__arrow span{
-    font-size:31px;
-    line-height:.8;
-    transform:translateY(-1px);
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__arrow--prev{left:8px}
-  #kuks-social-{{ section.id }} .kuks-social-proof__arrow--next{right:8px}
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__dots{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    margin-top:13px;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__dots button{
-    width:8px;
-    height:8px;
-    padding:0;
-    border:0;
-    border-radius:50%;
-    background:#929292;
-    cursor:pointer;
-  }
-
-  #kuks-social-{{ section.id }} .kuks-social-proof__dots button.is-active{
-    width:10px;
-    height:10px;
-    background:#000;
-  }
-
-  @media screen and (max-width:749px){
-    #kuks-social-{{ section.id }} .kuks-social-proof__inner{
-      padding:0 14px;
-    }
-
-    #kuks-social-{{ section.id }} .kuks-social-proof__heading{
-      margin-bottom:14px;
-      font-size:{{ section.settings.mobile_heading_size }}px;
-      line-height:1.12;
-    }
-
-    #kuks-social-{{ section.id }} .kuks-social-proof__track{
-      gap:10px;
-      grid-auto-columns:calc(50% - 5px);
-    }
-
-    #kuks-social-{{ section.id }} .kuks-social-proof__arrow{
-      width:34px;
-      height:34px;
-    }
-  }
-
-  @media screen and (min-width:750px){
-    #kuks-social-{{ section.id }} .kuks-social-proof__inner{
-      padding:0 24px;
-    }
-
-    #kuks-social-{{ section.id }} .kuks-social-proof__slide{
-      max-height:590px;
-    }
-  }
+#kuks-social-{{ section.id }}{background:#fff;padding:20px 0 28px;overflow:hidden}
+#kuks-social-{{ section.id }} .kuks-social__inner{width:min(100%,760px);margin:auto;padding:0 14px}
+#kuks-social-{{ section.id }} h2{margin:0 auto 18px;max-width:660px;text-align:center;font-size:31px;line-height:1.12;letter-spacing:-.035em;color:#111;font-weight:800}
+#kuks-social-{{ section.id }} .kuks-social__viewport{position:relative;overflow:hidden}
+#kuks-social-{{ section.id }} .kuks-social__track{display:grid;grid-auto-flow:column;grid-auto-columns:calc(50% - 5px);gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+#kuks-social-{{ section.id }} .kuks-social__track::-webkit-scrollbar{display:none}
+#kuks-social-{{ section.id }} .kuks-social__item{margin:0;aspect-ratio:.61;overflow:hidden;scroll-snap-align:start;background:#f2f2f2}
+#kuks-social-{{ section.id }} .kuks-social__item img{width:100%;height:100%;display:block;object-fit:cover}
+#kuks-social-{{ section.id }} .kuks-social__placeholder{height:100%;display:grid;place-items:center;color:#777}
+#kuks-social-{{ section.id }} .kuks-social__arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:34px;height:34px;border:0;border-radius:50%;background:rgba(20,20,20,.68);color:#fff;font-size:26px;display:grid;place-items:center;padding:0}
+#kuks-social-{{ section.id }} .kuks-social__arrow--prev{left:7px} #kuks-social-{{ section.id }} .kuks-social__arrow--next{right:7px}
+#kuks-social-{{ section.id }} .kuks-social__dots{display:flex;justify-content:center;gap:8px;margin-top:13px}
+#kuks-social-{{ section.id }} .kuks-social__dots button{width:6px;height:6px;border:0;border-radius:50%;padding:0;background:#9a9a9a}
+#kuks-social-{{ section.id }} .kuks-social__dots button.is-active{background:#111}
+@media(max-width:749px){#kuks-social-{{ section.id }} h2{font-size:27px;margin-bottom:16px}}
 </style>
-
 <script>
-(() => {
-  const root = document.getElementById('kuks-social-{{ section.id }}');
-  if (!root) return;
-
-  const track = root.querySelector('[data-kuks-social-track]');
-  const slides = Array.from(root.querySelectorAll('[data-kuks-social-slide]'));
-  const dots = Array.from(root.querySelectorAll('[data-kuks-social-dot]'));
-  const prev = root.querySelector('[data-kuks-social-prev]');
-  const next = root.querySelector('[data-kuks-social-next]');
-  if (!track || slides.length < 1) return;
-
-  const pageSize = 2;
-  const pageCount = Math.ceil(slides.length / pageSize);
-
-  const setActive = (page) => {
-    dots.forEach((dot, i) => dot.classList.toggle('is-active', i === page));
-  };
-
-  const getPage = () => {
-    if (slides.length < 2) return 0;
-    const pairWidth = slides[0].getBoundingClientRect().width * pageSize + 10;
-    return Math.max(0, Math.min(pageCount - 1, Math.round(track.scrollLeft / pairWidth)));
-  };
-
-  const goToPage = (page) => {
-    const idx = Math.min(slides.length - 1, page * pageSize);
-    track.scrollTo({ left: slides[idx].offsetLeft, behavior: 'smooth' });
-    setActive(page);
-  };
-
-  let raf;
-  track.addEventListener('scroll', () => {
-    if (raf) cancelAnimationFrame(raf);
-    raf = requestAnimationFrame(() => setActive(getPage()));
-  }, { passive:true });
-
-  dots.forEach((dot, page) => dot.addEventListener('click', () => goToPage(page)));
-
-  if (prev) prev.addEventListener('click', () => goToPage(Math.max(0, getPage() - 1)));
-  if (next) next.addEventListener('click', () => goToPage(Math.min(pageCount - 1, getPage() + 1)));
-})();
+(()=>{const r=document.getElementById('kuks-social-{{ section.id }}');if(!r)return;const t=r.querySelector('[data-track]');const s=[...r.querySelectorAll('[data-slide]')];const d=[...r.querySelectorAll('[data-dot]')];const p=r.querySelector('[data-prev]'),n=r.querySelector('[data-next]');if(!t||!s.length)return;const idx=()=>{const x=t.scrollLeft;let b=0,m=1e9;s.forEach((e,i)=>{const q=Math.abs(e.offsetLeft-x);if(q<m){m=q;b=i}});return b};const go=i=>{i=Math.max(0,Math.min(s.length-1,i));t.scrollTo({left:s[i].offsetLeft,behavior:'smooth'});d.forEach((x,j)=>x.classList.toggle('is-active',j===i))};let a;t.addEventListener('scroll',()=>{cancelAnimationFrame(a);a=requestAnimationFrame(()=>d.forEach((x,j)=>x.classList.toggle('is-active',j===idx())))},{passive:true});d.forEach((x,i)=>x.onclick=()=>go(i));if(p)p.onclick=()=>go(idx()-1);if(n)n.onclick=()=>go(idx()+1)})();
 </script>
-
 {% schema %}
-{
-  "name": "Carousel clients - KUKS",
-  "max_blocks": 12,
-  "settings": [
-    {
-      "type":"textarea",
-      "id":"heading",
-      "label":"Titre",
-      "default":"Approuvé par plus de 10 892 personnes qui ont refusé de « se résigner à cela » ❤️"
-    },
-    {
-      "type":"range",
-      "id":"mobile_heading_size",
-      "label":"Taille du titre sur mobile",
-      "min":22,
-      "max":38,
-      "step":1,
-      "default":30
-    },
-    {
-      "type":"range",
-      "id":"padding_top",
-      "label":"Espace haut",
-      "min":0,
-      "max":60,
-      "step":4,
-      "default":20
-    },
-    {
-      "type":"range",
-      "id":"padding_bottom",
-      "label":"Espace bas",
-      "min":0,
-      "max":60,
-      "step":4,
-      "default":24
-    }
-  ],
-  "blocks":[
-    {
-      "type":"image",
-      "name":"Image",
-      "settings":[
-        {
-          "type":"image_picker",
-          "id":"image",
-          "label":"Image"
-        },
-        {
-          "type":"text",
-          "id":"alt",
-          "label":"Texte alternatif",
-          "default":"Cliente"
-        }
-      ]
-    }
-  ],
-  "presets":[
-    {
-      "name":"Carousel clients - KUKS",
-      "blocks":[
-        {"type":"image"},
-        {"type":"image"},
-        {"type":"image"},
-        {"type":"image"}
-      ]
-    }
-  ]
-}
+{"name":"Photos approuvées - KUKS","max_blocks":12,"settings":[{"type":"textarea","id":"heading","label":"Titre","default":"Approuvé par celles et ceux qui ont choisi une routine plus simple"}],"blocks":[{"type":"image","name":"Photo","settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"alt","label":"Texte alternatif","default":"Photo client"}]}],"presets":[{"name":"Photos approuvées - KUKS","blocks":[{"type":"image"},{"type":"image"},{"type":"image"},{"type":"image"}]}]}
 {% endschema %}

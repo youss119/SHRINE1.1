@@ -1,0 +1,40 @@
+{% comment %}KUKS — ingrédients : image produit + 6 onglets/cartes éditables.{% endcomment %}
+<section id="kuks-ingredients-{{ section.id }}" class="kuks-ingredients">
+  <div class="kuks-ingredients__inner">
+    <h2>{{ section.settings.heading }}</h2>
+    <p class="kuks-ingredients__intro">{{ section.settings.intro }}</p>
+    {% if section.settings.image != blank %}<div class="kuks-ingredients__hero">{{ section.settings.image | image_url: width:1100 | image_tag: loading:'lazy', widths:'420,700,900,1100', sizes:'(max-width:749px) 100vw, 700px', alt:section.settings.heading }}</div>{% endif %}
+    <div class="kuks-ingredients__list">
+      {% for block in section.blocks %}
+        <details class="kuks-ingredients__item" {% if forloop.first %}open{% endif %} {{ block.shopify_attributes }}>
+          <summary>
+            <span class="kuks-ingredients__icon">{% if block.settings.image != blank %}{{ block.settings.image | image_url: width:120 | image_tag: loading:'lazy', widths:'60,90,120', alt:block.settings.title }}{% else %}{{ block.settings.short }}{% endif %}</span>
+            <span>{{ block.settings.title }}</span><span class="kuks-ingredients__plus">+</span>
+          </summary>
+          <p>{{ block.settings.text }}</p>
+        </details>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<style>
+#kuks-ingredients-{{ section.id }}{background:#f8f7f4;padding:34px 0}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__inner{width:min(100%,720px);margin:auto;padding:0 14px}
+#kuks-ingredients-{{ section.id }} h2{margin:0 auto 10px;max-width:630px;text-align:center;font-size:31px;line-height:1.14;letter-spacing:-.035em;color:#222}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__intro{margin:0 auto 18px;max-width:590px;text-align:center;font-size:13px;line-height:1.5;color:#666}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__hero{margin:0 0 20px;border-radius:18px;overflow:hidden;background:#fff}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__hero img{width:100%;display:block}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__list{display:grid;gap:10px}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__item{background:#fff;border-radius:18px;padding:0 16px}
+#kuks-ingredients-{{ section.id }} summary{list-style:none;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;min-height:74px;cursor:pointer;font-size:15px;color:#222}
+#kuks-ingredients-{{ section.id }} summary::-webkit-details-marker{display:none}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__icon{width:42px;height:42px;border-radius:50%;background:#f0f1f4;display:grid;place-items:center;color:#113d6b;font-size:10px;font-weight:800;overflow:hidden}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__icon img{width:100%;height:100%;object-fit:cover}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__plus{font-size:22px;color:#777;transition:transform .2s}
+#kuks-ingredients-{{ section.id }} details[open] .kuks-ingredients__plus{transform:rotate(45deg)}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__item p{margin:0;padding:0 0 16px 56px;font-size:12.5px;line-height:1.5;color:#4e555d}
+@media(max-width:749px){#kuks-ingredients-{{ section.id }} h2{font-size:28px}}
+</style>
+{% schema %}
+{"name":"Ingrédients - KUKS","max_blocks":6,"settings":[{"type":"textarea","id":"heading","label":"Titre","default":"Formulée avec des actifs issus de la science et du végétal"},{"type":"textarea","id":"intro","label":"Introduction","default":"Les bons ingrédients, aux bonnes concentrations, dans une seule routine."},{"type":"image_picker","id":"image","label":"Image principale"}],"blocks":[{"type":"ingredient","name":"Ingrédient","settings":[{"type":"image_picker","id":"image","label":"Icône / photo"},{"type":"text","id":"short","label":"Abréviation","default":"U"},{"type":"text","id":"title","label":"Nom","default":"40 % d’urée"},{"type":"textarea","id":"text","label":"Description","default":"Décrivez le rôle de cet ingrédient."}]}],"presets":[{"name":"Ingrédients - KUKS","blocks":[{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"}]}]}
+{% endschema %}

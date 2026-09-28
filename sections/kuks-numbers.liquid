@@ -1,4 +1,4 @@
-{% comment %}KUKS — Chiffres clés sur fond bleu.{% endcomment %}
+{% comment %}KUKS — chiffres clés empilés sur fond bleu, éditables.{% endcomment %}
 <section id="kuks-numbers-{{ section.id }}" class="kuks-numbers">
   <div class="kuks-numbers__inner">
     {% for block in section.blocks %}
@@ -12,34 +12,14 @@
 </section>
 <style>
 #kuks-numbers-{{ section.id }}{background:#113d6b;padding:26px 0;color:#fff}
-#kuks-numbers-{{ section.id }} .kuks-numbers__inner{width:min(100%,760px);margin:0 auto;padding:0 16px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
-#kuks-numbers-{{ section.id }} .kuks-numbers__item strong{display:block;font-size:40px;line-height:1;font-weight:800;margin-bottom:7px}
-#kuks-numbers-{{ section.id }} .kuks-numbers__item h3{margin:0 0 5px;font-size:17px;line-height:1.2;color:#fff}
-#kuks-numbers-{{ section.id }} .kuks-numbers__item p{margin:0;max-width:610px;color:rgba(255,255,255,.78);font-size:12px;line-height:1.45}
-@media(max-width:749px){
-  #kuks-numbers-{{ section.id }}{padding:22px 0}
-  #kuks-numbers-{{ section.id }} .kuks-numbers__inner{padding:0 14px;gap:20px}
-  #kuks-numbers-{{ section.id }} .kuks-numbers__item strong{font-size:34px}
-  #kuks-numbers-{{ section.id }} .kuks-numbers__item h3{font-size:14.5px}
-  #kuks-numbers-{{ section.id }} .kuks-numbers__item p{font-size:10.8px}
-}
+#kuks-numbers-{{ section.id }} .kuks-numbers__inner{width:min(100%,720px);margin:auto;padding:0 18px}
+#kuks-numbers-{{ section.id }} .kuks-numbers__item{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15)}
+#kuks-numbers-{{ section.id }} .kuks-numbers__item:last-child{border-bottom:0}
+#kuks-numbers-{{ section.id }} strong{display:block;font-size:42px;line-height:1;font-weight:800;margin-bottom:8px}
+#kuks-numbers-{{ section.id }} h3{margin:0 0 6px;font-size:17px;line-height:1.25;color:#fff}
+#kuks-numbers-{{ section.id }} p{margin:0;max-width:610px;color:rgba(255,255,255,.75);font-size:12.5px;line-height:1.48}
+@media(max-width:749px){#kuks-numbers-{{ section.id }}{padding:20px 0}#kuks-numbers-{{ section.id }} .kuks-numbers__inner{padding:0 18px}#kuks-numbers-{{ section.id }} strong{font-size:38px}#kuks-numbers-{{ section.id }} h3{font-size:15px}#kuks-numbers-{{ section.id }} p{font-size:11.5px}}
 </style>
 {% schema %}
-{
-  "name":"Chiffres clés - KUKS",
-  "max_blocks":6,
-  "settings":[],
-  "blocks":[
-    {
-      "type":"number",
-      "name":"Chiffre",
-      "settings":[
-        {"type":"text","id":"number","label":"Chiffre","default":"40 %"},
-        {"type":"text","id":"title","label":"Titre","default":"Concentration d’urée à usage intensif."},
-        {"type":"textarea","id":"text","label":"Texte","default":"À cette concentration, l’urée agit comme kératolytique et aide à ramollir la kératine compacte."}
-      ]
-    }
-  ],
-  "presets":[{"name":"Chiffres clés - KUKS","blocks":[{"type":"number"},{"type":"number"},{"type":"number"}]}]
-}
+{"name":"Chiffres clés - KUKS","max_blocks":6,"settings":[],"blocks":[{"type":"number","name":"Chiffre","settings":[{"type":"text","id":"number","label":"Chiffre","default":"40 %"},{"type":"text","id":"title","label":"Titre","default":"Titre"},{"type":"textarea","id":"text","label":"Texte","default":"Description courte."}]}],"presets":[{"name":"Chiffres clés - KUKS","blocks":[{"type":"number"},{"type":"number"},{"type":"number"},{"type":"number"}]}]}
 {% endschema %}

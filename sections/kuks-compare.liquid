@@ -1,0 +1,30 @@
+{% comment %}KUKS — tableau comparatif éditable.{% endcomment %}
+<section id="kuks-compare-{{ section.id }}" class="kuks-compare">
+  <div class="kuks-compare__inner">
+    <h2>{{ section.settings.heading }}</h2>
+    <p class="kuks-compare__intro">{{ section.settings.intro }}</p>
+    <div class="kuks-compare__wrap">
+      <table>
+        <thead><tr><th></th><th class="ours">{{ section.settings.col_ours }}</th><th>{{ section.settings.col_other1 }}</th><th>{{ section.settings.col_other2 }}</th></tr></thead>
+        <tbody>{% for block in section.blocks %}<tr {{ block.shopify_attributes }}><td>{{ block.settings.label }}</td><td class="ours">{{ block.settings.ours }}</td><td>{{ block.settings.other1 }}</td><td>{{ block.settings.other2 }}</td></tr>{% endfor %}</tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<style>
+#kuks-compare-{{ section.id }}{background:#fff;padding:34px 0}
+#kuks-compare-{{ section.id }} .kuks-compare__inner{width:min(100%,760px);margin:auto;padding:0 14px}
+#kuks-compare-{{ section.id }} h2{margin:0 auto 8px;max-width:640px;text-align:center;font-size:31px;line-height:1.12;letter-spacing:-.035em;color:#111}
+#kuks-compare-{{ section.id }} .kuks-compare__intro{margin:0 auto 18px;max-width:560px;text-align:center;font-size:13px;line-height:1.5;color:#666}
+#kuks-compare-{{ section.id }} .kuks-compare__wrap{overflow-x:auto;border:1px solid #e3e7eb;border-radius:16px}
+#kuks-compare-{{ section.id }} table{width:100%;border-collapse:collapse;min-width:620px;background:#fff}
+#kuks-compare-{{ section.id }} th,#kuks-compare-{{ section.id }} td{padding:13px 12px;border-bottom:1px solid #e8ebee;text-align:center;font-size:12px}
+#kuks-compare-{{ section.id }} th:first-child,#kuks-compare-{{ section.id }} td:first-child{text-align:left;min-width:210px}
+#kuks-compare-{{ section.id }} th{font-size:11px;color:#4b535c;background:#f7f8fa}
+#kuks-compare-{{ section.id }} .ours{background:#eef4fa;color:#113d6b;font-weight:800}
+#kuks-compare-{{ section.id }} tbody tr:last-child td{border-bottom:0}
+@media(max-width:749px){#kuks-compare-{{ section.id }} h2{font-size:28px}#kuks-compare-{{ section.id }} th,#kuks-compare-{{ section.id }} td{font-size:11px;padding:11px 9px}}
+</style>
+{% schema %}
+{"name":"Comparatif - KUKS","max_blocks":10,"settings":[{"type":"textarea","id":"heading","label":"Titre","default":"Une routine ciblée, là où les approches classiques diffèrent"},{"type":"textarea","id":"intro","label":"Introduction","default":"Comparez les grandes caractéristiques de chaque approche."},{"type":"text","id":"col_ours","label":"Colonne 1","default":"Crème Kératolytique"},{"type":"text","id":"col_other1","label":"Colonne 2","default":"Cryothérapie"},{"type":"text","id":"col_other2","label":"Colonne 3","default":"Acide glycolique"}],"blocks":[{"type":"row","name":"Ligne","settings":[{"type":"text","id":"label","label":"Critère","default":"Critère"},{"type":"text","id":"ours","label":"Votre produit","default":"✓"},{"type":"text","id":"other1","label":"Comparatif 1","default":"—"},{"type":"text","id":"other2","label":"Comparatif 2","default":"—"}]}],"presets":[{"name":"Comparatif - KUKS","blocks":[{"type":"row"},{"type":"row"},{"type":"row"},{"type":"row"},{"type":"row"}]}]}
+{% endschema %}
