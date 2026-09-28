@@ -131,34 +131,60 @@
         <span>En combien de temps verrai-je des résultats ?</span>
         <span class="kuks-faq-chevron" aria-hidden="true"></span>
       </summary>
-      <div class="kuks-faq-content kuks-results-timeline">
-        <p class="kuks-results-intro"><strong>La régularité est essentielle.</strong> Une application rigoureuse, chaque jour, permet d’obtenir les meilleurs résultats.</p>
+      <div class="kuks-faq-content kuks-progress-timeline">
+        <div class="kuks-progress-line" aria-hidden="true"></div>
 
-        <div class="kuks-result-step">
-          <span class="kuks-result-dot"></span>
-          <div>
-            <strong>Dès la 1re semaine</strong>
-            <p>Vous commencerez à voir les premiers changements visibles : les zones paraissent moins marquées et la texture commence à s’adoucir.</p>
+        <div class="kuks-progress-step is-active">
+          <div class="kuks-progress-dot">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 12.5l3 3 7-7"></path>
+            </svg>
+          </div>
+          <div class="kuks-progress-body">
+            <span class="kuks-progress-badge">Semaine 1</span>
+            <h4>Vous commencez à voir les premiers changements</h4>
+            <p>Les zones paraissent moins marquées et la texture commence à s’adoucir.</p>
           </div>
         </div>
 
-        <div class="kuks-result-step">
-          <span class="kuks-result-dot"></span>
-          <div>
-            <strong>Au bout de 2 semaines</strong>
+        <div class="kuks-progress-step is-active">
+          <div class="kuks-progress-dot">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 12.5l3 3 7-7"></path>
+            </svg>
+          </div>
+          <div class="kuks-progress-body">
+            <span class="kuks-progress-badge">Semaine 2</span>
+            <h4>Les résultats deviennent plus visibles</h4>
             <p>Les zones s’atténuent nettement et certaines deviennent presque invisibles avec une utilisation régulière.</p>
           </div>
         </div>
 
-        <div class="kuks-result-step">
-          <span class="kuks-result-dot"></span>
-          <div>
-            <strong>Entre 1 et 2 mois</strong>
-            <p>Les résultats deviennent les plus complets : peau visiblement plus lisse, plus uniforme et zones nettement réduites.</p>
+        <div class="kuks-progress-step is-active">
+          <div class="kuks-progress-dot">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 12.5l3 3 7-7"></path>
+            </svg>
+          </div>
+          <div class="kuks-progress-body">
+            <span class="kuks-progress-badge">1 à 2 mois</span>
+            <h4>Votre peau paraît plus nette et plus uniforme</h4>
+            <p>Avec une utilisation régulière et disciplinée, les résultats deviennent les plus complets et les zones sont nettement réduites.</p>
           </div>
         </div>
 
-        <p class="kuks-faq-note"><strong>Garantie 60 jours :</strong> si après 60 jours d’utilisation vous ne constatez aucun résultat, vous êtes intégralement remboursé.</p>
+        <div class="kuks-progress-step is-soft">
+          <div class="kuks-progress-dot is-soft">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 12.5l3 3 7-7"></path>
+            </svg>
+          </div>
+          <div class="kuks-progress-body">
+            <span class="kuks-progress-badge">Garantie 60 jours</span>
+            <h4>Résultat ou remboursé</h4>
+            <p>Si après 60 jours d’utilisation vous ne constatez aucun résultat, vous êtes intégralement remboursé.</p>
+          </div>
+        </div>
       </div>
     </details>
   </div>
@@ -466,6 +492,94 @@
     line-height:1.4;
   }
 
+
+  #MainProduct-{{ section.id }} .kuks-progress-timeline{
+    position:relative;
+    padding:3px 2px 4px 0;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-progress-line{
+    position:absolute;
+    left:10px;
+    top:8px;
+    bottom:16px;
+    width:1.5px;
+    background:#d8e0e8;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-progress-step{
+    position:relative;
+    display:grid;
+    grid-template-columns:22px minmax(0,1fr);
+    gap:12px;
+    align-items:start;
+    margin:0 0 17px;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-progress-step:last-child{
+    margin-bottom:0;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-progress-dot{
+    position:relative;
+    z-index:2;
+    display:grid;
+    place-items:center;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#113d6b;
+    box-shadow:0 0 0 4px #fff;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-progress-dot svg{
+    width:12px;
+    height:12px;
+    fill:none;
+    stroke:#fff;
+    stroke-width:2.3;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-progress-dot.is-soft{
+    background:#9aaabd;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-progress-badge{
+    display:inline-flex;
+    align-items:center;
+    min-height:22px;
+    padding:0 10px;
+    margin-bottom:6px;
+    border:1px solid #aeb9c7;
+    border-radius:999px;
+    background:#fff;
+    color:#344054;
+    font-size:9.8px;
+    font-weight:600;
+    line-height:1;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-progress-body h4{
+    margin:0 0 5px;
+    color:#113d6b;
+    font-size:12.6px;
+    line-height:1.22;
+    font-weight:700;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-progress-body p{
+    margin:0;
+    color:#4b5563;
+    font-size:10.6px;
+    line-height:1.45;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-progress-step.is-soft .kuks-progress-body h4{
+    color:#7f93ad;
+  }
+
   @keyframes kuksPulse{
     0%{transform:scale(.55);opacity:.5}
     70%,100%{transform:scale(1.8);opacity:0}
@@ -479,5 +593,9 @@
     #MainProduct-{{ section.id }} .kuks-value-box{padding:7px 9px;font-size:10.1px;line-height:1.25}
     #MainProduct-{{ section.id }} .kuks-faq-item summary{font-size:11.8px;padding:14px 1px}
     #MainProduct-{{ section.id }} .kuks-faq-content{font-size:10.8px;padding-left:29px}
+    #MainProduct-{{ section.id }} .kuks-progress-step{gap:11px;margin-bottom:15px}
+    #MainProduct-{{ section.id }} .kuks-progress-body h4{font-size:12.1px}
+    #MainProduct-{{ section.id }} .kuks-progress-body p{font-size:10.2px;line-height:1.42}
+    #MainProduct-{{ section.id }} .kuks-progress-badge{font-size:9.5px;min-height:21px;padding:0 9px}
   }
 </style>
