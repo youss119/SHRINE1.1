@@ -102,14 +102,6 @@
             "margin_bottom": 9
           }
         },
-        "payment_badges": {
-          "type": "payment_badges",
-          "settings": {
-            "enabled_payment_types": "american_express, apple_pay, google_pay, master, paypal, visa",
-            "margin_top": 15,
-            "margin_bottom": 15
-          }
-        },
         "kuks_post_atc": {
           "type": "custom_liquid",
           "settings": {
@@ -184,8 +176,9 @@
         "review_therese": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/ChatGPT_Image_Jul_7_2026_09_13_29_PM.png",
             "name": "Thérèse Ceron",
-            "country": "États-Unis",
+            "country": "France",
             "rating": 5,
             "review": "« J'ai passé des décennies à les enlever une par une. Les patients revenaient sans cesse avec de nouvelles imperfections. La Crème Kératolytique Intensive a changé ma façon d'aborder le problème. L'urée à 40 % ramollit la kératine compactée de l'intérieur. J'ai vu des patients passer de dizaines de zones rugueuses à une peau visiblement plus lisse en deux ou trois mois. C'est désormais mon premier choix. »"
           }
@@ -193,8 +186,9 @@
         "review_rachel": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/hf_20260126_210404_91e7bf49-6e69-487d-9196-21fee1d28edc.jpg",
             "name": "Rachel A.",
-            "country": "États-Unis",
+            "country": "France",
             "rating": 5,
             "review": "« J'en découvrais une nouvelle toutes les quelques semaines. Cou, poitrine, dos. J'ai arrêté de compter après 40. Mon médecin m'a dit qu'elles étaient inoffensives. Ça ne m'empêchait pas de détester la sensation qu'elles procuraient à chaque fois que je touchais ma peau. J'ai commencé à utiliser la Crème Kératolytique Intensive tous les soirs. Au bout de six semaines environ, les boutons rugueux sur mon cou se sont adoucis. Au bout de trois mois, j'ai passé la main sur ma poitrine et j'ai enfin senti une peau lisse. J'ai pleuré dans la salle de bain. Mon mari m'a demandé ce qui n'allait pas. Il n'y avait rien d'anormal. Enfin, quelque chose allait bien. »"
           }
@@ -202,8 +196,9 @@
         "review_sarah": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/636.jpg",
             "name": "Sarah L.",
-            "country": "États-Unis",
+            "country": "France",
             "rating": 5,
             "review": "« J'ai dépensé plus de 2 000 $ en cryothérapie en deux ans. Ils les ont fait disparaître par le froid. Ils sont réapparus. De nouveaux sont même apparus juste à côté. J'avais l'impression de jeter mon argent par les fenêtres. Une amie m'a parlé de la Crème Kératolytique Intensive. Je ne croyais pas qu'une crème puisse faire plus que ce que mon dermatologue avait réussi à faire. Mais après huit semaines, les boutons sur ma poitrine étaient moins visibles, plus lisses. Le mois dernier, j'ai porté un débardeur au match de foot de ma fille. Pour la première fois en quatre ans, je n'ai pas eu besoin d'enfiler un gilet en sortant. »"
           }
