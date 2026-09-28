@@ -11,6 +11,16 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "goda-trust-bar": {
+      "type": "goda-trust-bar",
+      "settings": {
+        "left_text": "Livraison offerte",
+        "center_text": "Déjà +95 000 clients",
+        "right_text": "Retours faciles",
+        "background": "#000000",
+        "text_color": "#FFFFFF"
+      }
+    },
     "2c2ec774-3430-481f-b927-e9c035b9d24e": {
       "type": "horizontal-ticker",
       "blocks": {
@@ -143,6 +153,7 @@
     }
   },
   "order": [
+    "goda-trust-bar",
     "2c2ec774-3430-481f-b927-e9c035b9d24e",
     "header",
     "fe1c8c67-b84c-4466-a515-70df3134c1c0"
