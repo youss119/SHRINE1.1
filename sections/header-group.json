@@ -111,6 +111,8 @@
         "heading": "2 ACHETÉS = 1 OFFERT 🎁",
         "subheading": "Commandez maintenant : jusqu’à -50 % + cadeaux offerts",
         "timer_hours": 7,
+        "margin_top": 0,
+        "padding_top": 5,
         "background": "#113d6b",
         "text_color": "#ffffff"
       }
