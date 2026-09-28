@@ -1,0 +1,33 @@
+{% comment %}KUKS — deux blocs scientifiques, image/overlay/texte éditables.{% endcomment %}
+<section id="kuks-science-{{ section.id }}" class="kuks-science" style="--bg:{{ section.settings.background }};">
+  <div class="kuks-science__inner">
+    {% for block in section.blocks %}
+      <article class="kuks-science__block" {{ block.shopify_attributes }}>
+        {% if block.settings.image != blank %}
+          <div class="kuks-science__media">
+            {{ block.settings.image | image_url: width:1100 | image_tag: loading:'lazy', widths:'420,700,900,1100', sizes:'(max-width:749px) 100vw, 700px', alt:block.settings.heading }}
+            {% if block.settings.overlay_text != blank %}<span class="kuks-science__overlay">{{ block.settings.overlay_text }}</span>{% endif %}
+          </div>
+        {% endif %}
+        {% if block.settings.eyebrow != blank %}<p class="kuks-science__eyebrow">{{ block.settings.eyebrow }}</p>{% endif %}
+        <h2>{{ block.settings.heading }}</h2>
+        <div class="kuks-science__body">{{ block.settings.body }}</div>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+<style>
+#kuks-science-{{ section.id }}{background:var(--bg);padding:10px 0 28px}
+#kuks-science-{{ section.id }} .kuks-science__inner{width:min(100%,720px);margin:auto;padding:0 14px}
+#kuks-science-{{ section.id }} .kuks-science__block{padding:12px 0 18px}
+#kuks-science-{{ section.id }} .kuks-science__media{position:relative;margin-bottom:16px}
+#kuks-science-{{ section.id }} img{width:100%;display:block;border-radius:12px}
+#kuks-science-{{ section.id }} .kuks-science__overlay{position:absolute;left:12px;bottom:12px;background:#113d6be8;color:#fff;border-radius:999px;padding:6px 10px;font-size:10px;font-weight:700}
+#kuks-science-{{ section.id }} .kuks-science__eyebrow{margin:0 0 5px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#666}
+#kuks-science-{{ section.id }} h2{margin:0 0 12px;font-size:31px;line-height:1.08;letter-spacing:-.035em;color:#111}
+#kuks-science-{{ section.id }} .kuks-science__body{font-size:14px;line-height:1.72;color:#30353a}
+@media(max-width:749px){#kuks-science-{{ section.id }} h2{font-size:27px}#kuks-science-{{ section.id }} .kuks-science__body{font-size:13.2px}}
+</style>
+{% schema %}
+{"name":"Science x2 - KUKS","max_blocks":2,"settings":[{"type":"color","id":"background","label":"Fond","default":"#ffffff"}],"blocks":[{"type":"science","name":"Bloc scientifique","settings":[{"type":"image_picker","id":"image","label":"Image / GIF"},{"type":"text","id":"overlay_text","label":"Texte superposé optionnel"},{"type":"text","id":"eyebrow","label":"Petit surtitre"},{"type":"textarea","id":"heading","label":"Titre","default":"Titre scientifique"},{"type":"richtext","id":"body","label":"Texte","default":"<p>Ajoutez votre texte ici.</p>"}]}],"presets":[{"name":"Science x2 - KUKS","blocks":[{"type":"science"},{"type":"science"}]}]}
+{% endschema %}

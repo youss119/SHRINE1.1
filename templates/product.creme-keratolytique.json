@@ -12,6 +12,34 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "kuks_rating": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"kuks-pdp-rating\" aria-label=\"Note 4,8 sur 5, 5 460 avis\">\n  <span class=\"kuks-pdp-rating__stars\" aria-hidden=\"true\">★★★★★</span>\n  <span class=\"kuks-pdp-rating__text\"><strong>4,8/5</strong> Très bien <span>(5 460 avis)</span></span>\n</div>\n<style>\n  .kuks-pdp-rating{display:flex;align-items:center;gap:8px;margin:2px 0 8px;color:#111;font-family:inherit;line-height:1}\n  .kuks-pdp-rating__stars{color:#f4c542;font-size:19px;letter-spacing:1px;line-height:1;white-space:nowrap}\n  .kuks-pdp-rating__text{font-size:14px;font-weight:500;letter-spacing:-.15px;white-space:nowrap}\n  .kuks-pdp-rating__text strong{font-weight:700}\n  @media(max-width:390px){\n    .kuks-pdp-rating{gap:7px;margin-bottom:7px}\n    .kuks-pdp-rating__stars{font-size:17px;letter-spacing:.5px}\n    .kuks-pdp-rating__text{font-size:12.7px}\n  }\n</style>"
+          }
+        },
+        "kuks_title": {
+          "type": "title",
+          "settings": {
+            "text_size": "h2",
+            "title_alignment": "left",
+            "uppercase_title": false,
+            "margin_top": 0,
+            "margin_bottom": 0
+          }
+        },
+        "kuks_benefits": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"kuks-pdp-benefits\" aria-label=\"Bénéfices du produit\">\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Adoucit &amp; aplatit les excroissances en 60 jours</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Votre peau cesse de paraître 10 ans plus vieille</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Toutes les zones, un seul pot — au lieu de 250 € par traitement</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Sans brûler, sans congeler, sans croûte ni cicatrice</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Fini de cacher votre peau et de vérifier chaque nouvelle bosse</span></div>\n</div>\n<style>\n  .kuks-pdp-benefits{display:flex;flex-direction:column;gap:7px;margin:9px 0 14px}\n  .kuks-pdp-benefit{display:grid;grid-template-columns:18px minmax(0,1fr);align-items:start;column-gap:8px;color:#1d1d1f;font-family:inherit;font-size:13.2px;font-weight:600;line-height:1.28;letter-spacing:-.12px}\n  .kuks-pdp-check{display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:#113d6b;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;line-height:1}\n  @media(max-width:390px){\n    .kuks-pdp-benefits{gap:6px;margin-top:8px;margin-bottom:12px}\n    .kuks-pdp-benefit{grid-template-columns:17px minmax(0,1fr);column-gap:7px;font-size:12.4px;line-height:1.25}\n    .kuks-pdp-check{width:16px;height:16px;font-size:10px}\n  }\n</style>"
+          }
+        },
+        "kuks_visual_tune": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n  /* KUKS PDP — visual cleanup only */\n  #MainProduct-{{ section.id }} .product__info-container{\n    color:#15171a;\n  }\n\n  #MainProduct-{{ section.id }} .kuks-pdp-rating{\n    gap:6px;\n    margin:2px 0 7px;\n  }\n  #MainProduct-{{ section.id }} .kuks-pdp-rating__stars{\n    font-size:16px;\n    letter-spacing:.35px;\n  }\n  #MainProduct-{{ section.id }} .kuks-pdp-rating__text{\n    font-size:12.6px;\n    font-weight:500;\n    letter-spacing:-.12px;\n  }\n\n  #MainProduct-{{ section.id }} .product__title{\n    margin-top:0 !important;\n    margin-bottom:0 !important;\n  }\n  #MainProduct-{{ section.id }} .product__title h1{\n    margin:0;\n    font-size:27px !important;\n    line-height:1.04 !important;\n    letter-spacing:-.65px !important;\n    font-weight:700 !important;\n  }\n\n  #MainProduct-{{ section.id }} .kuks-pdp-benefits{\n    gap:5px;\n    margin:9px 0 13px;\n  }\n  #MainProduct-{{ section.id }} .kuks-pdp-benefit{\n    grid-template-columns:16px minmax(0,1fr);\n    column-gap:7px;\n    font-size:11.8px;\n    font-weight:500;\n    line-height:1.28;\n    letter-spacing:-.12px;\n    color:#25282d;\n  }\n  #MainProduct-{{ section.id }} .kuks-pdp-check{\n    width:15px;\n    height:15px;\n    margin-top:1px;\n    font-size:9px;\n    background:#113d6b;\n    box-shadow:none;\n  }\n\n  #MainProduct-{{ section.id }} .quantity-breaks{\n    margin-top:10px !important;\n    margin-bottom:10px !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-breaks__title{\n    margin:0 0 9px !important;\n    font-size:13px !important;\n    line-height:1.15 !important;\n    font-weight:700 !important;\n    letter-spacing:.15px !important;\n    color:#18202a !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-breaks__title > span:first-child,\n  #MainProduct-{{ section.id }} .quantity-breaks__title > span:last-child{\n    opacity:.10 !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-breaks-container{\n    gap:7px !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break{\n    background:#fff !important;\n    border:1px solid #dce3ea !important;\n    border-radius:10px !important;\n    box-shadow:none !important;\n    overflow:hidden;\n  }\n  #MainProduct-{{ section.id }} .quantity-break:hover{\n    border-color:#b8c6d5 !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-breaks input[type=\"radio\"]:checked + .quantity-break{\n    background:#f8fbfe !important;\n    border-color:#113d6b !important;\n    box-shadow:0 0 0 1px rgba(17,61,107,.08) !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__content{\n    padding-top:9px !important;\n    padding-bottom:9px !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__label-text{\n    font-size:14px !important;\n    line-height:1.08 !important;\n    font-weight:700 !important;\n    letter-spacing:-.2px !important;\n    color:#15171a !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__caption{\n    margin-top:3px !important;\n    font-size:9.4px !important;\n    line-height:1.22 !important;\n    font-weight:400 !important;\n    color:#667085 !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__price{\n    font-size:15.5px !important;\n    line-height:1 !important;\n    font-weight:700 !important;\n    color:#15171a !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__compare-price{\n    margin-top:3px !important;\n    font-size:10.2px !important;\n    color:#8a94a3 !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__badge{\n    min-height:0 !important;\n    padding:3px 8px !important;\n    border-radius:999px !important;\n    font-size:9px !important;\n    line-height:1.1 !important;\n    font-weight:700 !important;\n    letter-spacing:.45px !important;\n    box-shadow:none !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__benefit{\n    margin-top:6px !important;\n    padding:5px 8px !important;\n    border-radius:6px !important;\n    background:#f3f6f9 !important;\n    color:#344054 !important;\n    font-size:9.5px !important;\n    line-height:1.15 !important;\n    font-weight:600 !important;\n  }\n\n  #MainProduct-{{ section.id }} .upsell{\n    background:#fff !important;\n    border-color:#dce3ea !important;\n    border-width:1px !important;\n    border-radius:10px !important;\n    box-shadow:none !important;\n  }\n  #MainProduct-{{ section.id }} .upsell__title{\n    font-size:13.5px !important;\n    line-height:1.08 !important;\n    font-weight:700 !important;\n    letter-spacing:-.15px !important;\n  }\n  #MainProduct-{{ section.id }} .upsell__desc{\n    font-size:9.5px !important;\n    line-height:1.2 !important;\n    font-weight:400 !important;\n    color:#667085 !important;\n  }\n  #MainProduct-{{ section.id }} .upsell__price,\n  #MainProduct-{{ section.id }} .upsell__price--separate{\n    font-size:14.5px !important;\n    font-weight:700 !important;\n  }\n\n  #MainProduct-{{ section.id }} .kuks-bundle-atc-gap{\n    height:10px !important;\n  }\n\n  @media screen and (max-width:749px){\n    #MainProduct-{{ section.id }} .product__info-wrapper{\n      padding-top:8px !important;\n    }\n    #MainProduct-{{ section.id }} .product__title h1{\n      font-size:25px !important;\n      line-height:1.03 !important;\n      letter-spacing:-.55px !important;\n    }\n    #MainProduct-{{ section.id }} .kuks-pdp-rating__stars{\n      font-size:15.5px !important;\n    }\n    #MainProduct-{{ section.id }} .kuks-pdp-rating__text{\n      font-size:12.2px !important;\n    }\n    #MainProduct-{{ section.id }} .kuks-pdp-benefit{\n      font-size:11.4px !important;\n      line-height:1.25 !important;\n    }\n    #MainProduct-{{ section.id }} .quantity-breaks__title{\n      margin-top:1px !important;\n      margin-bottom:8px !important;\n      font-size:12.6px !important;\n    }\n    #MainProduct-{{ section.id }} .quantity-break__content{\n      padding-top:8px !important;\n      padding-bottom:8px !important;\n    }\n    #MainProduct-{{ section.id }} .upsell{\n      margin-top:7px !important;\n    }\n\n    body.template-product .scroll-to-top-btn,\n    body:has(#MainProduct-{{ section.id }}) .scroll-to-top-btn{\n      display:none !important;\n    }\n  }\n</style>"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -49,6 +77,12 @@
             "margin_bottom": 12
           }
         },
+        "kuks_bundle_gap": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"kuks-bundle-atc-gap\" aria-hidden=\"true\"></div>\n<style>\n  .kuks-bundle-atc-gap{height:8px}\n  @media(max-width:390px){.kuks-bundle-atc-gap{height:7px}}\n</style>"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -68,55 +102,6 @@
             "margin_bottom": 9
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "margin_top": 24,
-            "margin_bottom": 24
-          }
-        },
-        "payment_badges": {
-          "type": "payment_badges",
-          "settings": {
-            "enabled_payment_types": "american_express, apple_pay, google_pay, master, paypal, visa",
-            "margin_top": 15,
-            "margin_bottom": 15
-          }
-        },
-        "kuks_rating": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"kuks-pdp-rating\" aria-label=\"Note 4,8 sur 5, 5 460 avis\">\n  <span class=\"kuks-pdp-rating__stars\" aria-hidden=\"true\">★★★★★</span>\n  <span class=\"kuks-pdp-rating__text\"><strong>4,8/5</strong> Très bien <span>(5 460 avis)</span></span>\n</div>\n<style>\n  .kuks-pdp-rating{display:flex;align-items:center;gap:8px;margin:2px 0 8px;color:#111;font-family:inherit;line-height:1}\n  .kuks-pdp-rating__stars{color:#f4c542;font-size:19px;letter-spacing:1px;line-height:1;white-space:nowrap}\n  .kuks-pdp-rating__text{font-size:14px;font-weight:500;letter-spacing:-.15px;white-space:nowrap}\n  .kuks-pdp-rating__text strong{font-weight:700}\n  @media(max-width:390px){\n    .kuks-pdp-rating{gap:7px;margin-bottom:7px}\n    .kuks-pdp-rating__stars{font-size:17px;letter-spacing:.5px}\n    .kuks-pdp-rating__text{font-size:12.7px}\n  }\n</style>"
-          }
-        },
-        "kuks_title": {
-          "type": "title",
-          "settings": {
-            "text_size": "h1",
-            "title_alignment": "left",
-            "uppercase_title": false,
-            "margin_top": 0,
-            "margin_bottom": 0
-          }
-        },
-        "kuks_benefits": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"kuks-pdp-benefits\" aria-label=\"Bénéfices du produit\">\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Adoucit &amp; aplatit les excroissances en 60 jours</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Votre peau cesse de paraître 10 ans plus vieille</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Toutes les zones, un seul pot — au lieu de 250 € par traitement</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Sans brûler, sans congeler, sans croûte ni cicatrice</span></div>\n  <div class=\"kuks-pdp-benefit\"><span class=\"kuks-pdp-check\">✓</span><span>Fini de cacher votre peau et de vérifier chaque nouvelle bosse</span></div>\n</div>\n<style>\n  .kuks-pdp-benefits{display:flex;flex-direction:column;gap:7px;margin:9px 0 14px}\n  .kuks-pdp-benefit{display:grid;grid-template-columns:18px minmax(0,1fr);align-items:start;column-gap:8px;color:#1d1d1f;font-family:inherit;font-size:13.2px;font-weight:600;line-height:1.28;letter-spacing:-.12px}\n  .kuks-pdp-check{display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:#113d6b;color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:11px;font-weight:800;line-height:1}\n  @media(max-width:390px){\n    .kuks-pdp-benefits{gap:6px;margin-top:8px;margin-bottom:12px}\n    .kuks-pdp-benefit{grid-template-columns:17px minmax(0,1fr);column-gap:7px;font-size:12.4px;line-height:1.25}\n    .kuks-pdp-check{width:16px;height:16px;font-size:10px}\n  }\n</style>"
-          }
-        },
-        "kuks_bundle_gap": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<div class=\"kuks-bundle-atc-gap\" aria-hidden=\"true\"></div>\n<style>\n  .kuks-bundle-atc-gap{height:8px}\n  @media(max-width:390px){.kuks-bundle-atc-gap{height:7px}}\n</style>"
-          }
-        },
-        "kuks_visual_tune": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<style>\n  /* KUKS PDP — visual cleanup only */\n  #MainProduct-{{ section.id }} .product__info-container{\n    color:#15171a;\n  }\n\n  #MainProduct-{{ section.id }} .kuks-pdp-rating{\n    gap:6px;\n    margin:2px 0 7px;\n  }\n  #MainProduct-{{ section.id }} .kuks-pdp-rating__stars{\n    font-size:16px;\n    letter-spacing:.35px;\n  }\n  #MainProduct-{{ section.id }} .kuks-pdp-rating__text{\n    font-size:12.6px;\n    font-weight:500;\n    letter-spacing:-.12px;\n  }\n\n  #MainProduct-{{ section.id }} .product__title{\n    margin-top:0 !important;\n    margin-bottom:0 !important;\n  }\n  #MainProduct-{{ section.id }} .product__title h1{\n    margin:0;\n    font-size:27px !important;\n    line-height:1.04 !important;\n    letter-spacing:-.65px !important;\n    font-weight:700 !important;\n  }\n\n  #MainProduct-{{ section.id }} .kuks-pdp-benefits{\n    gap:5px;\n    margin:9px 0 13px;\n  }\n  #MainProduct-{{ section.id }} .kuks-pdp-benefit{\n    grid-template-columns:16px minmax(0,1fr);\n    column-gap:7px;\n    font-size:11.8px;\n    font-weight:500;\n    line-height:1.28;\n    letter-spacing:-.12px;\n    color:#25282d;\n  }\n  #MainProduct-{{ section.id }} .kuks-pdp-check{\n    width:15px;\n    height:15px;\n    margin-top:1px;\n    font-size:9px;\n    background:#113d6b;\n    box-shadow:none;\n  }\n\n  #MainProduct-{{ section.id }} .quantity-breaks{\n    margin-top:10px !important;\n    margin-bottom:10px !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-breaks__title{\n    margin:0 0 9px !important;\n    font-size:13px !important;\n    line-height:1.15 !important;\n    font-weight:700 !important;\n    letter-spacing:.15px !important;\n    color:#18202a !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-breaks__title > span:first-child,\n  #MainProduct-{{ section.id }} .quantity-breaks__title > span:last-child{\n    opacity:.10 !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-breaks-container{\n    gap:7px !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break{\n    background:#fff !important;\n    border:1px solid #dce3ea !important;\n    border-radius:10px !important;\n    box-shadow:none !important;\n    overflow:hidden;\n  }\n  #MainProduct-{{ section.id }} .quantity-break:hover{\n    border-color:#b8c6d5 !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-breaks input[type=\"radio\"]:checked + .quantity-break{\n    background:#f8fbfe !important;\n    border-color:#113d6b !important;\n    box-shadow:0 0 0 1px rgba(17,61,107,.08) !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__content{\n    padding-top:9px !important;\n    padding-bottom:9px !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__label-text{\n    font-size:14px !important;\n    line-height:1.08 !important;\n    font-weight:700 !important;\n    letter-spacing:-.2px !important;\n    color:#15171a !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__caption{\n    margin-top:3px !important;\n    font-size:9.4px !important;\n    line-height:1.22 !important;\n    font-weight:400 !important;\n    color:#667085 !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__price{\n    font-size:15.5px !important;\n    line-height:1 !important;\n    font-weight:700 !important;\n    color:#15171a !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__compare-price{\n    margin-top:3px !important;\n    font-size:10.2px !important;\n    color:#8a94a3 !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__badge{\n    min-height:0 !important;\n    padding:3px 8px !important;\n    border-radius:999px !important;\n    font-size:9px !important;\n    line-height:1.1 !important;\n    font-weight:700 !important;\n    letter-spacing:.45px !important;\n    box-shadow:none !important;\n  }\n  #MainProduct-{{ section.id }} .quantity-break__benefit{\n    margin-top:6px !important;\n    padding:5px 8px !important;\n    border-radius:6px !important;\n    background:#f3f6f9 !important;\n    color:#344054 !important;\n    font-size:9.5px !important;\n    line-height:1.15 !important;\n    font-weight:600 !important;\n  }\n\n  #MainProduct-{{ section.id }} .upsell{\n    background:#fff !important;\n    border-color:#dce3ea !important;\n    border-width:1px !important;\n    border-radius:10px !important;\n    box-shadow:none !important;\n  }\n  #MainProduct-{{ section.id }} .upsell__title{\n    font-size:13.5px !important;\n    line-height:1.08 !important;\n    font-weight:700 !important;\n    letter-spacing:-.15px !important;\n  }\n  #MainProduct-{{ section.id }} .upsell__desc{\n    font-size:9.5px !important;\n    line-height:1.2 !important;\n    font-weight:400 !important;\n    color:#667085 !important;\n  }\n  #MainProduct-{{ section.id }} .upsell__price,\n  #MainProduct-{{ section.id }} .upsell__price--separate{\n    font-size:14.5px !important;\n    font-weight:700 !important;\n  }\n\n  #MainProduct-{{ section.id }} .kuks-bundle-atc-gap{\n    height:10px !important;\n  }\n\n  @media screen and (max-width:749px){\n    #MainProduct-{{ section.id }} .product__info-wrapper{\n      padding-top:8px !important;\n    }\n    #MainProduct-{{ section.id }} .product__title h1{\n      font-size:25px !important;\n      line-height:1.03 !important;\n      letter-spacing:-.55px !important;\n    }\n    #MainProduct-{{ section.id }} .kuks-pdp-rating__stars{\n      font-size:15.5px !important;\n    }\n    #MainProduct-{{ section.id }} .kuks-pdp-rating__text{\n      font-size:12.2px !important;\n    }\n    #MainProduct-{{ section.id }} .kuks-pdp-benefit{\n      font-size:11.4px !important;\n      line-height:1.25 !important;\n    }\n    #MainProduct-{{ section.id }} .quantity-breaks__title{\n      margin-top:1px !important;\n      margin-bottom:8px !important;\n      font-size:12.6px !important;\n    }\n    #MainProduct-{{ section.id }} .quantity-break__content{\n      padding-top:8px !important;\n      padding-bottom:8px !important;\n    }\n    #MainProduct-{{ section.id }} .upsell{\n      margin-top:7px !important;\n    }\n\n    body.template-product .scroll-to-top-btn,\n    body:has(#MainProduct-{{ section.id }}) .scroll-to-top-btn{\n      display:none !important;\n    }\n  }\n</style>"
-          }
-        },
         "kuks_post_atc": {
           "type": "custom_liquid",
           "settings": {
@@ -132,8 +117,7 @@
         "variant_picker",
         "kuks_bundle_gap",
         "buy_buttons",
-        "kuks_post_atc",
-        "description"
+        "kuks_post_atc"
       ],
       "settings": {
         "display_id": false,
@@ -143,7 +127,7 @@
         "hide_variants": false,
         "variant_image_filtering": "none",
         "image_zoom": "none",
-        "thumbnails_ratio": "square",
+        "thumbnails_ratio": "original",
         "arrows_color_scheme": "inverse",
         "transparent_arrows": true,
         "dots_color_scheme": "inverse",
@@ -186,14 +170,61 @@
         "desktop_padding_bottom": 36
       }
     },
+    "kuks_timeline": {
+      "type": "kuks-timeline",
+      "blocks": {
+        "t1": {
+          "type": "step",
+          "settings": {
+            "period": "Semaines 1–2",
+            "title": "Vous ressentez la différence",
+            "text": "La texture rugueuse commence à s’assouplir et les zones les plus dures paraissent moins rigides."
+          }
+        },
+        "t2": {
+          "type": "step",
+          "settings": {
+            "period": "Semaines 3–4",
+            "title": "Vous voyez le changement",
+            "text": "Les zones rugueuses paraissent progressivement plus lisses et moins présentes visuellement."
+          }
+        },
+        "t3": {
+          "type": "step",
+          "settings": {
+            "period": "Semaines 5–8",
+            "title": "La routine devient naturelle",
+            "text": "Vous appliquez le produit sans y penser et commencez à moins focaliser sur les zones qui vous gênaient."
+          }
+        },
+        "t4": {
+          "type": "step",
+          "settings": {
+            "period": "Semaines 9–12+",
+            "title": "Vous gardez le rythme",
+            "text": "La régularité devient le cœur de la routine et la peau paraît plus uniforme au toucher."
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ],
+      "settings": {
+        "heading": "À quoi peut ressembler une utilisation quotidienne"
+      }
+    },
     "kuks_testimonials": {
       "type": "kuks-testimonials",
       "blocks": {
         "review_therese": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/ChatGPT_Image_Jul_7_2026_09_13_29_PM.png",
             "name": "Thérèse Ceron",
-            "country": "États-Unis",
+            "country": "France",
             "rating": 5,
             "review": "« J'ai passé des décennies à les enlever une par une. Les patients revenaient sans cesse avec de nouvelles imperfections. La Crème Kératolytique Intensive a changé ma façon d'aborder le problème. L'urée à 40 % ramollit la kératine compactée de l'intérieur. J'ai vu des patients passer de dizaines de zones rugueuses à une peau visiblement plus lisse en deux ou trois mois. C'est désormais mon premier choix. »"
           }
@@ -201,8 +232,9 @@
         "review_rachel": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/hf_20260126_210404_91e7bf49-6e69-487d-9196-21fee1d28edc.jpg",
             "name": "Rachel A.",
-            "country": "États-Unis",
+            "country": "France",
             "rating": 5,
             "review": "« J'en découvrais une nouvelle toutes les quelques semaines. Cou, poitrine, dos. J'ai arrêté de compter après 40. Mon médecin m'a dit qu'elles étaient inoffensives. Ça ne m'empêchait pas de détester la sensation qu'elles procuraient à chaque fois que je touchais ma peau. J'ai commencé à utiliser la Crème Kératolytique Intensive tous les soirs. Au bout de six semaines environ, les boutons rugueux sur mon cou se sont adoucis. Au bout de trois mois, j'ai passé la main sur ma poitrine et j'ai enfin senti une peau lisse. J'ai pleuré dans la salle de bain. Mon mari m'a demandé ce qui n'allait pas. Il n'y avait rien d'anormal. Enfin, quelque chose allait bien. »"
           }
@@ -210,8 +242,9 @@
         "review_sarah": {
           "type": "review",
           "settings": {
+            "avatar": "shopify://shop_images/636.jpg",
             "name": "Sarah L.",
-            "country": "États-Unis",
+            "country": "France",
             "rating": 5,
             "review": "« J'ai dépensé plus de 2 000 $ en cryothérapie en deux ans. Ils les ont fait disparaître par le froid. Ils sont réapparus. De nouveaux sont même apparus juste à côté. J'avais l'impression de jeter mon argent par les fenêtres. Une amie m'a parlé de la Crème Kératolytique Intensive. Je ne croyais pas qu'une crème puisse faire plus que ce que mon dermatologue avait réussi à faire. Mais après huit semaines, les boutons sur ma poitrine étaient moins visibles, plus lisses. Le mois dernier, j'ai porté un débardeur au match de foot de ma fille. Pour la première fois en quatre ans, je n'ai pas eu besoin d'enfiler un gilet en sortant. »"
           }
@@ -265,10 +298,7 @@
         "social_4"
       ],
       "settings": {
-        "heading": "Approuvé par plus de 10 892 personnes qui ont refusé de « se résigner à cela » ❤️",
-        "mobile_heading_size": 30,
-        "padding_top": 20,
-        "padding_bottom": 24
+        "heading": "Approuvé par plus de 10 892 personnes qui ont refusé de « se résigner à cela » ❤️"
       }
     },
     "kuks_problems_tabs": {
@@ -308,8 +338,8 @@
         "p3"
       ],
       "settings": {
-        "heading": "Cette formule a été conçue pour répondre à ces trois problèmes.",
-        "intro": "Pendant des années, il n’y avait pas de réponse simple. L’urée à 40 % change l’approche."
+        "heading": "Cette formule a été conçue pour répondre à trois problèmes de texture",
+        "intro": "Trois situations différentes, avec un même point commun : une accumulation de kératine et une peau qui reste rugueuse."
       }
     },
     "kuks_change_story": {
@@ -317,62 +347,8 @@
       "settings": {
         "image": "shopify://shop_images/kuks-social-proof-4.png",
         "eyebrow": "UNE PEAU QUI RETROUVE UN ASPECT PLUS NET",
-        "heading": "Qu’est-ce qui change lorsque vous commencez à utiliser la Crème Kératolytique Intensive ?",
-        "text": "<p>Le retrait professionnel peut coûter entre 150 € et 300 € par zone, et les imperfections peuvent revenir. Une routine à domicile permet de traiter plusieurs zones chaque soir avec un seul pot, sans multiplier les rendez-vous.</p>"
-      }
-    },
-    "kuks_science": {
-      "type": "kuks-science",
-      "settings": {
-        "media": "shopify://shop_images/kuks-diagram-salicylic.png",
-        "heading": "L’acide salicylique termine le travail.",
-        "body": "<p>L’urée à 40 % commence par assouplir la kératine compacte. L’acide salicylique aide ensuite à détacher les cellules ramollies afin qu’elles puissent s’éliminer progressivement. Deux actifs, deux niveaux d’action sur le même problème.</p>"
-      }
-    },
-    "kuks_timeline": {
-      "type": "kuks-timeline",
-      "blocks": {
-        "t1": {
-          "type": "step",
-          "settings": {
-            "period": "Semaine 1–2",
-            "title": "Vous ressentez la différence",
-            "text": "La texture rugueuse et granuleuse commence à s’adoucir. Les zones dures paraissent moins rigides au toucher."
-          }
-        },
-        "t2": {
-          "type": "step",
-          "settings": {
-            "period": "Semaines 3 et 4",
-            "title": "Vous voyez le changement",
-            "text": "Les petites imperfections commencent à s’aplanir et les zones les plus rugueuses deviennent plus lisses et moins visibles."
-          }
-        },
-        "t3": {
-          "type": "step",
-          "settings": {
-            "period": "Semaines 5 à 8",
-            "title": "Vous cessez de vous cacher",
-            "text": "Les zones traitées paraissent plus uniformes. Vous pensez moins à les couvrir et vous commencez à retrouver confiance."
-          }
-        },
-        "t4": {
-          "type": "step",
-          "settings": {
-            "period": "Semaines 9 à 12",
-            "title": "Vous vous sentez à nouveau vous-même",
-            "text": "Avec une routine régulière, la peau paraît plus lisse et les zones en relief prennent moins de place dans votre quotidien."
-          }
-        }
-      },
-      "block_order": [
-        "t1",
-        "t2",
-        "t3",
-        "t4"
-      ],
-      "settings": {
-        "heading": "À quoi peut ressembler une utilisation quotidienne"
+        "heading": "Ce qui change quand vous intégrez la crème à votre routine",
+        "text": "<p>Une routine à domicile permet de travailler plusieurs zones avec le même produit, sans multiplier les étapes. L’objectif est de rendre la texture progressivement plus souple et plus uniforme au fil des utilisations.</p>"
       }
     },
     "kuks_numbers": {
@@ -382,31 +358,40 @@
           "type": "number",
           "settings": {
             "number": "40 %",
-            "title": "Concentration d’urée à usage intensif.",
-            "text": "À cette concentration, l’urée agit comme kératolytique et aide à ramollir la kératine compacte."
+            "title": "Urée à concentration intensive",
+            "text": "Une concentration pensée pour assouplir la kératine compacte."
           }
         },
         "n2": {
           "type": "number",
           "settings": {
             "number": "6",
-            "title": "Six composants, chacun avec un rôle précis.",
-            "text": "Assouplir, libérer, calmer, hydrater, uniformiser et protéger la peau."
+            "title": "Actifs complémentaires",
+            "text": "Chaque composant joue un rôle distinct dans la routine."
           }
         },
         "n3": {
           "type": "number",
           "settings": {
             "number": "60 jours",
-            "title": "Garantie de remboursement intégral.",
-            "text": "Vous disposez de temps pour intégrer la routine avant d’évaluer vos résultats."
+            "title": "Période d’essai de la routine",
+            "text": "Le temps nécessaire pour juger une routine progressive avec plus de recul."
+          }
+        },
+        "n4": {
+          "type": "number",
+          "settings": {
+            "number": "10 000+",
+            "title": "Une communauté en croissance",
+            "text": "Ce chiffre est entièrement modifiable dans l’éditeur avant publication."
           }
         }
       },
       "block_order": [
         "n1",
         "n2",
-        "n3"
+        "n3",
+        "n4"
       ],
       "settings": {}
     },
@@ -441,102 +426,266 @@
         "s3"
       ],
       "settings": {
-        "heading": "Les résultats qui les ont incités à repasser commande",
-        "intro": "Nous avons recueilli les retours de clients afin de mieux comprendre l’impact d’une routine à l’urée 40 % sur leur quotidien.",
+        "heading": "Les résultats qui donnent envie de rester régulier",
+        "intro": "Cette mise en page est prête à accueillir vos propres données clients vérifiées.",
         "image": "shopify://shop_images/kuks-survey-couple.png",
         "subheading": "Statistiques de satisfaction",
-        "note": "*Données à remplacer par vos propres résultats avant publication."
+        "note": "*Remplacez les chiffres ci-dessous par vos données vérifiées avant publication."
       }
     },
     "kuks_story_carousel": {
       "type": "kuks-story-carousel",
       "blocks": {
-        "story_rachel": {
+        "story_1": {
           "type": "story",
           "settings": {
-            "title": "« J’ai enfin senti une peau plus lisse. »",
+            "image": "shopify://shop_images/kuks-social-proof-before-after.png",
             "rating": 5,
-            "review": "<p>J’en découvrais une nouvelle toutes les quelques semaines : cou, poitrine, dos. J’ai arrêté de compter après 40.</p><p>J’ai commencé à utiliser la Crème Kératolytique Intensive tous les soirs. Au bout de six semaines environ, les zones rugueuses sur mon cou se sont adoucies. Au bout de trois mois, j’ai passé la main sur ma poitrine et j’ai enfin senti une peau lisse.</p>",
-            "author": "Rachel A.",
-            "meta": "États-Unis"
+            "title": "« Je n’arrivais pas à croire que c’était la même peau. »",
+            "review": "<p>J’évitais les décolletés depuis des années parce que la texture de ma peau me complexait. Avec une routine régulière, les zones rugueuses ont commencé à paraître plus souples et plus lisses.</p><p>Ce qui m’a le plus marquée, c’est de recommencer à porter les vêtements que j’aimais sans y penser toute la journée.</p>",
+            "author": "Margaret P.",
+            "meta": "Témoignage client"
           }
         },
-        "story_sarah": {
+        "story_2": {
           "type": "story",
           "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-4.png",
+            "rating": 5,
             "title": "« J’ai enfin arrêté de tout couvrir. »",
-            "rating": 5,
-            "review": "<p>J’ai dépensé plus de 2 000 $ en cryothérapie en deux ans. Certaines zones disparaissaient, puis d’autres apparaissaient.</p><p>Après huit semaines de routine, les zones sur ma poitrine me semblaient moins visibles et plus lisses. Le mois dernier, j’ai porté un débardeur au match de foot de ma fille, sans ajouter de gilet.</p>",
+            "review": "<p>J’avais essayé plusieurs routines sans réussir à obtenir une texture qui me plaisait. Avec une utilisation régulière, les zones les plus épaisses ont commencé à paraître plus souples.</p>",
             "author": "Sarah L.",
-            "meta": "États-Unis"
+            "meta": "Témoignage client"
           }
         },
-        "story_therese": {
+        "story_3": {
           "type": "story",
           "settings": {
-            "title": "« La texture peut réellement évoluer avec une routine régulière. »",
+            "image": "shopify://shop_images/kuks-social-proof-1.png",
             "rating": 5,
-            "review": "<p>J’ai passé des décennies à les enlever une par une. Avec une routine régulière à l’urée à 40 %, j’ai vu des zones rugueuses devenir progressivement plus souples et plus lisses au fil des semaines.</p>",
-            "author": "Thérèse Ceron",
-            "meta": "États-Unis"
+            "title": "« Une routine beaucoup plus simple au quotidien. »",
+            "review": "<p>Je voulais quelque chose que je puisse utiliser chez moi sans multiplier les produits. J’applique une fine couche le soir et je garde la même routine sur les zones qui me gênent.</p>",
+            "author": "Rachel A.",
+            "meta": "Témoignage client"
           }
         }
       },
       "block_order": [
-        "story_rachel",
-        "story_sarah",
-        "story_therese"
+        "story_1",
+        "story_2",
+        "story_3"
       ],
       "settings": {
-        "heading": "Rejoignez plus de 10 000 personnes qui ont décidé de ne plus se résigner à une peau rugueuse",
-        "intro": "Des expériences différentes, une même routine régulière."
+        "heading": "Rejoignez celles et ceux qui ont décidé de ne plus se résigner à une peau rugueuse",
+        "intro": "Des retours différents, avec un point commun : une routine simple et régulière."
       }
     },
-    "kuks_feature_cards": {
-      "type": "kuks-feature-cards",
+    "kuks_science_duo": {
+      "type": "kuks-science-duo",
       "blocks": {
-        "card_1": {
-          "type": "card",
+        "science_1": {
+          "type": "science",
           "settings": {
-            "number": "01",
-            "title": "Assouplir",
-            "text": "L’urée à 40 % aide à assouplir la kératine compacte."
+            "image": "shopify://shop_images/ImageChatGPT28sept.2026_17_18_25_1.png",
+            "heading": "Pourquoi l’urée à 40 % agit différemment",
+            "body": "<p>À forte concentration, l’urée aide à assouplir la kératine compacte qui donne aux zones rugueuses leur sensation épaisse et rigide. L’objectif est d’agir sur la texture, pas seulement d’hydrater la surface.</p>"
           }
         },
-        "card_2": {
-          "type": "card",
+        "science_2": {
+          "type": "science",
           "settings": {
-            "number": "02",
-            "title": "Libérer",
-            "text": "L’acide salicylique aide à détacher les cellules déjà ramollies."
-          }
-        },
-        "card_3": {
-          "type": "card",
-          "settings": {
-            "number": "03",
-            "title": "Toutes les zones",
-            "text": "Une seule routine peut s’appliquer aux différentes zones rugueuses du corps."
-          }
-        },
-        "card_4": {
-          "type": "card",
-          "settings": {
-            "number": "04",
-            "title": "Régularité",
-            "text": "Une fine couche, une fois par jour, pour garder une routine simple."
+            "image": "shopify://shop_images/kuks-diagram-salicylic.png",
+            "heading": "L’acide salicylique complète la routine",
+            "body": "<p>Une fois la kératine assouplie, l’acide salicylique aide à détacher progressivement les cellules accumulées à la surface. Les deux actifs travaillent à des niveaux complémentaires.</p>"
           }
         }
       },
       "block_order": [
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4"
+        "science_1",
+        "science_2"
       ],
       "settings": {
-        "heading": "Une routine simple, pensée en quatre étapes",
-        "intro": "L’essentiel de la formule et de son utilisation, en un coup d’œil."
+        "background": "#ffffff"
+      }
+    },
+    "kuks_ingredients": {
+      "type": "kuks-ingredients",
+      "blocks": {
+        "i1": {
+          "type": "ingredient",
+          "settings": {
+            "short": "U",
+            "title": "40 % d’urée",
+            "text": "Aide à assouplir la kératine compacte et la texture épaisse."
+          }
+        },
+        "i2": {
+          "type": "ingredient",
+          "settings": {
+            "short": "SA",
+            "title": "Acide salicylique",
+            "text": "Aide à exfolier et à libérer les cellules accumulées."
+          }
+        },
+        "i3": {
+          "type": "ingredient",
+          "settings": {
+            "short": "GT",
+            "title": "Extrait de thé vert",
+            "text": "Apporte un soutien apaisant à la peau."
+          }
+        },
+        "i4": {
+          "type": "ingredient",
+          "settings": {
+            "short": "AV",
+            "title": "Aloe vera",
+            "text": "Aide à maintenir l’hydratation et le confort cutané."
+          }
+        },
+        "i5": {
+          "type": "ingredient",
+          "settings": {
+            "short": "TT",
+            "title": "Huile d’arbre à thé",
+            "text": "Complète la formule avec un actif végétal ciblé."
+          }
+        },
+        "i6": {
+          "type": "ingredient",
+          "settings": {
+            "short": "CO",
+            "title": "Huile de coco",
+            "text": "Aide à nourrir la peau et à soutenir sa barrière."
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6"
+      ],
+      "settings": {
+        "heading": "Formulée avec des actifs issus de la science et du végétal",
+        "intro": "Les bons ingrédients, aux bonnes concentrations, dans une seule routine.",
+        "image": "shopify://shop_images/ImageChatGPT28sept.2026_15_47_35_1.png"
+      }
+    },
+    "kuks_compare": {
+      "type": "kuks-compare",
+      "blocks": {
+        "r1": {
+          "type": "row",
+          "settings": {
+            "label": "Cible la kératine épaissie",
+            "ours": "✓",
+            "other1": "—",
+            "other2": "—"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "label": "Utilisable sur plusieurs zones du corps",
+            "ours": "✓",
+            "other1": "—",
+            "other2": "✓"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "label": "Routine à domicile",
+            "ours": "✓",
+            "other1": "—",
+            "other2": "✓"
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "label": "Urée à 40 %",
+            "ours": "✓",
+            "other1": "—",
+            "other2": "—"
+          }
+        },
+        "r5": {
+          "type": "row",
+          "settings": {
+            "label": "Acide salicylique dans la formule",
+            "ours": "✓",
+            "other1": "—",
+            "other2": "✓"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ],
+      "settings": {
+        "heading": "Une routine ciblée, là où les approches classiques diffèrent",
+        "intro": "Comparez les grandes caractéristiques de chaque approche.",
+        "col_ours": "Crème Kératolytique",
+        "col_other1": "Cryothérapie",
+        "col_other2": "Acide glycolique"
+      }
+    },
+    "kuks_faq": {
+      "type": "kuks-faq",
+      "blocks": {
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "Comment utiliser la crème ?",
+            "answer": "<p>Appliquez une fine couche sur une petite zone propre et sèche. Commencez progressivement et évitez les zones irritées, les plaies ouvertes et le visage.</p>"
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "À quelle fréquence l’utiliser ?",
+            "answer": "<p>Commencez par une application par jour. Ajustez ensuite selon la tolérance de votre peau et les indications figurant sur votre produit.</p>"
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "Sur quelles zones du corps ?",
+            "answer": "<p>La routine est pensée pour les zones rugueuses du corps. Évitez le contour des yeux, le visage et les zones très sensibles sans avis professionnel.</p>"
+          }
+        },
+        "f4": {
+          "type": "faq",
+          "settings": {
+            "question": "Combien de temps avant d’évaluer la routine ?",
+            "answer": "<p>La texture de la peau évolue progressivement. Une utilisation régulière sur plusieurs semaines permet de mieux évaluer la réponse de votre peau.</p>"
+          }
+        },
+        "f5": {
+          "type": "faq",
+          "settings": {
+            "question": "Puis-je l’associer à d’autres actifs exfoliants ?",
+            "answer": "<p>Évitez de superposer plusieurs actifs exfoliants puissants sur la même zone au même moment. Introduisez les produits progressivement.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5"
+      ],
+      "settings": {
+        "heading": "Vos questions, simplement"
       }
     }
   },
@@ -547,10 +696,12 @@
     "kuks_story_carousel",
     "kuks_problems_tabs",
     "kuks_change_story",
-    "kuks_science",
+    "kuks_science_duo",
     "kuks_timeline",
-    "kuks_feature_cards",
     "kuks_numbers",
-    "kuks_survey"
+    "kuks_survey",
+    "kuks_ingredients",
+    "kuks_compare",
+    "kuks_faq"
   ]
 }

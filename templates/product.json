@@ -176,33 +176,33 @@
         "t1": {
           "type": "step",
           "settings": {
-            "period": "Semaine 1–2",
+            "period": "Semaines 1–2",
             "title": "Vous ressentez la différence",
-            "text": "La texture rugueuse et granuleuse commence à s’adoucir. Les zones dures paraissent moins rigides au toucher."
+            "text": "La texture rugueuse commence à s’assouplir et les zones les plus dures paraissent moins rigides."
           }
         },
         "t2": {
           "type": "step",
           "settings": {
-            "period": "Semaines 3 et 4",
+            "period": "Semaines 3–4",
             "title": "Vous voyez le changement",
-            "text": "Les petites imperfections commencent à s’aplanir et les zones les plus rugueuses deviennent plus lisses et moins visibles."
+            "text": "Les zones rugueuses paraissent progressivement plus lisses et moins présentes visuellement."
           }
         },
         "t3": {
           "type": "step",
           "settings": {
-            "period": "Semaines 5 à 8",
-            "title": "Vous cessez de vous cacher",
-            "text": "Les zones traitées paraissent plus uniformes. Vous pensez moins à les couvrir et vous commencez à retrouver confiance."
+            "period": "Semaines 5–8",
+            "title": "La routine devient naturelle",
+            "text": "Vous appliquez le produit sans y penser et commencez à moins focaliser sur les zones qui vous gênaient."
           }
         },
         "t4": {
           "type": "step",
           "settings": {
-            "period": "Semaines 9 à 12",
-            "title": "Vous vous sentez à nouveau vous-même",
-            "text": "Avec une routine régulière, la peau paraît plus lisse et les zones en relief prennent moins de place dans votre quotidien."
+            "period": "Semaines 9–12+",
+            "title": "Vous gardez le rythme",
+            "text": "La régularité devient le cœur de la routine et la peau paraît plus uniforme au toucher."
           }
         }
       },
@@ -258,11 +258,450 @@
       "settings": {
         "heading": "AVIS CLIENTS"
       }
+    },
+    "kuks_social_carousel": {
+      "type": "kuks-social-carousel",
+      "blocks": {
+        "social_1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-1.png",
+            "alt": "Cliente tenant le produit"
+          }
+        },
+        "social_2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-2.png",
+            "alt": "Cliente tenant le produit"
+          }
+        },
+        "social_3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-before-after.png",
+            "alt": "Avant après"
+          }
+        },
+        "social_4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-4.png",
+            "alt": "Cliente tenant le produit"
+          }
+        }
+      },
+      "block_order": [
+        "social_1",
+        "social_2",
+        "social_3",
+        "social_4"
+      ],
+      "settings": {
+        "heading": "Approuvé par plus de 10 892 personnes qui ont refusé de « se résigner à cela » ❤️"
+      }
+    },
+    "kuks_problems_tabs": {
+      "type": "kuks-problems-tabs",
+      "blocks": {
+        "p1": {
+          "type": "problem",
+          "settings": {
+            "label": "Problème 1",
+            "image": "shopify://shop_images/kuks-problem-sk.png",
+            "title": "Kératoses séborrhéiques / zones rugueuses en relief",
+            "text": "Des excroissances rugueuses et saillantes peuvent apparaître sur le cou, la poitrine, le dos ou les bras. Leur texture est souvent épaisse, sèche ou cireuse au toucher."
+          }
+        },
+        "p2": {
+          "type": "problem",
+          "settings": {
+            "label": "Problème 2",
+            "image": "shopify://shop_images/kuks-problem-kp.png",
+            "title": "Kératose pilaire",
+            "text": "De petits boutons rugueux apparaissent souvent à l’arrière des bras, sur les cuisses ou les joues. Une simple crème hydratante ne suffit pas toujours à lisser cette texture."
+          }
+        },
+        "p3": {
+          "type": "problem",
+          "settings": {
+            "label": "Problème 3",
+            "image": "shopify://shop_images/kuks-problem-rough.png",
+            "title": "Peau rugueuse et épaissie",
+            "text": "Des plaques sèches, épaisses et craquelées peuvent s’installer sur les talons, les coudes ou les genoux et rester très dures malgré l’hydratation classique."
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "heading": "Cette formule a été conçue pour répondre à trois problèmes de texture",
+        "intro": "Trois situations différentes, avec un même point commun : une accumulation de kératine et une peau qui reste rugueuse."
+      }
+    },
+    "kuks_change_story": {
+      "type": "kuks-change-story",
+      "settings": {
+        "image": "shopify://shop_images/kuks-social-proof-4.png",
+        "eyebrow": "UNE PEAU QUI RETROUVE UN ASPECT PLUS NET",
+        "heading": "Ce qui change quand vous intégrez la crème à votre routine",
+        "text": "<p>Une routine à domicile permet de travailler plusieurs zones avec le même produit, sans multiplier les étapes. L’objectif est de rendre la texture progressivement plus souple et plus uniforme au fil des utilisations.</p>"
+      }
+    },
+    "kuks_numbers": {
+      "type": "kuks-numbers",
+      "blocks": {
+        "n1": {
+          "type": "number",
+          "settings": {
+            "number": "40 %",
+            "title": "Urée à concentration intensive",
+            "text": "Une concentration pensée pour assouplir la kératine compacte."
+          }
+        },
+        "n2": {
+          "type": "number",
+          "settings": {
+            "number": "6",
+            "title": "Actifs complémentaires",
+            "text": "Chaque composant joue un rôle distinct dans la routine."
+          }
+        },
+        "n3": {
+          "type": "number",
+          "settings": {
+            "number": "60 jours",
+            "title": "Période d’essai de la routine",
+            "text": "Le temps nécessaire pour juger une routine progressive avec plus de recul."
+          }
+        },
+        "n4": {
+          "type": "number",
+          "settings": {
+            "number": "10 000+",
+            "title": "Une communauté en croissance",
+            "text": "Ce chiffre est entièrement modifiable dans l’éditeur avant publication."
+          }
+        }
+      },
+      "block_order": [
+        "n1",
+        "n2",
+        "n3",
+        "n4"
+      ],
+      "settings": {}
+    },
+    "kuks_survey": {
+      "type": "kuks-survey",
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "percent": 87,
+            "text": "La texture rugueuse leur semblait nettement adoucie au toucher."
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "percent": 90,
+            "text": "Les zones en relief paraissaient moins visibles et plus lisses."
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "percent": 90,
+            "text": "Ils déclaraient moins vérifier ou cacher les zones qui les gênaient."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "heading": "Les résultats qui donnent envie de rester régulier",
+        "intro": "Cette mise en page est prête à accueillir vos propres données clients vérifiées.",
+        "image": "shopify://shop_images/kuks-survey-couple.png",
+        "subheading": "Statistiques de satisfaction",
+        "note": "*Remplacez les chiffres ci-dessous par vos données vérifiées avant publication."
+      }
+    },
+    "kuks_story_carousel": {
+      "type": "kuks-story-carousel",
+      "blocks": {
+        "story_1": {
+          "type": "story",
+          "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-before-after.png",
+            "rating": 5,
+            "title": "« Je n’arrivais pas à croire que c’était la même peau. »",
+            "review": "<p>J’évitais les décolletés depuis des années parce que la texture de ma peau me complexait. Avec une routine régulière, les zones rugueuses ont commencé à paraître plus souples et plus lisses.</p><p>Ce qui m’a le plus marquée, c’est de recommencer à porter les vêtements que j’aimais sans y penser toute la journée.</p>",
+            "author": "Margaret P.",
+            "meta": "Témoignage client"
+          }
+        },
+        "story_2": {
+          "type": "story",
+          "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-4.png",
+            "rating": 5,
+            "title": "« J’ai enfin arrêté de tout couvrir. »",
+            "review": "<p>J’avais essayé plusieurs routines sans réussir à obtenir une texture qui me plaisait. Avec une utilisation régulière, les zones les plus épaisses ont commencé à paraître plus souples.</p>",
+            "author": "Sarah L.",
+            "meta": "Témoignage client"
+          }
+        },
+        "story_3": {
+          "type": "story",
+          "settings": {
+            "image": "shopify://shop_images/kuks-social-proof-1.png",
+            "rating": 5,
+            "title": "« Une routine beaucoup plus simple au quotidien. »",
+            "review": "<p>Je voulais quelque chose que je puisse utiliser chez moi sans multiplier les produits. J’applique une fine couche le soir et je garde la même routine sur les zones qui me gênent.</p>",
+            "author": "Rachel A.",
+            "meta": "Témoignage client"
+          }
+        }
+      },
+      "block_order": [
+        "story_1",
+        "story_2",
+        "story_3"
+      ],
+      "settings": {
+        "heading": "Rejoignez celles et ceux qui ont décidé de ne plus se résigner à une peau rugueuse",
+        "intro": "Des retours différents, avec un point commun : une routine simple et régulière."
+      }
+    },
+    "kuks_science_duo": {
+      "type": "kuks-science-duo",
+      "blocks": {
+        "science_1": {
+          "type": "science",
+          "settings": {
+            "image": "shopify://shop_images/ImageChatGPT28sept.2026_17_18_25_1.png",
+            "heading": "Pourquoi l’urée à 40 % agit différemment",
+            "body": "<p>À forte concentration, l’urée aide à assouplir la kératine compacte qui donne aux zones rugueuses leur sensation épaisse et rigide. L’objectif est d’agir sur la texture, pas seulement d’hydrater la surface.</p>"
+          }
+        },
+        "science_2": {
+          "type": "science",
+          "settings": {
+            "image": "shopify://shop_images/kuks-diagram-salicylic.png",
+            "heading": "L’acide salicylique complète la routine",
+            "body": "<p>Une fois la kératine assouplie, l’acide salicylique aide à détacher progressivement les cellules accumulées à la surface. Les deux actifs travaillent à des niveaux complémentaires.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "science_1",
+        "science_2"
+      ],
+      "settings": {
+        "background": "#ffffff"
+      }
+    },
+    "kuks_ingredients": {
+      "type": "kuks-ingredients",
+      "blocks": {
+        "i1": {
+          "type": "ingredient",
+          "settings": {
+            "short": "U",
+            "title": "40 % d’urée",
+            "text": "Aide à assouplir la kératine compacte et la texture épaisse."
+          }
+        },
+        "i2": {
+          "type": "ingredient",
+          "settings": {
+            "short": "SA",
+            "title": "Acide salicylique",
+            "text": "Aide à exfolier et à libérer les cellules accumulées."
+          }
+        },
+        "i3": {
+          "type": "ingredient",
+          "settings": {
+            "short": "GT",
+            "title": "Extrait de thé vert",
+            "text": "Apporte un soutien apaisant à la peau."
+          }
+        },
+        "i4": {
+          "type": "ingredient",
+          "settings": {
+            "short": "AV",
+            "title": "Aloe vera",
+            "text": "Aide à maintenir l’hydratation et le confort cutané."
+          }
+        },
+        "i5": {
+          "type": "ingredient",
+          "settings": {
+            "short": "TT",
+            "title": "Huile d’arbre à thé",
+            "text": "Complète la formule avec un actif végétal ciblé."
+          }
+        },
+        "i6": {
+          "type": "ingredient",
+          "settings": {
+            "short": "CO",
+            "title": "Huile de coco",
+            "text": "Aide à nourrir la peau et à soutenir sa barrière."
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6"
+      ],
+      "settings": {
+        "heading": "Formulée avec des actifs issus de la science et du végétal",
+        "intro": "Les bons ingrédients, aux bonnes concentrations, dans une seule routine.",
+        "image": "shopify://shop_images/ImageChatGPT28sept.2026_15_47_35_1.png"
+      }
+    },
+    "kuks_compare": {
+      "type": "kuks-compare",
+      "blocks": {
+        "r1": {
+          "type": "row",
+          "settings": {
+            "label": "Cible la kératine épaissie",
+            "ours": "✓",
+            "other1": "—",
+            "other2": "—"
+          }
+        },
+        "r2": {
+          "type": "row",
+          "settings": {
+            "label": "Utilisable sur plusieurs zones du corps",
+            "ours": "✓",
+            "other1": "—",
+            "other2": "✓"
+          }
+        },
+        "r3": {
+          "type": "row",
+          "settings": {
+            "label": "Routine à domicile",
+            "ours": "✓",
+            "other1": "—",
+            "other2": "✓"
+          }
+        },
+        "r4": {
+          "type": "row",
+          "settings": {
+            "label": "Urée à 40 %",
+            "ours": "✓",
+            "other1": "—",
+            "other2": "—"
+          }
+        },
+        "r5": {
+          "type": "row",
+          "settings": {
+            "label": "Acide salicylique dans la formule",
+            "ours": "✓",
+            "other1": "—",
+            "other2": "✓"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4",
+        "r5"
+      ],
+      "settings": {
+        "heading": "Une routine ciblée, là où les approches classiques diffèrent",
+        "intro": "Comparez les grandes caractéristiques de chaque approche.",
+        "col_ours": "Crème Kératolytique",
+        "col_other1": "Cryothérapie",
+        "col_other2": "Acide glycolique"
+      }
+    },
+    "kuks_faq": {
+      "type": "kuks-faq",
+      "blocks": {
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "Comment utiliser la crème ?",
+            "answer": "<p>Appliquez une fine couche sur une petite zone propre et sèche. Commencez progressivement et évitez les zones irritées, les plaies ouvertes et le visage.</p>"
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "À quelle fréquence l’utiliser ?",
+            "answer": "<p>Commencez par une application par jour. Ajustez ensuite selon la tolérance de votre peau et les indications figurant sur votre produit.</p>"
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "Sur quelles zones du corps ?",
+            "answer": "<p>La routine est pensée pour les zones rugueuses du corps. Évitez le contour des yeux, le visage et les zones très sensibles sans avis professionnel.</p>"
+          }
+        },
+        "f4": {
+          "type": "faq",
+          "settings": {
+            "question": "Combien de temps avant d’évaluer la routine ?",
+            "answer": "<p>La texture de la peau évolue progressivement. Une utilisation régulière sur plusieurs semaines permet de mieux évaluer la réponse de votre peau.</p>"
+          }
+        },
+        "f5": {
+          "type": "faq",
+          "settings": {
+            "question": "Puis-je l’associer à d’autres actifs exfoliants ?",
+            "answer": "<p>Évitez de superposer plusieurs actifs exfoliants puissants sur la même zone au même moment. Introduisez les produits progressivement.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5"
+      ],
+      "settings": {
+        "heading": "Vos questions, simplement"
+      }
     }
   },
   "order": [
     "main",
     "kuks_testimonials",
-    "kuks_timeline"
+    "kuks_social_carousel",
+    "kuks_story_carousel",
+    "kuks_problems_tabs",
+    "kuks_change_story",
+    "kuks_science_duo",
+    "kuks_timeline",
+    "kuks_numbers",
+    "kuks_survey",
+    "kuks_ingredients",
+    "kuks_compare",
+    "kuks_faq"
   ]
 }
