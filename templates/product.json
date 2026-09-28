@@ -12,23 +12,6 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "price": {
-          "type": "price",
-          "settings": {
-            "layout": "price_first",
-            "price_color": "accent-1",
-            "compare_price_color": "text",
-            "displayed_badge": "sale",
-            "icon_scale": 140,
-            "custom_badge_text": "[icon_1] SPECIAL OFFER",
-            "icon_1": "redeem",
-            "filled_icon_1": false,
-            "icon_2": "check_circle",
-            "filled_icon_2": false,
-            "margin_top": 15,
-            "margin_bottom": 15
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -102,7 +85,6 @@
         }
       },
       "block_order": [
-        "price",
         "variant_picker",
         "buy_buttons",
         "description",
