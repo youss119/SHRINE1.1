@@ -1427,20 +1427,73 @@
 {% if request.design_mode %}
 <script id="kuks-stock-preview-script">
 (function(){
-  function scheduleKuksStockPreview(){
+  var stockTimer = null;
+  var wasOpen = false;
+
+  function getDrawer(){
+    return document.querySelector('cart-drawer');
+  }
+
+  function drawerIsOpen(){
+    var drawer = getDrawer();
+    return !!(drawer && drawer.classList.contains('active'));
+  }
+
+  function resetPreviewStock(){
     document.querySelectorAll('[data-kuks-preview-stock="true"]').forEach(function(banner){
-      if(banner.dataset.kuksScheduled==='1') return;
-      banner.dataset.kuksScheduled='1';
-      var count=banner.querySelector('.kuks-stock-count');
-      if(!count) return;
-      count.textContent='11';
-      window.setTimeout(function(){ count.textContent='8'; },4000);
+      var count = banner.querySelector('.kuks-stock-count');
+      if(count) count.textContent = '11';
     });
   }
-  document.addEventListener('DOMContentLoaded',scheduleKuksStockPreview);
-  scheduleKuksStockPreview();
-  var root=document.getElementById('CartDrawer');
-  if(root) new MutationObserver(scheduleKuksStockPreview).observe(root,{childList:true,subtree:true});
+
+  function startPreviewStock(){
+    window.clearTimeout(stockTimer);
+    resetPreviewStock();
+
+    stockTimer = window.setTimeout(function(){
+      if(!drawerIsOpen()) return;
+      document.querySelectorAll('[data-kuks-preview-stock="true"]').forEach(function(banner){
+        var count = banner.querySelector('.kuks-stock-count');
+        if(count) count.textContent = '8';
+      });
+    }, 4000);
+  }
+
+  function syncDrawerState(){
+    var open = drawerIsOpen();
+
+    if(open && !wasOpen){
+      startPreviewStock();
+    }
+
+    if(!open && wasOpen){
+      window.clearTimeout(stockTimer);
+      resetPreviewStock();
+    }
+
+    wasOpen = open;
+  }
+
+  function initKuksStockPreview(){
+    var drawer = getDrawer();
+    if(!drawer) return;
+
+    resetPreviewStock();
+    syncDrawerState();
+
+    new MutationObserver(syncDrawerState).observe(drawer,{
+      attributes:true,
+      attributeFilter:['class'],
+      childList:true,
+      subtree:true
+    });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initKuksStockPreview);
+  } else {
+    initKuksStockPreview();
+  }
 })();
 </script>
 {% endif %}
