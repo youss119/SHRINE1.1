@@ -668,36 +668,57 @@
         "f1": {
           "type": "faq",
           "settings": {
-            "question": "Comment utiliser la crème ?",
-            "answer": "<p>Appliquez une fine couche sur une petite zone propre et sèche. Commencez progressivement et évitez les zones irritées, les plaies ouvertes et le visage.</p>"
+            "question": "Ce produit conviendra-t-il à mon type de peau ?",
+            "answer": "<p>La formule est destinée à une utilisation corporelle sur différents types de peau. Commencez par une petite zone, surtout si votre peau est sensible ou réactive. Évitez le visage, les muqueuses et la peau lésée.</p>"
           }
         },
         "f2": {
           "type": "faq",
           "settings": {
-            "question": "À quelle fréquence l’utiliser ?",
-            "answer": "<p>Commencez par une application par jour. Ajustez ensuite selon la tolérance de votre peau et les indications figurant sur votre produit.</p>"
+            "question": "Combien de temps dure un pot ?",
+            "answer": "<p>Cela dépend du nombre de zones traitées et de la fréquence d’utilisation. Sur quelques zones ciblées, un pot peut durer plusieurs semaines ; une utilisation sur de grandes zones le fera naturellement diminuer plus vite.</p>"
           }
         },
         "f3": {
           "type": "faq",
           "settings": {
-            "question": "Sur quelles zones du corps ?",
-            "answer": "<p>La routine est pensée pour les zones rugueuses du corps. Évitez le contour des yeux, le visage et les zones très sensibles sans avis professionnel.</p>"
+            "question": "Puis-je utiliser ce produit en complément de mes autres produits de soin de la peau ?",
+            "answer": "<p>Oui, mais évitez de superposer au même moment des rétinoïdes, acides ou exfoliants puissants sur la même zone. Introduisez la crème progressivement et observez la réaction de votre peau.</p>"
           }
         },
         "f4": {
           "type": "faq",
           "settings": {
-            "question": "Combien de temps avant d’évaluer la routine ?",
-            "answer": "<p>La texture de la peau évolue progressivement. Une utilisation régulière sur plusieurs semaines permet de mieux évaluer la réponse de votre peau.</p>"
+            "question": "Est-il sans danger pour une utilisation sur des zones sensibles comme les aisselles et le maillot ?",
+            "answer": "<p>Ces zones peuvent être plus réactives. Faites d’abord un test sur une petite zone et espacez les applications au début. N’appliquez pas sur les muqueuses, la peau irritée ou juste après le rasage ; arrêtez en cas de brûlure ou de rougeur persistante.</p>"
           }
         },
         "f5": {
           "type": "faq",
           "settings": {
-            "question": "Puis-je l’associer à d’autres actifs exfoliants ?",
-            "answer": "<p>Évitez de superposer plusieurs actifs exfoliants puissants sur la même zone au même moment. Introduisez les produits progressivement.</p>"
+            "question": "J’ai plus de 70 ans — est-il trop tard pour moi ?",
+            "answer": "<p>L’âge seul n’empêche pas une routine de soin, mais une peau mature peut être plus sensible. Commencez progressivement. Toute lésion qui change, saigne ou dont le diagnostic est incertain doit être montrée à un professionnel de santé.</p>"
+          }
+        },
+        "f6": {
+          "type": "faq",
+          "settings": {
+            "question": "À partir de quel âge ce produit convient-il ?",
+            "answer": "<p>Cette formule est destinée aux adultes. Nous ne la recommandons pas aux moins de 18 ans sans avis d’un professionnel de santé.</p>"
+          }
+        },
+        "f7": {
+          "type": "faq",
+          "settings": {
+            "question": "Est-ce que ça fait mal ou irrite la peau ?",
+            "answer": "<p>Un léger picotement peut survenir chez certaines personnes, surtout au début. En revanche, une brûlure, une rougeur importante ou un inconfort persistant n’est pas à ignorer : rincez la zone et arrêtez l’utilisation.</p>"
+          }
+        },
+        "f8": {
+          "type": "faq",
+          "settings": {
+            "question": "Est-ce que ça laisse des cicatrices ?",
+            "answer": "<p>La crème s’utilise sans créer volontairement de plaie. Une irritation reste toutefois possible si la peau réagit mal ou si le produit est mal utilisé. N’appliquez pas sur une zone ouverte ou sur une lésion dont la nature n’est pas certaine.</p>"
           }
         }
       },
@@ -706,11 +727,15 @@
         "f2",
         "f3",
         "f4",
-        "f5"
+        "f5",
+        "f6",
+        "f7",
+        "f8"
       ],
       "settings": {
-        "heading": "Vos questions, simplement",
-        "background": "#ffffff"
+        "heading": "Foire aux questions",
+        "background": "#ffffff",
+        "eyebrow": "VOS QUESTIONS ONT TROUVÉ RÉPONSE"
       }
     },
     "kuks_autoplay_video": {
