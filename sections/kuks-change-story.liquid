@@ -1,5 +1,5 @@
 {% comment %}KUKS — image éditable + texte, avec overlay optionnel.{% endcomment %}
-<section id="kuks-change-{{ section.id }}" class="kuks-change">
+<section id="kuks-change-{{ section.id }}" class="kuks-change" style="background:{{ section.settings.background }};">
   <div class="kuks-change__inner">
     {% if section.settings.image != blank %}
       <div class="kuks-change__media">
@@ -24,5 +24,5 @@
 @media(max-width:749px){#kuks-change-{{ section.id }} h2{font-size:27px}#kuks-change-{{ section.id }} .kuks-change__text{font-size:13.2px}}
 </style>
 {% schema %}
-{"name":"Image + texte - KUKS","settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"overlay","label":"Texte superposé optionnel"},{"type":"text","id":"eyebrow","label":"Petit surtitre","default":"UNE PEAU QUI RETROUVE UN ASPECT PLUS NET"},{"type":"textarea","id":"heading","label":"Titre","default":"Ce qui change quand vous intégrez la crème à votre routine"},{"type":"richtext","id":"text","label":"Texte","default":"<p>Ajoutez votre texte ici.</p>"}],"presets":[{"name":"Image + texte - KUKS"}]}
+{"name":"Image + texte - KUKS","settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"overlay","label":"Texte superposé optionnel"},{"type":"text","id":"eyebrow","label":"Petit surtitre","default":"UNE PEAU QUI RETROUVE UN ASPECT PLUS NET"},{"type":"textarea","id":"heading","label":"Titre","default":"Ce qui change quand vous intégrez la crème à votre routine"},{"type":"richtext","id":"text","label":"Texte","default":"<p>Ajoutez votre texte ici.</p>"},{"type":"color","id":"background","label":"Couleur de fond","default":"#ffffff"}],"presets":[{"name":"Image + texte - KUKS"}]}
 {% endschema %}

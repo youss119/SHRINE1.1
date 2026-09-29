@@ -1,12 +1,15 @@
-{% comment %}KUKS — timeline mobile centrée, proche du rythme de la référence.{% endcomment %}
-<section id="kuks-timeline-{{ section.id }}" class="kuks-timeline">
+{% comment %}KUKS — timeline compacte, cartes courtes et épurées.{% endcomment %}
+<section id="kuks-timeline-{{ section.id }}" class="kuks-timeline" style="background:{{ section.settings.background }};">
   <div class="kuks-timeline__inner">
-    <h2>{{ section.settings.heading }}</h2>
-    <div class="kuks-timeline__list">
+    {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
+    {% if section.settings.intro != blank %}<p class="kuks-timeline__intro">{{ section.settings.intro }}</p>{% endif %}
+    <div class="kuks-timeline__grid">
       {% for block in section.blocks %}
-        <article class="kuks-timeline__step" {{ block.shopify_attributes }}>
-          <div class="kuks-timeline__rail"><span>✓</span></div>
-          <span class="kuks-timeline__badge">{{ block.settings.period }}</span>
+        <article class="kuks-timeline__card" {{ block.shopify_attributes }}>
+          <div class="kuks-timeline__top">
+            <span class="kuks-timeline__index">{{ forloop.index }}</span>
+            <span class="kuks-timeline__period">{{ block.settings.period }}</span>
+          </div>
           <h3>{{ block.settings.title }}</h3>
           <p>{{ block.settings.text }}</p>
         </article>
@@ -15,19 +18,28 @@
   </div>
 </section>
 <style>
-#kuks-timeline-{{ section.id }}{background:#fff;padding:28px 0 30px}
-#kuks-timeline-{{ section.id }} .kuks-timeline__inner{width:min(100%,720px);margin:auto;padding:0 14px}
-#kuks-timeline-{{ section.id }} h2{margin:0 auto 26px;max-width:650px;text-align:center;font-size:33px;line-height:1.14;letter-spacing:-.035em;color:#555}
-#kuks-timeline-{{ section.id }} .kuks-timeline__list{max-width:620px;margin:auto}
-#kuks-timeline-{{ section.id }} .kuks-timeline__step{position:relative;text-align:center;padding:0 0 30px}
-#kuks-timeline-{{ section.id }} .kuks-timeline__step:not(:last-child)::after{content:"";position:absolute;left:50%;top:31px;bottom:0;width:2px;background:#113d6b;transform:translateX(-50%)}
-#kuks-timeline-{{ section.id }} .kuks-timeline__rail{position:relative;z-index:2;display:flex;justify-content:center;margin-bottom:8px}
-#kuks-timeline-{{ section.id }} .kuks-timeline__rail span{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#113d6b;color:#fff;font-size:12px;font-weight:800;box-shadow:0 0 0 6px #fff}
-#kuks-timeline-{{ section.id }} .kuks-timeline__badge{position:relative;z-index:2;display:inline-flex;border:1px solid #222;border-radius:999px;padding:4px 12px;background:#fff;margin-bottom:10px;font-size:10px;line-height:1;color:#111}
-#kuks-timeline-{{ section.id }} h3{position:relative;z-index:2;margin:0 0 9px;color:#113d6b;font-size:21px;line-height:1.18;font-weight:500}
-#kuks-timeline-{{ section.id }} p{position:relative;z-index:2;margin:0 auto;max-width:560px;background:#fff;padding:0 8px;font-size:13px;line-height:1.55;color:#30353a}
-@media(max-width:749px){#kuks-timeline-{{ section.id }} h2{font-size:29px}#kuks-timeline-{{ section.id }} h3{font-size:19px}#kuks-timeline-{{ section.id }} p{font-size:12.6px}}
+#kuks-timeline-{{ section.id }}{padding:22px 0}
+#kuks-timeline-{{ section.id }} .kuks-timeline__inner{width:min(100%,820px);margin:auto;padding:0 14px}
+#kuks-timeline-{{ section.id }} h2{margin:0 auto 6px;max-width:650px;text-align:center;font-size:30px;line-height:1.12;letter-spacing:-.035em;color:#171b22}
+#kuks-timeline-{{ section.id }} .kuks-timeline__intro{margin:0 auto 15px;max-width:560px;text-align:center;color:#68707a;font-size:12.5px;line-height:1.45}
+#kuks-timeline-{{ section.id }} .kuks-timeline__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+#kuks-timeline-{{ section.id }} .kuks-timeline__card{border:1px solid #e3e8ee;border-radius:16px;background:rgba(255,255,255,.86);padding:14px 13px;min-width:0;box-shadow:0 4px 16px rgba(17,61,107,.04)}
+#kuks-timeline-{{ section.id }} .kuks-timeline__top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+#kuks-timeline-{{ section.id }} .kuks-timeline__index{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;background:#113d6b;color:#fff;font-size:10px;font-weight:800;flex:0 0 auto}
+#kuks-timeline-{{ section.id }} .kuks-timeline__period{display:inline-flex;border:1px solid #ccd5df;border-radius:999px;padding:4px 8px;background:#fff;color:#4d5661;font-size:9.5px;line-height:1;white-space:nowrap}
+#kuks-timeline-{{ section.id }} h3{margin:0 0 6px;color:#113d6b;font-size:15px;line-height:1.2;font-weight:700}
+#kuks-timeline-{{ section.id }} .kuks-timeline__card p{margin:0;color:#4d5661;font-size:10.8px;line-height:1.42}
+@media(max-width:749px){
+  #kuks-timeline-{{ section.id }}{padding:18px 0}
+  #kuks-timeline-{{ section.id }} h2{font-size:22px;margin-bottom:5px}
+  #kuks-timeline-{{ section.id }} .kuks-timeline__intro{font-size:10.8px;margin-bottom:12px}
+  #kuks-timeline-{{ section.id }} .kuks-timeline__grid{display:flex;overflow-x:auto;gap:9px;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:2px}
+  #kuks-timeline-{{ section.id }} .kuks-timeline__grid::-webkit-scrollbar{display:none}
+  #kuks-timeline-{{ section.id }} .kuks-timeline__card{flex:0 0 76%;scroll-snap-align:start;padding:13px 12px}
+  #kuks-timeline-{{ section.id }} h3{font-size:14.5px}
+  #kuks-timeline-{{ section.id }} .kuks-timeline__card p{font-size:10.4px}
+}
 </style>
 {% schema %}
-{"name":"Timeline résultats - KUKS","max_blocks":6,"settings":[{"type":"textarea","id":"heading","label":"Titre","default":"À quoi peut ressembler une utilisation quotidienne"}],"blocks":[{"type":"step","name":"Étape","settings":[{"type":"text","id":"period","label":"Période","default":"Semaines 1–2"},{"type":"text","id":"title","label":"Titre","default":"Vous ressentez la différence"},{"type":"textarea","id":"text","label":"Texte","default":"Décrivez ici ce que la personne peut observer au fil de la routine."}]}],"presets":[{"name":"Timeline résultats - KUKS","blocks":[{"type":"step"},{"type":"step"},{"type":"step"},{"type":"step"}]}]}
+{"name":"Timeline compacte - KUKS","max_blocks":6,"settings":[{"type":"textarea","id":"heading","label":"Titre","default":"À quoi peut ressembler une utilisation quotidienne"},{"type":"textarea","id":"intro","label":"Introduction","default":"Une évolution progressive, sans prendre toute la page."},{"type":"color","id":"background","label":"Couleur de fond","default":"#ffffff"}],"blocks":[{"type":"step","name":"Étape","settings":[{"type":"text","id":"period","label":"Période","default":"Semaines 1–2"},{"type":"text","id":"title","label":"Titre","default":"Vous ressentez la différence"},{"type":"textarea","id":"text","label":"Texte","default":"Décrivez ici ce que la personne peut observer."}]}],"presets":[{"name":"Timeline compacte - KUKS","blocks":[{"type":"step"},{"type":"step"},{"type":"step"},{"type":"step"}]}]}
 {% endschema %}

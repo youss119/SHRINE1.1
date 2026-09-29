@@ -1,5 +1,5 @@
 {% comment %}KUKS — FAQ finale éditable.{% endcomment %}
-<section id="kuks-faq-{{ section.id }}" class="kuks-faq">
+<section id="kuks-faq-{{ section.id }}" class="kuks-faq" style="background:{{ section.settings.background }};">
   <div class="kuks-faq__inner">
     <h2>{{ section.settings.heading }}</h2>
     <div class="kuks-faq__list">
@@ -27,5 +27,5 @@
 @media(max-width:749px){#kuks-faq-{{ section.id }} h2{font-size:28px}#kuks-faq-{{ section.id }} summary{font-size:14px}}
 </style>
 {% schema %}
-{"name":"FAQ finale - KUKS","max_blocks":12,"settings":[{"type":"text","id":"heading","label":"Titre","default":"Vos questions, simplement"}],"blocks":[{"type":"faq","name":"Question","settings":[{"type":"text","id":"question","label":"Question","default":"Votre question"},{"type":"richtext","id":"answer","label":"Réponse","default":"<p>Votre réponse.</p>"}]}],"presets":[{"name":"FAQ finale - KUKS","blocks":[{"type":"faq"},{"type":"faq"},{"type":"faq"},{"type":"faq"},{"type":"faq"}]}]}
+{"name":"FAQ finale - KUKS","max_blocks":12,"settings":[{"type":"text","id":"heading","label":"Titre","default":"Vos questions, simplement"},{"type":"color","id":"background","label":"Couleur de fond","default":"#ffffff"}],"blocks":[{"type":"faq","name":"Question","settings":[{"type":"text","id":"question","label":"Question","default":"Votre question"},{"type":"richtext","id":"answer","label":"Réponse","default":"<p>Votre réponse.</p>"}]}],"presets":[{"name":"FAQ finale - KUKS","blocks":[{"type":"faq"},{"type":"faq"},{"type":"faq"},{"type":"faq"},{"type":"faq"}]}]}
 {% endschema %}

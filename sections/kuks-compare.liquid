@@ -1,5 +1,5 @@
 {% comment %}KUKS — tableau comparatif éditable.{% endcomment %}
-<section id="kuks-compare-{{ section.id }}" class="kuks-compare">
+<section id="kuks-compare-{{ section.id }}" class="kuks-compare" style="background:{{ section.settings.background }};">
   <div class="kuks-compare__inner">
     <h2>{{ section.settings.heading }}</h2>
     <p class="kuks-compare__intro">{{ section.settings.intro }}</p>
@@ -26,5 +26,5 @@
 @media(max-width:749px){#kuks-compare-{{ section.id }} h2{font-size:28px}#kuks-compare-{{ section.id }} th,#kuks-compare-{{ section.id }} td{font-size:11px;padding:11px 9px}}
 </style>
 {% schema %}
-{"name":"Comparatif - KUKS","max_blocks":10,"settings":[{"type":"textarea","id":"heading","label":"Titre","default":"Une routine ciblée, là où les approches classiques diffèrent"},{"type":"textarea","id":"intro","label":"Introduction","default":"Comparez les grandes caractéristiques de chaque approche."},{"type":"text","id":"col_ours","label":"Colonne 1","default":"Crème Kératolytique"},{"type":"text","id":"col_other1","label":"Colonne 2","default":"Cryothérapie"},{"type":"text","id":"col_other2","label":"Colonne 3","default":"Acide glycolique"}],"blocks":[{"type":"row","name":"Ligne","settings":[{"type":"text","id":"label","label":"Critère","default":"Critère"},{"type":"text","id":"ours","label":"Votre produit","default":"✓"},{"type":"text","id":"other1","label":"Comparatif 1","default":"—"},{"type":"text","id":"other2","label":"Comparatif 2","default":"—"}]}],"presets":[{"name":"Comparatif - KUKS","blocks":[{"type":"row"},{"type":"row"},{"type":"row"},{"type":"row"},{"type":"row"}]}]}
+{"name":"Comparatif - KUKS","max_blocks":10,"settings":[{"type":"textarea","id":"heading","label":"Titre","default":"Une routine ciblée, là où les approches classiques diffèrent"},{"type":"textarea","id":"intro","label":"Introduction","default":"Comparez les grandes caractéristiques de chaque approche."},{"type":"text","id":"col_ours","label":"Colonne 1","default":"Crème Kératolytique"},{"type":"text","id":"col_other1","label":"Colonne 2","default":"Cryothérapie"},{"type":"text","id":"col_other2","label":"Colonne 3","default":"Acide glycolique"},{"type":"color","id":"background","label":"Couleur de fond","default":"#ffffff"}],"blocks":[{"type":"row","name":"Ligne","settings":[{"type":"text","id":"label","label":"Critère","default":"Critère"},{"type":"text","id":"ours","label":"Votre produit","default":"✓"},{"type":"text","id":"other1","label":"Comparatif 1","default":"—"},{"type":"text","id":"other2","label":"Comparatif 2","default":"—"}]}],"presets":[{"name":"Comparatif - KUKS","blocks":[{"type":"row"},{"type":"row"},{"type":"row"},{"type":"row"},{"type":"row"}]}]}
 {% endschema %}

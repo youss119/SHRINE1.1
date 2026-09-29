@@ -213,7 +213,8 @@
         "t4"
       ],
       "settings": {
-        "heading": "À quoi peut ressembler une utilisation quotidienne"
+        "heading": "À quoi peut ressembler une utilisation quotidienne",
+        "intro": "4 étapes courtes, sans bloc interminable."
       }
     },
     "kuks_testimonials": {
@@ -687,6 +688,26 @@
       "settings": {
         "heading": "Vos questions, simplement"
       }
+    },
+    "kuks_autoplay_video": {
+      "type": "kuks-autoplay-video",
+      "settings": {
+        "heading": "",
+        "text": "",
+        "poster": "shopify://shop_images/Image_ChatGPT_29_sept._2026_12_22_57.png",
+        "background": "#ffffff"
+      }
+    },
+    "kuks_guarantee": {
+      "type": "kuks-guarantee",
+      "settings": {
+        "heading": "Garantie satisfaction de 60 jours",
+        "text": "<p>Nous vous laissons le temps d’intégrer la crème à votre routine et d’évaluer la texture de votre peau sur plusieurs semaines.</p><p>Si cette routine ne vous convient pas, vous disposez de 60 jours pour faire valoir la garantie selon les conditions de votre boutique.</p>",
+        "footer_text": "60 JOURS POUR TESTER LA ROUTINE À VOTRE RYTHME",
+        "background": "#ffffff",
+        "card_background": "#0f2f63",
+        "accent": "#f5c400"
+      }
     }
   },
   "order": [
@@ -696,12 +717,14 @@
     "kuks_story_carousel",
     "kuks_problems_tabs",
     "kuks_change_story",
+    "kuks_autoplay_video",
     "kuks_science_duo",
     "kuks_timeline",
     "kuks_numbers",
     "kuks_survey",
     "kuks_ingredients",
     "kuks_compare",
-    "kuks_faq"
+    "kuks_faq",
+    "kuks_guarantee"
   ]
 }

@@ -1,5 +1,5 @@
 {% comment %}KUKS — Image + statistiques en cercles.{% endcomment %}
-<section id="kuks-survey-{{ section.id }}" class="kuks-survey">
+<section id="kuks-survey-{{ section.id }}" class="kuks-survey" style="background:{{ section.settings.background }};">
   <div class="kuks-survey__inner">
     <h2>{{ section.settings.heading }}</h2>
     <p class="kuks-survey__intro">{{ section.settings.intro }}</p>
@@ -50,26 +50,5 @@
 }
 </style>
 {% schema %}
-{
-  "name":"Statistiques - KUKS",
-  "max_blocks":5,
-  "settings":[
-    {"type":"text","id":"heading","label":"Titre","default":"Les résultats qui les ont incités à repasser commande"},
-    {"type":"textarea","id":"intro","label":"Introduction","default":"Nous avons recueilli les retours de clients afin de mieux comprendre l’impact d’une routine à l’urée 40 % sur leur quotidien."},
-    {"type":"image_picker","id":"image","label":"Image"},
-    {"type":"text","id":"subheading","label":"Sous-titre","default":"Statistiques de satisfaction"},
-    {"type":"text","id":"note","label":"Note en petit","default":"*Données à remplacer par vos propres résultats avant publication."}
-  ],
-  "blocks":[
-    {
-      "type":"stat",
-      "name":"Pourcentage",
-      "settings":[
-        {"type":"range","id":"percent","label":"Pourcentage","min":1,"max":100,"step":1,"default":87},
-        {"type":"textarea","id":"text","label":"Texte","default":"La texture rugueuse leur semblait nettement adoucie."}
-      ]
-    }
-  ],
-  "presets":[{"name":"Statistiques - KUKS","blocks":[{"type":"stat"},{"type":"stat"},{"type":"stat"}]}]
-}
+{"name":"Statistiques - KUKS","max_blocks":5,"settings":[{"type":"text","id":"heading","label":"Titre","default":"Les résultats qui les ont incités à repasser commande"},{"type":"textarea","id":"intro","label":"Introduction","default":"Nous avons recueilli les retours de clients afin de mieux comprendre l’impact d’une routine à l’urée 40 % sur leur quotidien."},{"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"subheading","label":"Sous-titre","default":"Statistiques de satisfaction"},{"type":"text","id":"note","label":"Note en petit","default":"*Données à remplacer par vos propres résultats avant publication."},{"type":"color","id":"background","label":"Couleur de fond","default":"#ffffff"}],"blocks":[{"type":"stat","name":"Pourcentage","settings":[{"type":"range","id":"percent","label":"Pourcentage","min":1,"max":100,"step":1,"default":87},{"type":"textarea","id":"text","label":"Texte","default":"La texture rugueuse leur semblait nettement adoucie."}]}],"presets":[{"name":"Statistiques - KUKS","blocks":[{"type":"stat"},{"type":"stat"},{"type":"stat"}]}]}
 {% endschema %}

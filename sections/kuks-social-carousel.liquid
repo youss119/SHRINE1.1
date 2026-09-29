@@ -1,5 +1,5 @@
 {% comment %}KUKS — preuve sociale, 2 photos visibles comme la référence mobile.{% endcomment %}
-<section id="kuks-social-{{ section.id }}" class="kuks-social">
+<section id="kuks-social-{{ section.id }}" class="kuks-social" style="background:{{ section.settings.background }};">
   <div class="kuks-social__inner">
     <h2>{{ section.settings.heading }}</h2>
     <div class="kuks-social__viewport" data-viewport>
@@ -49,5 +49,5 @@
 (()=>{const r=document.getElementById('kuks-social-{{ section.id }}');if(!r)return;const t=r.querySelector('[data-track]');const s=[...r.querySelectorAll('[data-slide]')];const d=[...r.querySelectorAll('[data-dot]')];const p=r.querySelector('[data-prev]'),n=r.querySelector('[data-next]');if(!t||!s.length)return;const idx=()=>{const x=t.scrollLeft;let b=0,m=1e9;s.forEach((e,i)=>{const q=Math.abs(e.offsetLeft-x);if(q<m){m=q;b=i}});return b};const go=i=>{i=Math.max(0,Math.min(s.length-1,i));t.scrollTo({left:s[i].offsetLeft,behavior:'smooth'});d.forEach((x,j)=>x.classList.toggle('is-active',j===i))};let a;t.addEventListener('scroll',()=>{cancelAnimationFrame(a);a=requestAnimationFrame(()=>d.forEach((x,j)=>x.classList.toggle('is-active',j===idx())))},{passive:true});d.forEach((x,i)=>x.onclick=()=>go(i));if(p)p.onclick=()=>go(idx()-1);if(n)n.onclick=()=>go(idx()+1)})();
 </script>
 {% schema %}
-{"name":"Photos approuvées - KUKS","max_blocks":12,"settings":[{"type":"textarea","id":"heading","label":"Titre","default":"Approuvé par celles et ceux qui ont choisi une routine plus simple"}],"blocks":[{"type":"image","name":"Photo","settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"alt","label":"Texte alternatif","default":"Photo client"}]}],"presets":[{"name":"Photos approuvées - KUKS","blocks":[{"type":"image"},{"type":"image"},{"type":"image"},{"type":"image"}]}]}
+{"name":"Photos approuvées - KUKS","max_blocks":12,"settings":[{"type":"textarea","id":"heading","label":"Titre","default":"Approuvé par celles et ceux qui ont choisi une routine plus simple"},{"type":"color","id":"background","label":"Couleur de fond","default":"#ffffff"}],"blocks":[{"type":"image","name":"Photo","settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"text","id":"alt","label":"Texte alternatif","default":"Photo client"}]}],"presets":[{"name":"Photos approuvées - KUKS","blocks":[{"type":"image"},{"type":"image"},{"type":"image"},{"type":"image"}]}]}
 {% endschema %}
