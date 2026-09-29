@@ -487,6 +487,85 @@
         "background": "#FFFFFF"
       }
     },
+    "kuks_ingredients": {
+      "type": "kuks-ingredients",
+      "blocks": {
+        "i1": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/kuks-ing-uree_5f684e00-3f69-4cef-ab50-5d4c664a3634.png",
+            "icon_kind": "urea",
+            "short": "U",
+            "title": "40 % d’urée",
+            "text": "Aide à assouplir la kératine compacte et la texture épaisse."
+          }
+        },
+        "i2": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/kuks-ing-salicylique.png",
+            "icon_kind": "salicylic",
+            "short": "SA",
+            "title": "Acide salicylique",
+            "text": "Aide à exfolier et à libérer les cellules accumulées."
+          }
+        },
+        "i3": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/kuks-ing-the-vert.png",
+            "icon_kind": "tea",
+            "short": "GT",
+            "title": "Extrait de thé vert",
+            "text": "Apporte un soutien apaisant à la peau."
+          }
+        },
+        "i4": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/kuks-ing-aloe.png",
+            "icon_kind": "aloe",
+            "short": "AV",
+            "title": "Aloe vera",
+            "text": "Aide à maintenir l’hydratation et le confort cutané."
+          }
+        },
+        "i5": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/kuks-ing-tea-tree.png",
+            "icon_kind": "teatree",
+            "short": "TT",
+            "title": "Huile d’arbre à thé",
+            "text": "Complète la formule avec un actif végétal ciblé."
+          }
+        },
+        "i6": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/kuks-ing-coco.png",
+            "icon_kind": "coconut",
+            "short": "CO",
+            "title": "Huile de coco",
+            "text": "Aide à nourrir la peau et à soutenir sa barrière."
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3",
+        "i4",
+        "i5",
+        "i6"
+      ],
+      "settings": {
+        "background": "#E7FBE3",
+        "heading": "Formulée avec des actifs issus de la science et du végétal",
+        "intro": "Les bons ingrédients, aux bonnes concentrations, dans une seule routine.",
+        "image": "shopify://shop_images/ImageChatGPT28sept.2026_15_47_35_1.png"
+      }
+    },
     "kuks_timeline": {
       "type": "kuks-timeline",
       "blocks": {
@@ -655,85 +734,6 @@
         "angle": 180
       }
     },
-    "kuks_ingredients": {
-      "type": "kuks-ingredients",
-      "blocks": {
-        "i1": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/kuks-ing-uree_5f684e00-3f69-4cef-ab50-5d4c664a3634.png",
-            "icon_kind": "urea",
-            "short": "U",
-            "title": "40 % d’urée",
-            "text": "Aide à assouplir la kératine compacte et la texture épaisse."
-          }
-        },
-        "i2": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/kuks-ing-salicylique.png",
-            "icon_kind": "salicylic",
-            "short": "SA",
-            "title": "Acide salicylique",
-            "text": "Aide à exfolier et à libérer les cellules accumulées."
-          }
-        },
-        "i3": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/kuks-ing-the-vert.png",
-            "icon_kind": "tea",
-            "short": "GT",
-            "title": "Extrait de thé vert",
-            "text": "Apporte un soutien apaisant à la peau."
-          }
-        },
-        "i4": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/kuks-ing-aloe.png",
-            "icon_kind": "aloe",
-            "short": "AV",
-            "title": "Aloe vera",
-            "text": "Aide à maintenir l’hydratation et le confort cutané."
-          }
-        },
-        "i5": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/kuks-ing-tea-tree.png",
-            "icon_kind": "teatree",
-            "short": "TT",
-            "title": "Huile d’arbre à thé",
-            "text": "Complète la formule avec un actif végétal ciblé."
-          }
-        },
-        "i6": {
-          "type": "ingredient",
-          "settings": {
-            "image": "shopify://shop_images/kuks-ing-coco.png",
-            "icon_kind": "coconut",
-            "short": "CO",
-            "title": "Huile de coco",
-            "text": "Aide à nourrir la peau et à soutenir sa barrière."
-          }
-        }
-      },
-      "block_order": [
-        "i1",
-        "i2",
-        "i3",
-        "i4",
-        "i5",
-        "i6"
-      ],
-      "settings": {
-        "background": "#E7FBE3",
-        "heading": "Formulée avec des actifs issus de la science et du végétal",
-        "intro": "Les bons ingrédients, aux bonnes concentrations, dans une seule routine.",
-        "image": "shopify://shop_images/ImageChatGPT28sept.2026_15_47_35_1.png"
-      }
-    },
     "kuks_gradient_divider_wQDTEV": {
       "type": "kuks-gradient-divider",
       "name": "Fondu de couleur - KUKS",
@@ -821,13 +821,13 @@
     "kuks_autoplay_video",
     "kuks_gradient_divider_AxYxFE",
     "kuks_science_duo",
+    "kuks_gradient_divider_CUHzLW",
+    "kuks_ingredients",
     "kuks_timeline",
     "kuks_gradient_divider",
     "kuks_numbers",
     "kuks_gradient_divider_nNd3LE",
     "kuks_survey",
-    "kuks_gradient_divider_CUHzLW",
-    "kuks_ingredients",
     "kuks_gradient_divider_wQDTEV",
     "kuks_faq",
     "kuks_guarantee"
