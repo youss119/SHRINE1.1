@@ -670,6 +670,10 @@
                                     <{% if block.settings.title_link %}a href="{{ item.url }}"{% else %}h4{% endif %} class="cart-item__name h4 break">
                                       {{- item.product.title | escape -}}
                                     </{% if block.settings.title_link %}a{% else %}h4{% endif %}>
+                                    <div class="kuks-cart-offer-badge">
+                                      <svg viewBox="0 0 24 24" fill="none"><path d="M20 13 11 22 2 13V2h11l7 7v4Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg>
+                                      <span>Offre K-Cream</span>
+                                    </div>
         
                                     {%- if item.original_price != item.final_price and block.settings.display_single_item_prices -%}
                                       {% assign has_props = true %}
@@ -1020,6 +1024,10 @@
                       </p>
                     {% endif %}
                   {% endif %}
+                  <p class="kuks-cart-shipping-row">
+                    <span>Livraison rapide :</span>
+                    <strong>Gratuite</strong>
+                  </p>
                   {% if block.settings.display_subtotal %}
                     {% capture subtotal_money %}<span class='cart-drawer__totals__row__money'>{{ cart.total_price | money }}</span>{% endcapture %}
                     <p class='cart-drawer__totals__row cart-drawer__totals__row--{{ block.settings.subtotal_alignment }} text-color-{{ block.settings.subtotal_text_color }}' style='--text-size:{{ block.settings.subtotal_text_size | divided_by: 10.0 }}rem;'>
