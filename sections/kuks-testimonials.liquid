@@ -23,7 +23,10 @@
               </span>
             </div>
 
-            <p class="kuks-testimonial-quote">{{ block.settings.review }}</p>
+            <div class="kuks-testimonial-expand" data-kuks-expand-wrap>
+              <p class="kuks-testimonial-quote is-collapsed" data-kuks-expand-text>{{ block.settings.review }}</p>
+              <button type="button" class="kuks-review-more" data-kuks-expand-btn aria-expanded="false">Voir plus</button>
+            </div>
 
             <div class="kuks-testimonial-author">
               <span class="kuks-avatar-frame">
@@ -143,13 +146,35 @@
     font-size:13px;
   }
   #kuks-testimonials-{{ section.id }} .kuks-green-stars span.is-empty{opacity:.18}
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-expand{margin:0 0 14px}
   #kuks-testimonials-{{ section.id }} .kuks-testimonial-quote{
-    margin:0 0 14px;
+    margin:0;
     color:#242932;
     font-size:10.8px;
     line-height:1.47;
     font-weight:500;
+    transition:max-height .28s ease;
   }
+  #kuks-testimonials-{{ section.id }} .kuks-testimonial-quote.is-collapsed{
+    max-height:190px;
+    overflow:hidden;
+  }
+  #kuks-testimonials-{{ section.id }} .kuks-review-more{
+    display:none;
+    margin:8px 0 0;
+    padding:0;
+    border:0;
+    background:transparent;
+    color:#113d6b;
+    font:inherit;
+    font-size:10.5px;
+    line-height:1.2;
+    font-weight:750;
+    text-decoration:underline;
+    text-underline-offset:2px;
+    cursor:pointer;
+  }
+  #kuks-testimonials-{{ section.id }} .kuks-review-more.is-visible{display:inline-flex}
   #kuks-testimonials-{{ section.id }} .kuks-testimonial-author{
     display:grid;
     grid-template-columns:44px minmax(0,1fr) auto;
@@ -325,6 +350,37 @@
     } else {
       activate(0);
     }
+  })();
+</script>
+
+<script>
+  (() => {
+    const root=document.getElementById('kuks-testimonials-{{ section.id }}');
+    if(!root) return;
+    const setup=()=>{
+      root.querySelectorAll('[data-kuks-expand-wrap]').forEach(wrap=>{
+        const text=wrap.querySelector('[data-kuks-expand-text]');
+        const btn=wrap.querySelector('[data-kuks-expand-btn]');
+        if(!text||!btn) return;
+        text.classList.add('is-collapsed');
+        requestAnimationFrame(()=>{
+          const needsMore=text.scrollHeight>text.clientHeight+2;
+          btn.classList.toggle('is-visible',needsMore);
+          if(!needsMore) text.classList.remove('is-collapsed');
+        });
+        if(btn.dataset.bound==='1') return;
+        btn.dataset.bound='1';
+        btn.addEventListener('click',()=>{
+          const expanded=btn.getAttribute('aria-expanded')==='true';
+          btn.setAttribute('aria-expanded',expanded?'false':'true');
+          btn.textContent=expanded?'Voir plus':'Voir moins';
+          text.classList.toggle('is-collapsed',expanded);
+          requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')));
+        });
+      });
+    };
+    setup();
+    document.addEventListener('shopify:section:load',setup);
   })();
 </script>
 

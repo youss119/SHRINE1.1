@@ -11,7 +11,10 @@
             <div class="kuks-stories__body">
               <div class="kuks-stories__stars">{% for i in (1..5) %}<span class="{% if i > block.settings.rating %}is-empty{% endif %}">★</span>{% endfor %}</div>
               <h3>{{ block.settings.title }}</h3>
-              <div class="kuks-stories__review">{{ block.settings.review }}</div>
+              <div class="kuks-stories__review-wrap" data-kuks-expand-wrap>
+                <div class="kuks-stories__review is-collapsed" data-kuks-expand-text>{{ block.settings.review }}</div>
+                <button type="button" class="kuks-stories__more" data-kuks-expand-btn aria-expanded="false">Voir plus</button>
+              </div>
               <div class="kuks-stories__author"><strong>{{ block.settings.author }}</strong>{% if block.settings.meta != blank %}<span>{{ block.settings.meta }}</span>{% endif %}</div>
             </div>
           </article>
@@ -40,8 +43,12 @@
 #kuks-stories-{{ section.id }} .kuks-stories__stars{display:flex;justify-content:center;gap:2px;margin-bottom:8px;color:#ffd400;font-size:18px}
 #kuks-stories-{{ section.id }} .kuks-stories__stars .is-empty{opacity:.2}
 #kuks-stories-{{ section.id }} h3{margin:0 0 12px;font-size:17px;line-height:1.35;color:#111}
-#kuks-stories-{{ section.id }} .kuks-stories__review{font-size:14px;line-height:1.72;color:#2f3338;text-align:left}
+#kuks-stories-{{ section.id }} .kuks-stories__review-wrap{text-align:left}
+#kuks-stories-{{ section.id }} .kuks-stories__review{font-size:14px;line-height:1.72;color:#2f3338;text-align:left;transition:max-height .28s ease}
+#kuks-stories-{{ section.id }} .kuks-stories__review.is-collapsed{max-height:315px;overflow:hidden}
 #kuks-stories-{{ section.id }} .kuks-stories__review p{margin:0 0 12px}
+#kuks-stories-{{ section.id }} .kuks-stories__more{display:none;margin:8px 0 0;padding:0;border:0;background:transparent;color:#113d6b;font:inherit;font-size:11.5px;line-height:1.2;font-weight:750;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+#kuks-stories-{{ section.id }} .kuks-stories__more.is-visible{display:inline-flex}
 #kuks-stories-{{ section.id }} .kuks-stories__author{margin-top:15px;padding-top:12px;border-top:1px solid #ddd;font-size:12px;font-style:italic;text-align:left}
 #kuks-stories-{{ section.id }} .kuks-stories__author span{margin-left:6px;color:#777}
 #kuks-stories-{{ section.id }} .kuks-stories__arrow{position:absolute;top:38%;z-index:4;width:34px;height:34px;border:0;border-radius:50%;background:#111b;color:#fff;font-size:26px;display:grid;place-items:center;padding:0}
@@ -53,6 +60,9 @@
 </style>
 <script>
 (()=>{const r=document.getElementById('kuks-stories-{{ section.id }}');if(!r)return;const v=r.querySelector('[data-vp]'),t=r.querySelector('[data-track]'),c=[...r.querySelectorAll('[data-card]')],d=[...r.querySelectorAll('[data-dot]')],p=r.querySelector('[data-prev]'),n=r.querySelector('[data-next]');if(!v||!t||!c.length)return;const active=()=>{const x=t.scrollLeft;let b=0,m=1e9;c.forEach((e,i)=>{const q=Math.abs(e.offsetLeft-x);if(q<m){m=q;b=i}});return b};const set=i=>{i=Math.max(0,Math.min(c.length-1,i));c.forEach((e,j)=>e.classList.toggle('is-active',j===i));d.forEach((e,j)=>e.classList.toggle('is-active',j===i));requestAnimationFrame(()=>v.style.height=Math.ceil(c[i].getBoundingClientRect().height)+'px')};const go=i=>{i=Math.max(0,Math.min(c.length-1,i));t.scrollTo({left:c[i].offsetLeft,behavior:'smooth'});set(i)};let a;t.addEventListener('scroll',()=>{cancelAnimationFrame(a);a=requestAnimationFrame(()=>set(active()))},{passive:true});d.forEach((e,i)=>e.onclick=()=>go(i));if(p)p.onclick=()=>go(active()-1);if(n)n.onclick=()=>go(active()+1);window.addEventListener('resize',()=>set(active()));if(document.fonts?.ready)document.fonts.ready.then(()=>set(0));else set(0)})();
+</script>
+<script>
+(()=>{const root=document.getElementById('kuks-stories-{{ section.id }}');if(!root)return;const setup=()=>{root.querySelectorAll('[data-kuks-expand-wrap]').forEach(wrap=>{const txt=wrap.querySelector('[data-kuks-expand-text]'),btn=wrap.querySelector('[data-kuks-expand-btn]');if(!txt||!btn)return;txt.classList.add('is-collapsed');requestAnimationFrame(()=>{const long=txt.scrollHeight>txt.clientHeight+2;btn.classList.toggle('is-visible',long);if(!long)txt.classList.remove('is-collapsed')});if(btn.dataset.bound==='1')return;btn.dataset.bound='1';btn.addEventListener('click',()=>{const open=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',open?'false':'true');btn.textContent=open?'Voir plus':'Voir moins';txt.classList.toggle('is-collapsed',open);requestAnimationFrame(()=>window.dispatchEvent(new Event('resize')))})})};setup();document.addEventListener('shopify:section:load',setup)})();
 </script>
 {% schema %}
 {"name":"Témoignages longs - KUKS","max_blocks":10,"settings":[{"type":"color","id":"background","label":"Couleur du fond","default":"#ffffff"},{"type":"textarea","id":"heading","label":"Titre","default":"Des histoires de peau, racontées sans filtre"},{"type":"textarea","id":"intro","label":"Introduction","default":"Des retours différents, avec un point commun : une routine simple et régulière."}],"blocks":[{"type":"story","name":"Témoignage long","settings":[{"type":"image_picker","id":"image","label":"Image"},{"type":"range","id":"rating","label":"Note","min":1,"max":5,"step":1,"default":5},{"type":"text","id":"title","label":"Titre","default":"Titre du témoignage"},{"type":"richtext","id":"review","label":"Texte","default":"<p>Ajoutez votre témoignage ici.</p>"},{"type":"text","id":"author","label":"Nom","default":"Prénom N."},{"type":"text","id":"meta","label":"Détail","default":"Témoignage client"}]}],"presets":[{"name":"Témoignages longs - KUKS","blocks":[{"type":"story"},{"type":"story"},{"type":"story"}]}]}
