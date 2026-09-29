@@ -238,6 +238,32 @@
               <div class='cart-timer color-{{ block.settings.color_scheme }}' style="--font-size:{{ block.settings.font_size }}rem;--margin-top: {{ block.settings.margin_top | divided_by: 10.0 }}rem;--margin-bottom: {{ block.settings.margin_bottom | divided_by: 10.0 }}rem;" {{ block.shopify_attributes }}>
                 {{ block.settings.timer_text | replace: '[timer]', timer }}
               </div>
+              <div class="kuks-cart-trust-wrap">
+                <div class="kuks-cart-guarantee-strip">
+                  <span class="kuks-cart-check">✓</span>
+                  <span>Satisfait ou remboursé pendant <strong>60 jours</strong></span>
+                </div>
+                <div class="kuks-cart-benefits" aria-label="Avantages commande">
+                  <div class="kuks-cart-benefit">
+                    <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+                    <span>Paiement sécurisé</span>
+                  </div>
+                  <div class="kuks-cart-benefit">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 1 0 2-5.3"/><path d="M4 4v5h5"/></svg>
+                    <span>Garantie 60 jours</span>
+                  </div>
+                  <div class="kuks-cart-benefit">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>
+                    <span>Livraison rapide</span>
+                  </div>
+                </div>
+              </div>
+              {% assign kuks_stock_item = cart.items | first %}
+              {% if kuks_stock_item != blank and kuks_stock_item.variant.inventory_management != blank and kuks_stock_item.variant.inventory_quantity > 0 %}
+                <div class="kuks-stock-banner">
+                  STOCK SUIVI EN TEMPS RÉEL — Il reste <strong>{{ kuks_stock_item.variant.inventory_quantity }} pot{% if kuks_stock_item.variant.inventory_quantity > 1 %}s{% endif %}</strong>.
+                </div>
+              {% endif %}
             {% when 'cart_items' %}
               <cart-drawer-items
                 {% if cart == empty %}
@@ -745,7 +771,7 @@
                 >
                   <span class='button__label'>Procéder au paiement • {{ cart.total_price | money }}</span>
                 </button>
-                
+                <div class="kuks-cart-refund"><span>✓</span><strong>Satisfait ou remboursé pendant 60 jours</strong></div>
                 <div class='tnc-checkbox-warning tnc-checkbox-warning--under-button hidden' style='margin-top: 0.6em;'></div>
               </div>
             {%- when 'payment_badges' -%}
@@ -763,6 +789,13 @@
                     </li>
                   {%- endfor -%}
                 </ul>
+                {% if additional_checkout_buttons %}
+                  <div class="kuks-cart-dynamic">
+                    <div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+                      {{ content_for_additional_checkout_buttons }}
+                    </div>
+                  </div>
+                {% endif %}
               </div>
             {%- when 'tnc_checkbox' -%}
               <div style="--margin-top: {{ block.settings.margin_top | divided_by: 10.0 }}rem;--margin-bottom: {{ block.settings.margin_bottom | divided_by: 10.0 }}rem;" {{ block.shopify_attributes }}>
