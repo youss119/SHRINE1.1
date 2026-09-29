@@ -1,0 +1,104 @@
+{% liquid
+  assign featured_product = section.settings.product
+  assign hero_image = section.settings.image
+  if hero_image == blank and featured_product != blank
+    assign hero_image = featured_product.featured_image
+  endif
+%}
+
+<section class="kuks-home-hero" style="--bg:{{ section.settings.background }};--text:{{ section.settings.text_color }};--accent:{{ section.settings.accent_color }};--btn-text:{{ section.settings.button_text_color }};">
+  <div class="kuks-home-hero__inner page-width">
+    <div class="kuks-home-hero__copy">
+      {% if section.settings.eyebrow != blank %}
+        <p class="kuks-home-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      {% endif %}
+      <h1>{{ section.settings.heading }}</h1>
+      {% if section.settings.text != blank %}
+        <div class="kuks-home-hero__text">{{ section.settings.text }}</div>
+      {% endif %}
+
+      <div class="kuks-home-hero__points" aria-label="Points clés">
+        <span>40 % d’urée</span>
+        <span>2 % d’acide salicylique</span>
+        <span>Garantie 60 jours</span>
+      </div>
+
+      {% if featured_product != blank %}
+        <div class="kuks-home-hero__buy">
+          <a class="kuks-home-hero__button" href="{{ featured_product.url }}">{{ section.settings.button_label }}</a>
+          <div class="kuks-home-hero__price">
+            <strong>{{ featured_product.price | money }}</strong>
+            {% if featured_product.compare_at_price_max > featured_product.price %}
+              <s>{{ featured_product.compare_at_price_max | money }}</s>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="kuks-home-hero__visual">
+      {% if hero_image != blank %}
+        {{ hero_image | image_url: width: 1500 | image_tag:
+          loading: 'eager',
+          fetchpriority: 'high',
+          widths: '480, 720, 960, 1200, 1500',
+          sizes: '(min-width: 900px) 48vw, 100vw',
+          class: 'kuks-home-hero__image',
+          alt: section.settings.image_alt
+        }}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% style %}
+  #shopify-section-{{ section.id }} .kuks-home-hero{background:var(--bg);color:var(--text);padding:42px 0 34px}
+  #shopify-section-{{ section.id }} .kuks-home-hero__inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,.9fr);gap:56px;align-items:center}
+  #shopify-section-{{ section.id }} .kuks-home-hero__copy{max-width:650px}
+  #shopify-section-{{ section.id }} .kuks-home-hero__eyebrow{margin:0 0 12px;font-size:12px;line-height:1.2;letter-spacing:.14em;text-transform:uppercase;font-weight:700;opacity:.66}
+  #shopify-section-{{ section.id }} .kuks-home-hero h1{margin:0;font-size:clamp(42px,5vw,72px);line-height:.98;letter-spacing:-.045em;font-weight:750;color:var(--text)}
+  #shopify-section-{{ section.id }} .kuks-home-hero__text{margin-top:22px;font-size:18px;line-height:1.55;max-width:580px;opacity:.82}
+  #shopify-section-{{ section.id }} .kuks-home-hero__text p{margin:0}
+  #shopify-section-{{ section.id }} .kuks-home-hero__points{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  #shopify-section-{{ section.id }} .kuks-home-hero__points span{border:1px solid color-mix(in srgb,var(--text) 18%,transparent);border-radius:999px;padding:8px 12px;font-size:13px;font-weight:650;background:rgba(255,255,255,.52)}
+  #shopify-section-{{ section.id }} .kuks-home-hero__buy{display:flex;align-items:center;gap:18px;margin-top:28px}
+  #shopify-section-{{ section.id }} .kuks-home-hero__button{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 24px;border-radius:999px;background:var(--accent);color:var(--btn-text);text-decoration:none;font-weight:750;font-size:15px}
+  #shopify-section-{{ section.id }} .kuks-home-hero__price{display:flex;gap:8px;align-items:baseline;font-size:18px}
+  #shopify-section-{{ section.id }} .kuks-home-hero__price s{font-size:14px;opacity:.48}
+  #shopify-section-{{ section.id }} .kuks-home-hero__visual{min-width:0}
+  #shopify-section-{{ section.id }} .kuks-home-hero__image{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:28px}
+  @media(max-width:899px){
+    #shopify-section-{{ section.id }} .kuks-home-hero{padding:20px 0 28px}
+    #shopify-section-{{ section.id }} .kuks-home-hero__inner{grid-template-columns:1fr;gap:22px}
+    #shopify-section-{{ section.id }} .kuks-home-hero__copy{display:contents}
+    #shopify-section-{{ section.id }} .kuks-home-hero__eyebrow{order:1;margin:0 0 -8px}
+    #shopify-section-{{ section.id }} .kuks-home-hero h1{order:2;font-size:42px}
+    #shopify-section-{{ section.id }} .kuks-home-hero__text{order:4;margin-top:0;font-size:16px}
+    #shopify-section-{{ section.id }} .kuks-home-hero__points{order:5;margin-top:0;gap:6px}
+    #shopify-section-{{ section.id }} .kuks-home-hero__points span{font-size:12px;padding:7px 10px}
+    #shopify-section-{{ section.id }} .kuks-home-hero__buy{order:6;margin-top:2px;justify-content:space-between}
+    #shopify-section-{{ section.id }} .kuks-home-hero__visual{order:3}
+    #shopify-section-{{ section.id }} .kuks-home-hero__image{border-radius:20px}
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name":"Accueil KUKS — Hero",
+  "tag":"section",
+  "settings":[
+    {"type":"product","id":"product","label":"Produit"},
+    {"type":"image_picker","id":"image","label":"Image (optionnel — sinon image du produit)"},
+    {"type":"text","id":"image_alt","label":"Texte alternatif","default":"K-Cream KUKS Beauty"},
+    {"type":"text","id":"eyebrow","label":"Petit texte","default":"KUKS BEAUTY · SOIN CIBLÉ"},
+    {"type":"text","id":"heading","label":"Titre","default":"Une peau plus lisse. Une routine plus simple."},
+    {"type":"richtext","id":"text","label":"Texte","default":"<p>K-Cream associe 40 % d’urée et 2 % d’acide salicylique dans une routine simple pour les zones rugueuses, épaisses et irrégulières.</p>"},
+    {"type":"text","id":"button_label","label":"Bouton","default":"Découvrir K-Cream"},
+    {"type":"color","id":"background","label":"Fond","default":"#f4f6f8"},
+    {"type":"color","id":"text_color","label":"Texte","default":"#113d6b"},
+    {"type":"color","id":"accent_color","label":"Bouton","default":"#113d6b"},
+    {"type":"color","id":"button_text_color","label":"Texte du bouton","default":"#ffffff"}
+  ],
+  "presets":[{"name":"Accueil KUKS — Hero"}]
+}
+{% endschema %}
