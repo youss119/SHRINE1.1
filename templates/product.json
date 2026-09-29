@@ -443,6 +443,18 @@
         "small_text": ""
       }
     },
+    "kuks_gradient_divider_AxYxFE": {
+      "type": "kuks-gradient-divider",
+      "name": "Fondu de couleur - KUKS",
+      "settings": {
+        "start_color": "#E7FBE3",
+        "end_color": "#FFFFFF",
+        "height_desktop": 70,
+        "height_mobile": 50,
+        "fade_start": 5,
+        "angle": 180
+      }
+    },
     "kuks_science_duo": {
       "type": "kuks-science-duo",
       "blocks": {
@@ -807,6 +819,7 @@
     "kuks_problems_tabs",
     "kuks_gradient_divider_nX4GWA",
     "kuks_autoplay_video",
+    "kuks_gradient_divider_AxYxFE",
     "kuks_science_duo",
     "kuks_timeline",
     "kuks_gradient_divider",
