@@ -555,10 +555,10 @@
       ],
       "settings": {
         "heading": "Les résultats qui donnent envie de rester régulier",
-        "intro": "Cette mise en page est prête à accueillir vos propres données clients vérifiées.",
+        "intro": "",
         "image": "shopify://shop_images/kuks-survey-couple.png",
         "subheading": "Statistiques de satisfaction",
-        "note": "*Remplacez les chiffres ci-dessous par vos données vérifiées avant publication."
+        "note": ""
       }
     },
     "kuks_ingredients": {
