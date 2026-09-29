@@ -281,6 +281,18 @@
         "heading": "Approuvé par plus de 10 892 personnes qui ont refusé de « se résigner à cela » ❤️"
       }
     },
+    "kuks_gradient_divider_LRfna6": {
+      "type": "kuks-gradient-divider",
+      "name": "Fondu de couleur - KUKS",
+      "settings": {
+        "start_color": "#ffffff",
+        "end_color": "#E7FBE3",
+        "height_desktop": 70,
+        "height_mobile": 50,
+        "fade_start": 5,
+        "angle": 180
+      }
+    },
     "kuks_story_carousel": {
       "type": "kuks-story-carousel",
       "blocks": {
@@ -348,9 +360,21 @@
         "story_jbDwEm"
       ],
       "settings": {
-        "background": "#E7FBE3",
+        "background": "#e7fbe3",
         "heading": "Rejoignez celles et ceux qui ont décidé de ne plus se résigner à une peau rugueuse",
         "intro": "Des retours différents, avec un point commun : une routine simple et régulière."
+      }
+    },
+    "kuks_gradient_divider_YNzcqx": {
+      "type": "kuks-gradient-divider",
+      "name": "Fondu de couleur - KUKS",
+      "settings": {
+        "start_color": "#E7FBE3",
+        "end_color": "#FFFFFF",
+        "height_desktop": 70,
+        "height_mobile": 50,
+        "fade_start": 5,
+        "angle": 180
       }
     },
     "kuks_problems_tabs": {
@@ -485,6 +509,17 @@
         "background": "#ffffff",
         "heading": "À quoi peut ressembler une utilisation quotidienne",
         "intro": "Une évolution progressive, sans prendre toute la page."
+      }
+    },
+    "kuks_gradient_divider": {
+      "type": "kuks-gradient-divider",
+      "settings": {
+        "start_color": "#ffffff",
+        "end_color": "#113d6b",
+        "height_desktop": 70,
+        "height_mobile": 50,
+        "fade_start": 10,
+        "angle": 180
       }
     },
     "kuks_numbers": {
@@ -712,24 +747,15 @@
         "text": "<p>Nous vous laissons 60 jours pour intégrer la formule à votre routine et observer son évolution sur plusieurs semaines.</p><p>Si elle ne vous convient pas, vous pouvez faire valoir la garantie selon les conditions de votre boutique.</p>",
         "footer_text": "PLUS DE 10 000 CLIENTS SATISFAITS"
       }
-    },
-    "kuks_gradient_divider": {
-      "type": "kuks-gradient-divider",
-      "settings": {
-        "start_color": "#ffffff",
-        "end_color": "#113d6b",
-        "height_desktop": 70,
-        "height_mobile": 50,
-        "fade_start": 10,
-        "angle": 180
-      }
     }
   },
   "order": [
     "main",
     "kuks_testimonials",
     "kuks_social_carousel",
+    "kuks_gradient_divider_LRfna6",
     "kuks_story_carousel",
+    "kuks_gradient_divider_YNzcqx",
     "kuks_problems_tabs",
     "kuks_autoplay_video",
     "kuks_science_duo",
