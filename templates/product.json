@@ -359,7 +359,7 @@
             "label": "Problème 1",
             "image": "shopify://shop_images/images_8.jpg",
             "title": "Kératoses séborrhéiques / zones rugueuses en relief",
-            "text": "Des excroissances rugueuses et saillantes peuvent apparaître sur le cou, la poitrine, le dos ou les bras. Leur texture est souvent épaisse, sèche ou cireuse au toucher."
+            "text": ""
           }
         },
         "p2": {
@@ -368,7 +368,7 @@
             "label": "Problème 2",
             "image": "shopify://shop_images/Keratosis-Pilaris-jpg.jpg",
             "title": "Kératose pilaire",
-            "text": "De petits boutons rugueux apparaissent souvent à l’arrière des bras, sur les cuisses ou les joues. Une simple crème hydratante ne suffit pas toujours à lisser cette texture."
+            "text": ""
           }
         },
         "p3": {
@@ -377,7 +377,7 @@
             "label": "Problème 3",
             "image": "shopify://shop_images/images_9.jpg",
             "title": "Peau rugueuse et épaissie",
-            "text": "Des plaques sèches, épaisses et craquelées peuvent s’installer sur les talons, les coudes ou les genoux et rester très dures malgré l’hydratation classique."
+            "text": ""
           }
         }
       },
