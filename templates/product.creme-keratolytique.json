@@ -214,7 +214,8 @@
       ],
       "settings": {
         "heading": "À quoi peut ressembler une utilisation quotidienne",
-        "intro": "4 étapes courtes, sans bloc interminable."
+        "intro": "4 étapes courtes, sans bloc interminable.",
+        "background": "#ffffff"
       }
     },
     "kuks_testimonials": {
@@ -257,7 +258,8 @@
         "review_sarah"
       ],
       "settings": {
-        "heading": "AVIS CLIENTS"
+        "heading": "AVIS CLIENTS",
+        "background": "#ffffff"
       }
     },
     "kuks_social_carousel": {
@@ -299,7 +301,8 @@
         "social_4"
       ],
       "settings": {
-        "heading": "Approuvé par plus de 10 892 personnes qui ont refusé de « se résigner à cela » ❤️"
+        "heading": "Approuvé par plus de 10 892 personnes qui ont refusé de « se résigner à cela » ❤️",
+        "background": "#ffffff"
       }
     },
     "kuks_problems_tabs": {
@@ -340,7 +343,8 @@
       ],
       "settings": {
         "heading": "Cette formule a été conçue pour répondre à trois problèmes de texture",
-        "intro": "Trois situations différentes, avec un même point commun : une accumulation de kératine et une peau qui reste rugueuse."
+        "intro": "Trois situations différentes, avec un même point commun : une accumulation de kératine et une peau qui reste rugueuse.",
+        "background": "#ffffff"
       }
     },
     "kuks_change_story": {
@@ -349,7 +353,8 @@
         "image": "shopify://shop_images/kuks-social-proof-4.png",
         "eyebrow": "UNE PEAU QUI RETROUVE UN ASPECT PLUS NET",
         "heading": "Ce qui change quand vous intégrez la crème à votre routine",
-        "text": "<p>Une routine à domicile permet de travailler plusieurs zones avec le même produit, sans multiplier les étapes. L’objectif est de rendre la texture progressivement plus souple et plus uniforme au fil des utilisations.</p>"
+        "text": "<p>Une routine à domicile permet de travailler plusieurs zones avec le même produit, sans multiplier les étapes. L’objectif est de rendre la texture progressivement plus souple et plus uniforme au fil des utilisations.</p>",
+        "background": "#ffffff"
       }
     },
     "kuks_numbers": {
@@ -394,7 +399,9 @@
         "n3",
         "n4"
       ],
-      "settings": {}
+      "settings": {
+        "background": "#113d6b"
+      }
     },
     "kuks_survey": {
       "type": "kuks-survey",
@@ -431,7 +438,8 @@
         "intro": "Cette mise en page est prête à accueillir vos propres données clients vérifiées.",
         "image": "shopify://shop_images/kuks-survey-couple.png",
         "subheading": "Statistiques de satisfaction",
-        "note": "*Remplacez les chiffres ci-dessous par vos données vérifiées avant publication."
+        "note": "*Remplacez les chiffres ci-dessous par vos données vérifiées avant publication.",
+        "background": "#ffffff"
       }
     },
     "kuks_story_carousel": {
@@ -478,7 +486,8 @@
       ],
       "settings": {
         "heading": "Rejoignez celles et ceux qui ont décidé de ne plus se résigner à une peau rugueuse",
-        "intro": "Des retours différents, avec un point commun : une routine simple et régulière."
+        "intro": "Des retours différents, avec un point commun : une routine simple et régulière.",
+        "background": "#ffffff"
       }
     },
     "kuks_science_duo": {
@@ -517,7 +526,9 @@
           "settings": {
             "short": "U",
             "title": "40 % d’urée",
-            "text": "Aide à assouplir la kératine compacte et la texture épaisse."
+            "text": "Aide à assouplir la kératine compacte et la texture épaisse.",
+            "image": "shopify://shop_images/kuks-ing-uree_5f684e00-3f69-4cef-ab50-5d4c664a3634.png",
+            "icon_kind": "urea"
           }
         },
         "i2": {
@@ -525,7 +536,9 @@
           "settings": {
             "short": "SA",
             "title": "Acide salicylique",
-            "text": "Aide à exfolier et à libérer les cellules accumulées."
+            "text": "Aide à exfolier et à libérer les cellules accumulées.",
+            "image": "shopify://shop_images/kuks-ing-salicylique.png",
+            "icon_kind": "salicylic"
           }
         },
         "i3": {
@@ -533,7 +546,9 @@
           "settings": {
             "short": "GT",
             "title": "Extrait de thé vert",
-            "text": "Apporte un soutien apaisant à la peau."
+            "text": "Apporte un soutien apaisant à la peau.",
+            "image": "shopify://shop_images/kuks-ing-the-vert.png",
+            "icon_kind": "tea"
           }
         },
         "i4": {
@@ -541,7 +556,9 @@
           "settings": {
             "short": "AV",
             "title": "Aloe vera",
-            "text": "Aide à maintenir l’hydratation et le confort cutané."
+            "text": "Aide à maintenir l’hydratation et le confort cutané.",
+            "image": "shopify://shop_images/kuks-ing-aloe.png",
+            "icon_kind": "aloe"
           }
         },
         "i5": {
@@ -549,7 +566,9 @@
           "settings": {
             "short": "TT",
             "title": "Huile d’arbre à thé",
-            "text": "Complète la formule avec un actif végétal ciblé."
+            "text": "Complète la formule avec un actif végétal ciblé.",
+            "image": "shopify://shop_images/kuks-ing-tea-tree.png",
+            "icon_kind": "teatree"
           }
         },
         "i6": {
@@ -557,7 +576,9 @@
           "settings": {
             "short": "CO",
             "title": "Huile de coco",
-            "text": "Aide à nourrir la peau et à soutenir sa barrière."
+            "text": "Aide à nourrir la peau et à soutenir sa barrière.",
+            "image": "shopify://shop_images/kuks-ing-coco.png",
+            "icon_kind": "coconut"
           }
         }
       },
@@ -572,7 +593,8 @@
       "settings": {
         "heading": "Formulée avec des actifs issus de la science et du végétal",
         "intro": "Les bons ingrédients, aux bonnes concentrations, dans une seule routine.",
-        "image": "shopify://shop_images/ImageChatGPT28sept.2026_15_47_35_1.png"
+        "image": "shopify://shop_images/ImageChatGPT28sept.2026_15_47_35_1.png",
+        "background": "#f8f7f4"
       }
     },
     "kuks_compare": {
@@ -636,7 +658,8 @@
         "intro": "Comparez les grandes caractéristiques de chaque approche.",
         "col_ours": "Crème Kératolytique",
         "col_other1": "Cryothérapie",
-        "col_other2": "Acide glycolique"
+        "col_other2": "Acide glycolique",
+        "background": "#ffffff"
       }
     },
     "kuks_faq": {
@@ -686,27 +709,30 @@
         "f5"
       ],
       "settings": {
-        "heading": "Vos questions, simplement"
+        "heading": "Vos questions, simplement",
+        "background": "#ffffff"
       }
     },
     "kuks_autoplay_video": {
       "type": "kuks-autoplay-video",
       "settings": {
-        "heading": "",
-        "text": "",
+        "background": "#ffffff",
         "poster": "shopify://shop_images/Image_ChatGPT_29_sept._2026_12_22_57.png",
-        "background": "#ffffff"
+        "eyebrow": "UNE ROUTINE SIMPLE À INTÉGRER",
+        "heading": "Une application simple, directement chez vous",
+        "text": "<p>Appliquez une fine couche sur les zones ciblées et laissez la routine agir progressivement au fil des utilisations.</p><p>Cette section est entièrement modifiable : vidéo, texte et couleur de fond.</p>",
+        "small_text": "Ajoutez votre vidéo Shopify dans cette section pour activer l’autoplay."
       }
     },
     "kuks_guarantee": {
       "type": "kuks-guarantee",
       "settings": {
-        "heading": "Garantie satisfaction de 60 jours",
-        "text": "<p>Nous vous laissons le temps d’intégrer la crème à votre routine et d’évaluer la texture de votre peau sur plusieurs semaines.</p><p>Si cette routine ne vous convient pas, vous disposez de 60 jours pour faire valoir la garantie selon les conditions de votre boutique.</p>",
-        "footer_text": "60 JOURS POUR TESTER LA ROUTINE À VOTRE RYTHME",
         "background": "#ffffff",
         "card_background": "#0f2f63",
-        "accent": "#f5c400"
+        "accent": "#f5c400",
+        "heading": "Garantie « Peau lisse » de 60 jours",
+        "text": "<p>Nous vous laissons 60 jours pour intégrer la formule à votre routine et observer son évolution sur plusieurs semaines.</p><p>Si elle ne vous convient pas, vous pouvez faire valoir la garantie selon les conditions de votre boutique.</p>",
+        "footer_text": "PLUS DE 10 000 CLIENTS SATISFAITS"
       }
     }
   },

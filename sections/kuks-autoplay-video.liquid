@@ -1,40 +1,50 @@
-{% comment %}KUKS — vidéo autoplay silencieuse, boucle, éditable.{% endcomment %}
-<section id="kuks-video-{{ section.id }}" class="kuks-video" style="background:{{ section.settings.background }};">
-  <div class="kuks-video__inner">
-    {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
-    {% if section.settings.text != blank %}<div class="kuks-video__text">{{ section.settings.text }}</div>{% endif %}
-    <div class="kuks-video__frame">
+{% comment %}KUKS — vidéo + texte, autoplay silencieux, section éditable.{% endcomment %}
+<section id="kuks-video-text-{{ section.id }}" class="kuks-video-text" style="background:{{ section.settings.background }};">
+  <div class="kuks-video-text__inner">
+    <div class="kuks-video-text__media">
       {% if section.settings.video != blank %}
         {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'metadata' }}
       {% elsif section.settings.poster != blank %}
-        {{ section.settings.poster | image_url: width:1200 | image_tag: loading:'lazy', widths:'420,700,900,1200', sizes:'(max-width:749px) 100vw, 720px', alt:section.settings.heading }}
-        {% if request.design_mode %}<span class="kuks-video__hint">Choisissez une vidéo dans les réglages de cette section.</span>{% endif %}
+        {{ section.settings.poster | image_url: width:1200 | image_tag: loading:'lazy', widths:'420,700,900,1200', sizes:'(max-width:749px) 100vw, 52vw', alt:section.settings.heading }}
+        {% if request.design_mode %}<span class="kuks-video-text__hint">Ajoute ici ta vidéo Shopify : autoplay, muette et en boucle.</span>{% endif %}
       {% elsif request.design_mode %}
-        <div class="kuks-video__placeholder">Ajoutez une vidéo Shopify : elle démarrera automatiquement, sans son, en boucle.</div>
+        <div class="kuks-video-text__placeholder">Sélectionne une vidéo dans les réglages de la section.</div>
       {% endif %}
+    </div>
+    <div class="kuks-video-text__copy">
+      {% if section.settings.eyebrow != blank %}<p class="kuks-video-text__eyebrow">{{ section.settings.eyebrow }}</p>{% endif %}
+      {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
+      {% if section.settings.text != blank %}<div class="kuks-video-text__text">{{ section.settings.text }}</div>{% endif %}
+      {% if section.settings.small_text != blank %}<p class="kuks-video-text__small">{{ section.settings.small_text }}</p>{% endif %}
     </div>
   </div>
 </section>
 <style>
-#kuks-video-{{ section.id }}{padding:20px 0 26px}
-#kuks-video-{{ section.id }} .kuks-video__inner{width:min(100%,760px);margin:auto;padding:0 14px}
-#kuks-video-{{ section.id }} h2{margin:0 auto 8px;text-align:center;max-width:640px;font-size:29px;line-height:1.12;letter-spacing:-.035em;color:#171b22}
-#kuks-video-{{ section.id }} .kuks-video__text{margin:0 auto 14px;max-width:580px;text-align:center;color:#626b75;font-size:12.5px;line-height:1.5}
-#kuks-video-{{ section.id }} .kuks-video__frame{position:relative;border-radius:18px;overflow:hidden;background:#eef1f4;box-shadow:0 8px 30px rgba(17,61,107,.06)}
-#kuks-video-{{ section.id }} video,#kuks-video-{{ section.id }} img{display:block;width:100%;height:auto;max-height:680px;object-fit:cover}
-#kuks-video-{{ section.id }} .kuks-video__placeholder{min-height:320px;display:grid;place-items:center;padding:28px;text-align:center;color:#737b84;font-size:13px}
-#kuks-video-{{ section.id }} .kuks-video__hint{position:absolute;left:12px;bottom:12px;background:rgba(17,61,107,.9);color:white;padding:7px 10px;border-radius:999px;font-size:10px}
+#kuks-video-text-{{ section.id }}{padding:24px 0}
+#kuks-video-text-{{ section.id }} .kuks-video-text__inner{width:min(100%,980px);margin:auto;padding:0 16px;display:grid;grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr);gap:28px;align-items:center}
+#kuks-video-text-{{ section.id }} .kuks-video-text__media{position:relative;border-radius:20px;overflow:hidden;background:#eef1f4;min-height:340px;box-shadow:0 8px 28px rgba(17,61,107,.06)}
+#kuks-video-text-{{ section.id }} video,#kuks-video-text-{{ section.id }} img{display:block;width:100%;height:100%;min-height:340px;max-height:540px;object-fit:cover}
+#kuks-video-text-{{ section.id }} .kuks-video-text__placeholder{min-height:340px;display:grid;place-items:center;text-align:center;padding:28px;color:#77808a;font-size:13px}
+#kuks-video-text-{{ section.id }} .kuks-video-text__hint{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(17,61,107,.92);color:#fff;padding:8px 10px;border-radius:12px;text-align:center;font-size:10px}
+#kuks-video-text-{{ section.id }} .kuks-video-text__eyebrow{margin:0 0 8px;color:#113d6b;font-size:10px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+#kuks-video-text-{{ section.id }} h2{margin:0 0 12px;color:#171b22;font-size:34px;line-height:1.06;letter-spacing:-.04em}
+#kuks-video-text-{{ section.id }} .kuks-video-text__text{color:#3f4852;font-size:14px;line-height:1.7}
+#kuks-video-text-{{ section.id }} .kuks-video-text__text p{margin:0 0 10px}
+#kuks-video-text-{{ section.id }} .kuks-video-text__small{margin:12px 0 0;color:#7a828b;font-size:11px;line-height:1.45}
 @media(max-width:749px){
-  #kuks-video-{{ section.id }}{padding:16px 0 20px}
-  #kuks-video-{{ section.id }} h2{font-size:22px}
-  #kuks-video-{{ section.id }} .kuks-video__text{font-size:10.8px}
-  #kuks-video-{{ section.id }} .kuks-video__frame{border-radius:14px}
-  #kuks-video-{{ section.id }} video,#kuks-video-{{ section.id }} img{max-height:560px}
+  #kuks-video-text-{{ section.id }}{padding:16px 0 18px}
+  #kuks-video-text-{{ section.id }} .kuks-video-text__inner{grid-template-columns:1fr;gap:14px;padding:0 13px}
+  #kuks-video-text-{{ section.id }} .kuks-video-text__media{min-height:0;border-radius:14px;aspect-ratio:4/5}
+  #kuks-video-text-{{ section.id }} video,#kuks-video-text-{{ section.id }} img{min-height:0;height:100%;max-height:none}
+  #kuks-video-text-{{ section.id }} .kuks-video-text__copy{padding:0 2px}
+  #kuks-video-text-{{ section.id }} h2{font-size:24px;margin-bottom:9px}
+  #kuks-video-text-{{ section.id }} .kuks-video-text__text{font-size:12px;line-height:1.58}
+  #kuks-video-text-{{ section.id }} .kuks-video-text__small{font-size:10px}
 }
 </style>
 <script>
-(()=>{const r=document.getElementById('kuks-video-{{ section.id }}');if(!r)return;const v=r.querySelector('video');if(v){v.muted=true;v.setAttribute('muted','');v.setAttribute('playsinline','');const p=v.play();if(p&&p.catch)p.catch(()=>{})}})();
+(()=>{const root=document.getElementById('kuks-video-text-{{ section.id }}');if(!root)return;const v=root.querySelector('video');if(v){v.muted=true;v.setAttribute('muted','');v.setAttribute('playsinline','');const p=v.play();if(p&&p.catch)p.catch(()=>{})}})();
 </script>
 {% schema %}
-{"name":"Vidéo autoplay - KUKS","settings":[{"type":"text","id":"heading","label":"Titre"},{"type":"richtext","id":"text","label":"Texte"},{"type":"video","id":"video","label":"Vidéo Shopify"},{"type":"image_picker","id":"poster","label":"Image d’attente (optionnelle)"},{"type":"color","id":"background","label":"Couleur de fond","default":"#ffffff"}],"presets":[{"name":"Vidéo autoplay - KUKS"}]}
+{"name":"Vidéo + texte - KUKS","settings":[{"type":"color","id":"background","label":"Couleur du fond","default":"#ffffff"},{"type":"video","id":"video","label":"Vidéo Shopify"},{"type":"image_picker","id":"poster","label":"Image d’attente"},{"type":"text","id":"eyebrow","label":"Petit surtitre","default":"UNE ROUTINE SIMPLE À INTÉGRER"},{"type":"textarea","id":"heading","label":"Titre","default":"Une application simple, directement chez vous"},{"type":"richtext","id":"text","label":"Texte","default":"<p>Appliquez une fine couche sur les zones ciblées et laissez la routine agir progressivement au fil des utilisations.</p><p>Cette section est entièrement modifiable : vidéo, texte et couleur de fond.</p>"},{"type":"textarea","id":"small_text","label":"Petit texte","default":"Vidéo en lecture automatique, sans son et en boucle."}],"presets":[{"name":"Vidéo + texte - KUKS"}]}
 {% endschema %}
