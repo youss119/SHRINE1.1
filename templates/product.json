@@ -283,7 +283,7 @@
         "story_3": {
           "type": "story",
           "settings": {
-            "image": "shopify://shop_images/kuks-social-proof-1.png",
+            "image": "shopify://shop_images/hf_20260718_164632_38ec9282-8c8e-4da2-a793-3946bd73b7ab.png",
             "rating": 5,
             "title": "« Une routine beaucoup plus simple au quotidien. »",
             "review": "<p>Je voulais quelque chose que je puisse utiliser chez moi sans multiplier les produits. J’applique une fine couche le soir et je garde la même routine sur les zones qui me gênent.</p>",
@@ -294,6 +294,7 @@
         "story_d8UCtA": {
           "type": "story",
           "settings": {
+            "image": "shopify://shop_images/cbab60c7-37a5-4c69-aeb9-796c90c0a086.png",
             "rating": 5,
             "title": "Titre du témoignage",
             "review": "<p>Ajoutez votre témoignage ici.</p>",
@@ -304,6 +305,7 @@
         "story_jbDwEm": {
           "type": "story",
           "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jul_19_2026_12_39_10_AM.png",
             "rating": 5,
             "title": "Titre du témoignage",
             "review": "<p>Ajoutez votre témoignage ici.</p>",
