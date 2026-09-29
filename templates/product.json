@@ -476,8 +476,7 @@
         "t4"
       ],
       "settings": {
-        "heading": "À quoi peut ressembler une utilisation quotidienne",
-        "intro": "4 étapes courtes, sans bloc interminable."
+        "heading": "À quoi peut ressembler une utilisation quotidienne"
       }
     },
     "kuks_numbers": {
@@ -628,70 +627,6 @@
         "image": "shopify://shop_images/ImageChatGPT28sept.2026_15_47_35_1.png"
       }
     },
-    "kuks_compare": {
-      "type": "kuks-compare",
-      "blocks": {
-        "r1": {
-          "type": "row",
-          "settings": {
-            "label": "Cible la kératine épaissie",
-            "ours": "✓",
-            "other1": "—",
-            "other2": "—"
-          }
-        },
-        "r2": {
-          "type": "row",
-          "settings": {
-            "label": "Utilisable sur plusieurs zones du corps",
-            "ours": "✓",
-            "other1": "—",
-            "other2": "✓"
-          }
-        },
-        "r3": {
-          "type": "row",
-          "settings": {
-            "label": "Routine à domicile",
-            "ours": "✓",
-            "other1": "—",
-            "other2": "✓"
-          }
-        },
-        "r4": {
-          "type": "row",
-          "settings": {
-            "label": "Urée à 40 %",
-            "ours": "✓",
-            "other1": "—",
-            "other2": "—"
-          }
-        },
-        "r5": {
-          "type": "row",
-          "settings": {
-            "label": "Acide salicylique dans la formule",
-            "ours": "✓",
-            "other1": "—",
-            "other2": "✓"
-          }
-        }
-      },
-      "block_order": [
-        "r1",
-        "r2",
-        "r3",
-        "r4",
-        "r5"
-      ],
-      "settings": {
-        "heading": "Une routine ciblée, là où les approches classiques diffèrent",
-        "intro": "Comparez les grandes caractéristiques de chaque approche.",
-        "col_ours": "Crème Kératolytique",
-        "col_other1": "Cryothérapie",
-        "col_other2": "Acide glycolique"
-      }
-    },
     "kuks_faq": {
       "type": "kuks-faq",
       "blocks": {
@@ -741,26 +676,6 @@
       "settings": {
         "heading": "Vos questions, simplement"
       }
-    },
-    "kuks_autoplay_video": {
-      "type": "kuks-autoplay-video",
-      "settings": {
-        "heading": "",
-        "text": "",
-        "poster": "shopify://shop_images/Image_ChatGPT_29_sept._2026_12_22_57.png",
-        "background": "#ffffff"
-      }
-    },
-    "kuks_guarantee": {
-      "type": "kuks-guarantee",
-      "settings": {
-        "heading": "Garantie satisfaction de 60 jours",
-        "text": "<p>Nous vous laissons le temps d’intégrer la crème à votre routine et d’évaluer la texture de votre peau sur plusieurs semaines.</p><p>Si cette routine ne vous convient pas, vous disposez de 60 jours pour faire valoir la garantie selon les conditions de votre boutique.</p>",
-        "footer_text": "60 JOURS POUR TESTER LA ROUTINE À VOTRE RYTHME",
-        "background": "#ffffff",
-        "card_background": "#0f2f63",
-        "accent": "#f5c400"
-      }
     }
   },
   "order": [
@@ -770,14 +685,11 @@
     "kuks_story_carousel",
     "kuks_problems_tabs",
     "kuks_change_story",
-    "kuks_autoplay_video",
     "kuks_science_duo",
     "kuks_timeline",
     "kuks_numbers",
     "kuks_survey",
     "kuks_ingredients",
-    "kuks_compare",
-    "kuks_faq",
-    "kuks_guarantee"
+    "kuks_faq"
   ]
 }
