@@ -753,56 +753,56 @@
           "type": "faq",
           "settings": {
             "question": "Ce produit conviendra-t-il à mon type de peau ?",
-            "answer": "<p>La formule est destinée à une utilisation corporelle sur différents types de peau. Commencez par une petite zone, surtout si votre peau est sensible ou réactive. Évitez le visage, les muqueuses et la peau lésée.</p>"
+            "answer": "<p>La formule est prévue pour différents types de peau. Appliquez-la uniquement sur les zones concernées, jamais sur le visage. Commencez une fois par jour, puis augmentez selon votre tolérance. Si votre peau est réactive, faites d’abord un test localisé.</p>"
           }
         },
         "f2": {
           "type": "faq",
           "settings": {
             "question": "Combien de temps dure un pot ?",
-            "answer": "<p>Cela dépend du nombre de zones traitées et de la fréquence d’utilisation. Sur quelques zones ciblées, un pot peut durer plusieurs semaines ; une utilisation sur de grandes zones le fera naturellement diminuer plus vite.</p>"
+            "answer": "<p>Cela dépend du nombre de zones traitées. Sur quelques zones, un pot peut durer jusqu’à environ 2 mois à raison d’une application par jour. Avec davantage de zones ou deux applications quotidiennes, comptez plutôt autour d’un mois.</p>"
           }
         },
         "f3": {
           "type": "faq",
           "settings": {
             "question": "Puis-je utiliser ce produit en complément de mes autres produits de soin de la peau ?",
-            "answer": "<p>Oui, mais évitez de superposer au même moment des rétinoïdes, acides ou exfoliants puissants sur la même zone. Introduisez la crème progressivement et observez la réaction de votre peau.</p>"
+            "answer": "<p>Oui, mais évitez de superposer rétinoïdes, acides ou exfoliants puissants sur la même zone au même moment. Introduisez K-Cream progressivement et hydratez la peau autour si nécessaire.</p>"
           }
         },
         "f4": {
           "type": "faq",
           "settings": {
             "question": "Est-il sans danger pour une utilisation sur des zones sensibles comme les aisselles et le maillot ?",
-            "answer": "<p>Ces zones peuvent être plus réactives. Faites d’abord un test sur une petite zone et espacez les applications au début. N’appliquez pas sur les muqueuses, la peau irritée ou juste après le rasage ; arrêtez en cas de brûlure ou de rougeur persistante.</p>"
+            "answer": "<p>Commencez plutôt sur une zone moins sensible. Pour les aisselles ou le maillot, faites un test pendant 24 h, puis espacez les applications au début. Arrêtez en cas de brûlure ou de rougeur persistante. Ne pas appliquer sur le visage.</p>"
           }
         },
         "f5": {
           "type": "faq",
           "settings": {
             "question": "J’ai plus de 70 ans — est-il trop tard pour moi ?",
-            "answer": "<p>L’âge seul n’empêche pas une routine de soin, mais une peau mature peut être plus sensible. Commencez progressivement. Toute lésion qui change, saigne ou dont le diagnostic est incertain doit être montrée à un professionnel de santé.</p>"
+            "answer": "<p>L’âge seul n’empêche pas l’utilisation, mais une peau mature peut être plus sensible. Commencez progressivement. Si une lésion change d’aspect, saigne ou n’a pas été identifiée, demandez un avis professionnel avant de la traiter.</p>"
           }
         },
         "f6": {
           "type": "faq",
           "settings": {
             "question": "À partir de quel âge ce produit convient-il ?",
-            "answer": "<p>Cette formule est destinée aux adultes. Nous ne la recommandons pas aux moins de 18 ans sans avis d’un professionnel de santé.</p>"
+            "answer": "<p>K-Cream est destinée aux adultes. Nous ne la recommandons pas aux moins de 18 ans sans l’avis d’un professionnel de santé.</p>"
           }
         },
         "f7": {
           "type": "faq",
           "settings": {
             "question": "Est-ce que ça fait mal ou irrite la peau ?",
-            "answer": "<p>Un léger picotement peut survenir chez certaines personnes, surtout au début. En revanche, une brûlure, une rougeur importante ou un inconfort persistant n’est pas à ignorer : rincez la zone et arrêtez l’utilisation.</p>"
+            "answer": "<p>Un léger picotement peut apparaître lors des premières utilisations. Si votre peau est sensible, commencez plus doucement. En cas de rougeur, brûlure ou inconfort persistant, arrêtez l’utilisation sur la zone.</p>"
           }
         },
         "f8": {
           "type": "faq",
           "settings": {
             "question": "Est-ce que ça laisse des cicatrices ?",
-            "answer": "<p>La crème s’utilise sans créer volontairement de plaie. Une irritation reste toutefois possible si la peau réagit mal ou si le produit est mal utilisé. N’appliquez pas sur une zone ouverte ou sur une lésion dont la nature n’est pas certaine.</p>"
+            "answer": "<p>La routine n’est pas conçue pour créer une plaie. Une irritation reste toutefois possible si la peau réagit mal. N’appliquez pas le produit sur une peau ouverte ou sur une lésion dont la nature n’est pas certaine.</p>"
           }
         }
       },
