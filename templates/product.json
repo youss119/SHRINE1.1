@@ -460,7 +460,7 @@
         "science_2"
       ],
       "settings": {
-        "background": "#ffffff"
+        "background": "#FFFFFF"
       }
     },
     "kuks_timeline": {
@@ -566,6 +566,18 @@
       ],
       "settings": {
         "background": "#113d6b"
+      }
+    },
+    "kuks_gradient_divider_nNd3LE": {
+      "type": "kuks-gradient-divider",
+      "name": "Fondu de couleur - KUKS",
+      "settings": {
+        "start_color": "#113D6B",
+        "end_color": "#FFFFFF",
+        "height_desktop": 70,
+        "height_mobile": 50,
+        "fade_start": 5,
+        "angle": 180
       }
     },
     "kuks_survey": {
@@ -762,6 +774,7 @@
     "kuks_timeline",
     "kuks_gradient_divider",
     "kuks_numbers",
+    "kuks_gradient_divider_nNd3LE",
     "kuks_survey",
     "kuks_ingredients",
     "kuks_faq",
