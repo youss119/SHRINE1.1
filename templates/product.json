@@ -710,6 +710,18 @@
         "image": "shopify://shop_images/ImageChatGPT28sept.2026_15_47_35_1.png"
       }
     },
+    "kuks_gradient_divider_wQDTEV": {
+      "type": "kuks-gradient-divider",
+      "name": "Fondu de couleur - KUKS",
+      "settings": {
+        "start_color": "#E7FBE3",
+        "end_color": "#FFFFFF",
+        "height_desktop": 70,
+        "height_mobile": 50,
+        "fade_start": 5,
+        "angle": 180
+      }
+    },
     "kuks_faq": {
       "type": "kuks-faq",
       "blocks": {
@@ -790,6 +802,7 @@
     "kuks_survey",
     "kuks_gradient_divider_CUHzLW",
     "kuks_ingredients",
+    "kuks_gradient_divider_wQDTEV",
     "kuks_faq",
     "kuks_guarantee"
   ]
