@@ -734,6 +734,17 @@
         "text": "<p>Nous vous laissons 60 jours pour intégrer la formule à votre routine et observer son évolution sur plusieurs semaines.</p><p>Si elle ne vous convient pas, vous pouvez faire valoir la garantie selon les conditions de votre boutique.</p>",
         "footer_text": "PLUS DE 10 000 CLIENTS SATISFAITS"
       }
+    },
+    "kuks_gradient_divider": {
+      "type": "kuks-gradient-divider",
+      "settings": {
+        "start_color": "#ffffff",
+        "end_color": "#113d6b",
+        "height_desktop": 70,
+        "height_mobile": 50,
+        "fade_start": 10,
+        "angle": 180
+      }
     }
   },
   "order": [
@@ -746,6 +757,7 @@
     "kuks_autoplay_video",
     "kuks_science_duo",
     "kuks_timeline",
+    "kuks_gradient_divider",
     "kuks_numbers",
     "kuks_survey",
     "kuks_ingredients",

@@ -1,0 +1,93 @@
+{% comment %}KUKS — séparateur fin en fondu entre deux couleurs.{% endcomment %}
+<section id="kuks-gradient-divider-{{ section.id }}" class="kuks-gradient-divider" aria-hidden="true">
+  <div class="kuks-gradient-divider__fade"></div>
+</section>
+
+<style>
+#kuks-gradient-divider-{{ section.id }}{
+  margin:0;
+  padding:0;
+  line-height:0;
+  background:{{ section.settings.start_color }};
+}
+#kuks-gradient-divider-{{ section.id }} .kuks-gradient-divider__fade{
+  width:100%;
+  height:{{ section.settings.height_desktop }}px;
+  background:linear-gradient(
+    {{ section.settings.angle }}deg,
+    {{ section.settings.start_color }} 0%,
+    {{ section.settings.start_color }} {{ section.settings.fade_start }}%,
+    {{ section.settings.end_color }} 100%
+  );
+}
+@media(max-width:749px){
+  #kuks-gradient-divider-{{ section.id }} .kuks-gradient-divider__fade{
+    height:{{ section.settings.height_mobile }}px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name":"Fondu de couleur - KUKS",
+  "settings":[
+    {
+      "type":"color",
+      "id":"start_color",
+      "label":"Couleur de départ",
+      "default":"#ffffff"
+    },
+    {
+      "type":"color",
+      "id":"end_color",
+      "label":"Couleur d’arrivée",
+      "default":"#113d6b"
+    },
+    {
+      "type":"range",
+      "id":"height_desktop",
+      "label":"Hauteur ordinateur",
+      "min":20,
+      "max":180,
+      "step":5,
+      "unit":"px",
+      "default":70
+    },
+    {
+      "type":"range",
+      "id":"height_mobile",
+      "label":"Hauteur mobile",
+      "min":15,
+      "max":120,
+      "step":5,
+      "unit":"px",
+      "default":50
+    },
+    {
+      "type":"range",
+      "id":"fade_start",
+      "label":"Début du fondu",
+      "min":0,
+      "max":80,
+      "step":5,
+      "unit":"%",
+      "default":10
+    },
+    {
+      "type":"range",
+      "id":"angle",
+      "label":"Angle du fondu",
+      "min":0,
+      "max":180,
+      "step":5,
+      "unit":"°",
+      "default":180
+    }
+  ],
+  "presets":[
+    {
+      "name":"Fondu de couleur - KUKS"
+    }
+  ]
+}
+{% endschema %}
