@@ -158,21 +158,24 @@
   #kuks-testimonials-{{ section.id }} .kuks-testimonial-quote.is-collapsed{
     max-height:190px;
     overflow:hidden;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 72%,rgba(0,0,0,.72) 84%,transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 0%,#000 72%,rgba(0,0,0,.72) 84%,transparent 100%);
   }
   #kuks-testimonials-{{ section.id }} .kuks-review-more{
     display:none;
-    margin:8px 0 0;
-    padding:0;
-    border:0;
-    background:transparent;
+    margin:7px auto 0;
+    padding:5px 10px;
+    border:1px solid #d8dee6;
+    border-radius:999px;
+    background:#fff;
     color:#113d6b;
     font:inherit;
-    font-size:10.5px;
-    line-height:1.2;
-    font-weight:750;
-    text-decoration:underline;
-    text-underline-offset:2px;
+    font-size:10.3px;
+    line-height:1.1;
+    font-weight:800;
+    text-decoration:none;
     cursor:pointer;
+    box-shadow:0 2px 8px rgba(17,61,107,.06);
   }
   #kuks-testimonials-{{ section.id }} .kuks-review-more.is-visible{display:inline-flex}
   #kuks-testimonials-{{ section.id }} .kuks-testimonial-author{
