@@ -219,29 +219,50 @@
         "social_1": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/kuks-social-proof-1.png",
+            "image": "shopify://shop_images/Image_ChatGPT_29_sept._2026_12_19_06.png",
             "alt": "Cliente tenant le produit"
           }
         },
         "social_2": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/kuks-social-proof-2.png",
+            "image": "shopify://shop_images/hf_20260714_095129_b7c31d37-6f68-4c40-b4e6-c5f967d6db6c_1.png",
             "alt": "Cliente tenant le produit"
           }
         },
         "social_3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/kuks-social-proof-before-after.png",
+            "image": "shopify://shop_images/hf_20260714_095325_f8b76242-06b5-4525-91bc-cf015aafdd19_1.png",
             "alt": "Avant après"
           }
         },
         "social_4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/kuks-social-proof-4.png",
+            "image": "shopify://shop_images/hf_20260714_095840_fb612ca6-fb10-44fb-bb9d-a66457ce5234_1.png",
             "alt": "Cliente tenant le produit"
+          }
+        },
+        "image_CFyGtm": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hf_20260714_100248_394856ab-532e-4cab-a04c-315a5ae8e422_1.png",
+            "alt": "Photo client"
+          }
+        },
+        "image_dWeyUA": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cb72508c-a811-4a90-8701-dae5134be0da.png",
+            "alt": "Photo client"
+          }
+        },
+        "image_nW3wAL": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/eca50eff-c8d6-468f-a385-2106243246ce.png",
+            "alt": "Photo client"
           }
         }
       },
@@ -249,7 +270,10 @@
         "social_1",
         "social_2",
         "social_3",
-        "social_4"
+        "social_4",
+        "image_CFyGtm",
+        "image_dWeyUA",
+        "image_nW3wAL"
       ],
       "settings": {
         "heading": "Approuvé par plus de 10 892 personnes qui ont refusé de « se résigner à cela » ❤️"
