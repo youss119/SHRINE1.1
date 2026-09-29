@@ -210,8 +210,8 @@
         "review_sarah"
       ],
       "settings": {
-        "heading": "AVIS CLIENTS",
-        "background": "#ffffff"
+        "background": "#ffffff",
+        "heading": "AVIS CLIENTS"
       }
     },
     "kuks_social_carousel": {
@@ -277,8 +277,8 @@
         "image_nW3wAL"
       ],
       "settings": {
-        "heading": "Approuvé par plus de 10 892 personnes qui ont refusé de « se résigner à cela » ❤️",
-        "background": "#ffffff"
+        "background": "#ffffff",
+        "heading": "Approuvé par plus de 10 892 personnes qui ont refusé de « se résigner à cela » ❤️"
       }
     },
     "kuks_story_carousel": {
@@ -348,9 +348,9 @@
         "story_jbDwEm"
       ],
       "settings": {
+        "background": "#E7FBE3",
         "heading": "Rejoignez celles et ceux qui ont décidé de ne plus se résigner à une peau rugueuse",
-        "intro": "Des retours différents, avec un point commun : une routine simple et régulière.",
-        "background": "#ffffff"
+        "intro": "Des retours différents, avec un point commun : une routine simple et régulière."
       }
     },
     "kuks_problems_tabs": {
@@ -390,20 +390,21 @@
         "p3"
       ],
       "settings": {
+        "background": "#ffffff",
         "heading": "Cette formule a été conçue pour répondre à trois problèmes de texture",
-        "intro": "Trois situations différentes, avec un même point commun : une accumulation de kératine et une peau qui reste rugueuse.",
-        "background": "#ffffff"
+        "intro": "Trois situations différentes, avec un même point commun : une accumulation de kératine et une peau qui reste rugueuse."
       }
     },
-    "kuks_change_story": {
-      "type": "kuks-change-story",
+    "kuks_autoplay_video": {
+      "type": "kuks-autoplay-video",
       "settings": {
-        "image": "shopify://shop_images/Image_ChatGPT_29_sept._2026_12_22_57.png",
-        "overlay": "",
-        "eyebrow": "",
-        "heading": "Ce qui change quand vous intégrez la crème à votre routine",
-        "text": "<p>Une routine à domicile permet de travailler plusieurs zones avec le même produit, sans multiplier les étapes. L’objectif est de rendre la texture progressivement plus souple et plus uniforme au fil des utilisations.</p>",
-        "background": "#ffffff"
+        "background": "#ffffff",
+        "video": "shopify://files/videos/SK Renewal 40 Advanced Keratolytic Cream For Rough Raised Seborr.mp4",
+        "poster": "shopify://shop_images/Image_ChatGPT_29_sept._2026_12_22_57.png",
+        "eyebrow": "UNE ROUTINE SIMPLE À INTÉGRER",
+        "heading": "Une application simple, directement chez vous",
+        "text": "<p>Appliquez une fine couche sur les zones ciblées et laissez la routine agir progressivement au fil des utilisations.</p><p>Cette section est entièrement modifiable : vidéo, texte et couleur de fond.</p>",
+        "small_text": "Ajoutez votre vidéo Shopify dans cette section pour activer l’autoplay."
       }
     },
     "kuks_science_duo": {
@@ -481,8 +482,9 @@
         "t4"
       ],
       "settings": {
+        "background": "#ffffff",
         "heading": "À quoi peut ressembler une utilisation quotidienne",
-        "background": "#ffffff"
+        "intro": "Une évolution progressive, sans prendre toute la page."
       }
     },
     "kuks_numbers": {
@@ -562,12 +564,12 @@
         "s3"
       ],
       "settings": {
+        "background": "#ffffff",
         "heading": "Les résultats qui donnent envie de rester régulier",
         "intro": "",
         "image": "shopify://shop_images/kuks-survey-couple.png",
         "subheading": "Statistiques de satisfaction",
-        "note": "",
-        "background": "#ffffff"
+        "note": ""
       }
     },
     "kuks_ingredients": {
@@ -576,61 +578,61 @@
         "i1": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/kuks-ing-uree_5f684e00-3f69-4cef-ab50-5d4c664a3634.png",
+            "icon_kind": "urea",
             "short": "U",
             "title": "40 % d’urée",
-            "text": "Aide à assouplir la kératine compacte et la texture épaisse.",
-            "image": "shopify://shop_images/kuks-ing-uree_5f684e00-3f69-4cef-ab50-5d4c664a3634.png",
-            "icon_kind": "urea"
+            "text": "Aide à assouplir la kératine compacte et la texture épaisse."
           }
         },
         "i2": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/kuks-ing-salicylique.png",
+            "icon_kind": "salicylic",
             "short": "SA",
             "title": "Acide salicylique",
-            "text": "Aide à exfolier et à libérer les cellules accumulées.",
-            "image": "shopify://shop_images/kuks-ing-salicylique.png",
-            "icon_kind": "salicylic"
+            "text": "Aide à exfolier et à libérer les cellules accumulées."
           }
         },
         "i3": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/kuks-ing-the-vert.png",
+            "icon_kind": "tea",
             "short": "GT",
             "title": "Extrait de thé vert",
-            "text": "Apporte un soutien apaisant à la peau.",
-            "image": "shopify://shop_images/kuks-ing-the-vert.png",
-            "icon_kind": "tea"
+            "text": "Apporte un soutien apaisant à la peau."
           }
         },
         "i4": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/kuks-ing-aloe.png",
+            "icon_kind": "aloe",
             "short": "AV",
             "title": "Aloe vera",
-            "text": "Aide à maintenir l’hydratation et le confort cutané.",
-            "image": "shopify://shop_images/kuks-ing-aloe.png",
-            "icon_kind": "aloe"
+            "text": "Aide à maintenir l’hydratation et le confort cutané."
           }
         },
         "i5": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/kuks-ing-tea-tree.png",
+            "icon_kind": "teatree",
             "short": "TT",
             "title": "Huile d’arbre à thé",
-            "text": "Complète la formule avec un actif végétal ciblé.",
-            "image": "shopify://shop_images/kuks-ing-tea-tree.png",
-            "icon_kind": "teatree"
+            "text": "Complète la formule avec un actif végétal ciblé."
           }
         },
         "i6": {
           "type": "ingredient",
           "settings": {
+            "image": "shopify://shop_images/kuks-ing-coco.png",
+            "icon_kind": "coconut",
             "short": "CO",
             "title": "Huile de coco",
-            "text": "Aide à nourrir la peau et à soutenir sa barrière.",
-            "image": "shopify://shop_images/kuks-ing-coco.png",
-            "icon_kind": "coconut"
+            "text": "Aide à nourrir la peau et à soutenir sa barrière."
           }
         }
       },
@@ -643,10 +645,10 @@
         "i6"
       ],
       "settings": {
+        "background": "#f8f7f4",
         "heading": "Formulée avec des actifs issus de la science et du végétal",
         "intro": "Les bons ingrédients, aux bonnes concentrations, dans une seule routine.",
-        "image": "shopify://shop_images/ImageChatGPT28sept.2026_15_47_35_1.png",
-        "background": "#f8f7f4"
+        "image": "shopify://shop_images/ImageChatGPT28sept.2026_15_47_35_1.png"
       }
     },
     "kuks_faq": {
@@ -696,19 +698,8 @@
         "f5"
       ],
       "settings": {
-        "heading": "Vos questions, simplement",
-        "background": "#ffffff"
-      }
-    },
-    "kuks_autoplay_video": {
-      "type": "kuks-autoplay-video",
-      "settings": {
         "background": "#ffffff",
-        "poster": "shopify://shop_images/Image_ChatGPT_29_sept._2026_12_22_57.png",
-        "eyebrow": "UNE ROUTINE SIMPLE À INTÉGRER",
-        "heading": "Une application simple, directement chez vous",
-        "text": "<p>Appliquez une fine couche sur les zones ciblées et laissez la routine agir progressivement au fil des utilisations.</p><p>Cette section est entièrement modifiable : vidéo, texte et couleur de fond.</p>",
-        "small_text": "Ajoutez votre vidéo Shopify dans cette section pour activer l’autoplay."
+        "heading": "Vos questions, simplement"
       }
     },
     "kuks_guarantee": {
@@ -729,7 +720,6 @@
     "kuks_social_carousel",
     "kuks_story_carousel",
     "kuks_problems_tabs",
-    "kuks_change_story",
     "kuks_autoplay_video",
     "kuks_science_duo",
     "kuks_timeline",
