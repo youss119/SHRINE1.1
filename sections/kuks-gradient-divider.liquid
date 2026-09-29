@@ -1,28 +1,56 @@
-{% comment %}KUKS — séparateur fin en fondu entre deux couleurs.{% endcomment %}
-<section id="kuks-gradient-divider-{{ section.id }}" class="kuks-gradient-divider" aria-hidden="true">
+{% comment %}KUKS — séparateur de transition en fondu, pleine largeur.{% endcomment %}
+<section
+  id="kuks-gradient-divider-{{ section.id }}"
+  class="kuks-gradient-divider"
+  aria-hidden="true"
+  style="
+    --kuks-divider-start: {{ section.settings.start_color }};
+    --kuks-divider-end: {{ section.settings.end_color }};
+    --kuks-divider-h-desktop: {{ section.settings.height_desktop }}px;
+    --kuks-divider-h-mobile: {{ section.settings.height_mobile }}px;
+    --kuks-divider-stop: {{ section.settings.fade_start }}%;
+    --kuks-divider-angle: {{ section.settings.angle }}deg;
+  "
+>
   <div class="kuks-gradient-divider__fade"></div>
 </section>
 
 <style>
 #kuks-gradient-divider-{{ section.id }}{
-  margin:0;
-  padding:0;
-  line-height:0;
-  background:{{ section.settings.start_color }};
+  display:block !important;
+  width:100% !important;
+  min-height:var(--kuks-divider-h-desktop) !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  line-height:0 !important;
+  overflow:hidden !important;
+  background:transparent !important;
 }
 #kuks-gradient-divider-{{ section.id }} .kuks-gradient-divider__fade{
-  width:100%;
-  height:{{ section.settings.height_desktop }}px;
-  background:linear-gradient(
-    {{ section.settings.angle }}deg,
-    {{ section.settings.start_color }} 0%,
-    {{ section.settings.start_color }} {{ section.settings.fade_start }}%,
-    {{ section.settings.end_color }} 100%
-  );
+  display:block !important;
+  position:relative !important;
+  left:50% !important;
+  width:100vw !important;
+  height:var(--kuks-divider-h-desktop) !important;
+  min-height:var(--kuks-divider-h-desktop) !important;
+  margin-left:-50vw !important;
+  padding:0 !important;
+  background:
+    linear-gradient(
+      var(--kuks-divider-angle),
+      var(--kuks-divider-start) 0%,
+      var(--kuks-divider-start) var(--kuks-divider-stop),
+      var(--kuks-divider-end) 100%
+    ) !important;
 }
 @media(max-width:749px){
+  #kuks-gradient-divider-{{ section.id }}{
+    min-height:var(--kuks-divider-h-mobile) !important;
+  }
   #kuks-gradient-divider-{{ section.id }} .kuks-gradient-divider__fade{
-    height:{{ section.settings.height_mobile }}px;
+    height:var(--kuks-divider-h-mobile) !important;
+    min-height:var(--kuks-divider-h-mobile) !important;
   }
 }
 </style>
@@ -41,7 +69,7 @@
       "type":"color",
       "id":"end_color",
       "label":"Couleur d’arrivée",
-      "default":"#113d6b"
+      "default":"#E7FBE3"
     },
     {
       "type":"range",
@@ -71,7 +99,7 @@
       "max":80,
       "step":5,
       "unit":"%",
-      "default":10
+      "default":5
     },
     {
       "type":"range",
