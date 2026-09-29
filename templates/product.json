@@ -419,10 +419,22 @@
         "intro": "Trois situations différentes, avec un même point commun : une accumulation de kératine et une peau qui reste rugueuse."
       }
     },
+    "kuks_gradient_divider_nX4GWA": {
+      "type": "kuks-gradient-divider",
+      "name": "Fondu de couleur - KUKS",
+      "settings": {
+        "start_color": "#ffffff",
+        "end_color": "#E7FBE3",
+        "height_desktop": 70,
+        "height_mobile": 50,
+        "fade_start": 5,
+        "angle": 180
+      }
+    },
     "kuks_autoplay_video": {
       "type": "kuks-autoplay-video",
       "settings": {
-        "background": "#ffffff",
+        "background": "#E7FBE3",
         "video": "shopify://files/videos/SK Renewal 40 Advanced Keratolytic Cream For Rough Raised Seborr.mp4",
         "poster": "shopify://shop_images/Image_ChatGPT_29_sept._2026_12_22_57.png",
         "eyebrow": "UNE ROUTINE SIMPLE À INTÉGRER",
@@ -793,6 +805,7 @@
     "kuks_story_carousel",
     "kuks_gradient_divider_YNzcqx",
     "kuks_problems_tabs",
+    "kuks_gradient_divider_nX4GWA",
     "kuks_autoplay_video",
     "kuks_science_duo",
     "kuks_timeline",
