@@ -1,40 +1,102 @@
-{% comment %}KUKS — ingrédients : image produit + 6 onglets/cartes éditables.{% endcomment %}
-<section id="kuks-ingredients-{{ section.id }}" class="kuks-ingredients">
+{% comment %}KUKS — ingrédients interactifs : visuel + liste + fiche active.{% endcomment %}
+<section id="kuks-ingredients-{{ section.id }}" class="kuks-ingredients" style="background:{{ section.settings.background }};">
   <div class="kuks-ingredients__inner">
-    <h2>{{ section.settings.heading }}</h2>
-    <p class="kuks-ingredients__intro">{{ section.settings.intro }}</p>
-    {% if section.settings.image != blank %}<div class="kuks-ingredients__hero">{{ section.settings.image | image_url: width:1100 | image_tag: loading:'lazy', widths:'420,700,900,1100', sizes:'(max-width:749px) 100vw, 700px', alt:section.settings.heading }}</div>{% endif %}
-    <div class="kuks-ingredients__list">
+    {% if section.settings.heading != blank %}<h2>{{ section.settings.heading }}</h2>{% endif %}
+    {% if section.settings.intro != blank %}<p class="kuks-ingredients__intro">{{ section.settings.intro }}</p>{% endif %}
+    <div class="kuks-ingredients__layout">
+      <div class="kuks-ingredients__visual">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width:1200 | image_tag: loading:'lazy', widths:'420,700,900,1200', sizes:'(max-width:749px) 100vw, 48vw', alt:section.settings.heading }}
+        {% else %}
+          <div class="kuks-ingredients__placeholder">Ajoutez votre visuel principal</div>
+        {% endif %}
+      </div>
+      <div class="kuks-ingredients__tabs" role="tablist">
+        {% for block in section.blocks %}
+          <button type="button" class="kuks-ingredients__tab{% if forloop.first %} is-active{% endif %}" data-kuks-ing-tab="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+            <span class="kuks-ingredients__icon">
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width:140 | image_tag: loading:'lazy', widths:'70,100,140', alt:block.settings.title }}
+              {% else %}
+                {% case block.settings.icon_kind %}
+                  {% when 'urea' %}<svg viewBox="0 0 48 48"><circle cx="24" cy="10" r="5"/><circle cx="12" cy="28" r="5"/><circle cx="36" cy="28" r="5"/><path d="M21 14 15 24M27 14l6 10M17 28h14"/></svg>
+                  {% when 'salicylic' %}<svg viewBox="0 0 48 48"><path d="m24 8 13 8v16l-13 8-13-8V16z"/><circle cx="38" cy="10" r="4"/><path d="m33 14 4-3"/></svg>
+                  {% when 'tea' %}<svg viewBox="0 0 48 48"><path d="M10 31c14-1 21-9 27-20 2 13-2 25-17 27-5 1-8-2-10-7Z"/><path d="M14 33c8-6 14-10 22-17"/></svg>
+                  {% when 'aloe' %}<svg viewBox="0 0 48 48"><path d="M24 40V10M24 36 12 18M24 34l12-18M24 29 8 26M24 28l16-3"/></svg>
+                  {% when 'teatree' %}<svg viewBox="0 0 48 48"><path d="M24 40V13M24 20 12 12M24 24l13-10M24 29 10 2M24 30l14 1"/><circle cx="11" cy="11" r="4"/><circle cx="38" cy="13" r="4"/><circle cx="9" cy="31" r="4"/><circle cx="39" cy="31" r="4"/></svg>
+                  {% when 'coconut' %}<svg viewBox="0 0 48 48"><path d="M9 26c0-10 7-17 17-17 8 0 14 5 16 12-3 12-11 18-20 18-8 0-13-5-13-13Z"/><path d="M13 27c5 2 12 2 19-1 4-2 7-4 9-6"/><circle cx="28" cy="16" r="2"/></svg>
+                  {% else %}<span>{{ block.settings.short }}</span>
+                {% endcase %}
+              {% endif %}
+            </span>
+            <span class="kuks-ingredients__name">{{ block.settings.title }}</span>
+            <span class="kuks-ingredients__chev">›</span>
+          </button>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="kuks-ingredients__detail-wrap">
       {% for block in section.blocks %}
-        <details class="kuks-ingredients__item" {% if forloop.first %}open{% endif %} {{ block.shopify_attributes }}>
-          <summary>
-            <span class="kuks-ingredients__icon">{% if block.settings.image != blank %}{{ block.settings.image | image_url: width:120 | image_tag: loading:'lazy', widths:'60,90,120', alt:block.settings.title }}{% else %}{{ block.settings.short }}{% endif %}</span>
-            <span>{{ block.settings.title }}</span><span class="kuks-ingredients__plus">+</span>
-          </summary>
-          <p>{{ block.settings.text }}</p>
-        </details>
+        <article class="kuks-ingredients__detail{% if forloop.first %} is-active{% endif %}" data-kuks-ing-panel="{{ forloop.index0 }}">
+          <div class="kuks-ingredients__detail-icon">
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width:180 | image_tag: loading:'lazy', widths:'90,140,180', alt:block.settings.title }}
+            {% else %}<span>{{ block.settings.short }}</span>{% endif %}
+          </div>
+          <div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div>
+        </article>
       {% endfor %}
     </div>
   </div>
 </section>
 <style>
-#kuks-ingredients-{{ section.id }}{background:#f8f7f4;padding:34px 0}
-#kuks-ingredients-{{ section.id }} .kuks-ingredients__inner{width:min(100%,720px);margin:auto;padding:0 14px}
-#kuks-ingredients-{{ section.id }} h2{margin:0 auto 10px;max-width:630px;text-align:center;font-size:31px;line-height:1.14;letter-spacing:-.035em;color:#222}
-#kuks-ingredients-{{ section.id }} .kuks-ingredients__intro{margin:0 auto 18px;max-width:590px;text-align:center;font-size:13px;line-height:1.5;color:#666}
-#kuks-ingredients-{{ section.id }} .kuks-ingredients__hero{margin:0 0 20px;border-radius:18px;overflow:hidden;background:#fff}
-#kuks-ingredients-{{ section.id }} .kuks-ingredients__hero img{width:100%;display:block}
-#kuks-ingredients-{{ section.id }} .kuks-ingredients__list{display:grid;gap:10px}
-#kuks-ingredients-{{ section.id }} .kuks-ingredients__item{background:#fff;border-radius:18px;padding:0 16px}
-#kuks-ingredients-{{ section.id }} summary{list-style:none;display:grid;grid-template-columns:44px 1fr auto;gap:12px;align-items:center;min-height:74px;cursor:pointer;font-size:15px;color:#222}
-#kuks-ingredients-{{ section.id }} summary::-webkit-details-marker{display:none}
-#kuks-ingredients-{{ section.id }} .kuks-ingredients__icon{width:42px;height:42px;border-radius:50%;background:#f0f1f4;display:grid;place-items:center;color:#113d6b;font-size:10px;font-weight:800;overflow:hidden}
+#kuks-ingredients-{{ section.id }}{padding:28px 0}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__inner{width:min(100%,1080px);margin:auto;padding:0 16px}
+#kuks-ingredients-{{ section.id }} h2{margin:0 auto 7px;max-width:760px;text-align:center;font-size:31px;line-height:1.12;letter-spacing:-.035em;color:#17202b}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__intro{margin:0 auto 20px;max-width:620px;text-align:center;color:#69717a;font-size:12.8px;line-height:1.5}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);gap:26px;align-items:stretch}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__visual{border-radius:18px;overflow:hidden;background:#fff;display:flex}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__visual img{width:100%;height:100%;display:block;object-fit:cover}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__placeholder{min-height:390px;width:100%;display:grid;place-items:center;color:#8a9199;background:#f2f3f4}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__tabs{display:grid;gap:9px}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__tab{width:100%;min-height:64px;border:1px solid transparent;border-radius:17px;background:#fff;display:grid;grid-template-columns:46px 1fr auto;gap:12px;align-items:center;text-align:left;padding:8px 13px;color:#222;cursor:pointer;transition:.18s ease}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__tab.is-active{border-color:#113d6b;background:#edf3ec;box-shadow:0 2px 8px rgba(17,61,107,.08)}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__icon{width:42px;height:42px;border-radius:50%;background:#f2f3f6;display:grid;place-items:center;overflow:hidden;color:#113d6b}
 #kuks-ingredients-{{ section.id }} .kuks-ingredients__icon img{width:100%;height:100%;object-fit:cover}
-#kuks-ingredients-{{ section.id }} .kuks-ingredients__plus{font-size:22px;color:#777;transition:transform .2s}
-#kuks-ingredients-{{ section.id }} details[open] .kuks-ingredients__plus{transform:rotate(45deg)}
-#kuks-ingredients-{{ section.id }} .kuks-ingredients__item p{margin:0;padding:0 0 16px 56px;font-size:12.5px;line-height:1.5;color:#4e555d}
-@media(max-width:749px){#kuks-ingredients-{{ section.id }} h2{font-size:28px}}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__icon svg{width:27px;height:27px;fill:none;stroke:#113d6b;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__icon span{font-size:9px;font-weight:800}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__name{font-size:14px;font-weight:600}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__chev{font-size:20px;color:#87909a}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__detail-wrap{margin-top:18px}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__detail{display:none;border:1px solid #dde3e9;border-radius:18px;background:#fff;padding:17px 19px;grid-template-columns:60px 1fr;gap:16px;align-items:center}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__detail.is-active{display:grid}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__detail-icon{width:56px;height:56px;border-radius:50%;background:#f2f3f6;display:grid;place-items:center;overflow:hidden;color:#113d6b;font-weight:800}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__detail-icon img{width:100%;height:100%;object-fit:cover}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__detail h3{margin:0 0 5px;font-size:17px;color:#1d2630}
+#kuks-ingredients-{{ section.id }} .kuks-ingredients__detail p{margin:0;color:#555e67;font-size:12.5px;line-height:1.5}
+@media(max-width:749px){
+  #kuks-ingredients-{{ section.id }}{padding:20px 0}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__inner{padding:0 13px}
+  #kuks-ingredients-{{ section.id }} h2{font-size:23px}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__intro{font-size:10.8px;margin-bottom:14px}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__layout{grid-template-columns:1fr;gap:12px}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__visual{aspect-ratio:1.18}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__tabs{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__tab{min-height:58px;grid-template-columns:36px 1fr;padding:7px 8px;gap:8px;border-radius:14px}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__icon{width:34px;height:34px}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__icon svg{width:22px;height:22px}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__name{font-size:11.3px;line-height:1.2}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__chev{display:none}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__detail-wrap{margin-top:10px}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__detail{grid-template-columns:46px 1fr;gap:11px;padding:13px 12px;border-radius:14px}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__detail-icon{width:44px;height:44px}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__detail h3{font-size:14px}
+  #kuks-ingredients-{{ section.id }} .kuks-ingredients__detail p{font-size:10.6px;line-height:1.42}
+}
 </style>
+<script>
+(()=>{const root=document.getElementById('kuks-ingredients-{{ section.id }}');if(!root)return;const tabs=[...root.querySelectorAll('[data-kuks-ing-tab]')],panels=[...root.querySelectorAll('[data-kuks-ing-panel]')];tabs.forEach((tab,i)=>tab.addEventListener('click',()=>{tabs.forEach((x,j)=>x.classList.toggle('is-active',i===j));panels.forEach((x,j)=>x.classList.toggle('is-active',i===j))}))})();
+</script>
 {% schema %}
-{"name":"Ingrédients - KUKS","max_blocks":6,"settings":[{"type":"textarea","id":"heading","label":"Titre","default":"Formulée avec des actifs issus de la science et du végétal"},{"type":"textarea","id":"intro","label":"Introduction","default":"Les bons ingrédients, aux bonnes concentrations, dans une seule routine."},{"type":"image_picker","id":"image","label":"Image principale"}],"blocks":[{"type":"ingredient","name":"Ingrédient","settings":[{"type":"image_picker","id":"image","label":"Icône / photo"},{"type":"text","id":"short","label":"Abréviation","default":"U"},{"type":"text","id":"title","label":"Nom","default":"40 % d’urée"},{"type":"textarea","id":"text","label":"Description","default":"Décrivez le rôle de cet ingrédient."}]}],"presets":[{"name":"Ingrédients - KUKS","blocks":[{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"}]}]}
+{"name":"Ingrédients - KUKS","max_blocks":6,"settings":[{"type":"textarea","id":"heading","label":"Titre","default":"Formulée avec des actifs issus de la science et du végétal"},{"type":"textarea","id":"intro","label":"Introduction","default":"Sélectionnez un ingrédient pour afficher son rôle."},{"type":"image_picker","id":"image","label":"Image principale"},{"type":"color","id":"background","label":"Couleur de fond","default":"#f8f7f4"}],"blocks":[{"type":"ingredient","name":"Ingrédient","settings":[{"type":"image_picker","id":"image","label":"Image / icône personnalisée"},{"type":"select","id":"icon_kind","label":"Icône intégrée","default":"urea","options":[{"value":"urea","label":"Molécule urée"},{"value":"salicylic","label":"Acide salicylique"},{"value":"tea","label":"Thé vert"},{"value":"aloe","label":"Aloe vera"},{"value":"teatree","label":"Arbre à thé"},{"value":"coconut","label":"Noix de coco"},{"value":"custom","label":"Abréviation"}]},{"type":"text","id":"short","label":"Abréviation","default":"U"},{"type":"text","id":"title","label":"Nom","default":"40 % d’urée"},{"type":"textarea","id":"text","label":"Description","default":"Décrivez le rôle de cet ingrédient."}]}],"presets":[{"name":"Ingrédients - KUKS","blocks":[{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"},{"type":"ingredient"}]}]}
 {% endschema %}
