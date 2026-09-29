@@ -286,7 +286,7 @@
       "name": "Fondu de couleur - KUKS",
       "settings": {
         "start_color": "#ffffff",
-        "end_color": "#E7FBE3",
+        "end_color": "#e7fbe3",
         "height_desktop": 70,
         "height_mobile": 50,
         "fade_start": 5,
@@ -369,8 +369,8 @@
       "type": "kuks-gradient-divider",
       "name": "Fondu de couleur - KUKS",
       "settings": {
-        "start_color": "#E7FBE3",
-        "end_color": "#FFFFFF",
+        "start_color": "#e7fbe3",
+        "end_color": "#ffffff",
         "height_desktop": 70,
         "height_mobile": 50,
         "fade_start": 5,
@@ -424,7 +424,7 @@
       "name": "Fondu de couleur - KUKS",
       "settings": {
         "start_color": "#ffffff",
-        "end_color": "#E7FBE3",
+        "end_color": "#e7fbe3",
         "height_desktop": 70,
         "height_mobile": 50,
         "fade_start": 5,
@@ -434,7 +434,7 @@
     "kuks_autoplay_video": {
       "type": "kuks-autoplay-video",
       "settings": {
-        "background": "#E7FBE3",
+        "background": "#e7fbe3",
         "video": "shopify://files/videos/SK Renewal 40 Advanced Keratolytic Cream For Rough Raised Seborr.mp4",
         "poster": "shopify://shop_images/Image_ChatGPT_29_sept._2026_12_22_57.png",
         "eyebrow": "UNE ROUTINE SIMPLE À INTÉGRER",
@@ -447,8 +447,8 @@
       "type": "kuks-gradient-divider",
       "name": "Fondu de couleur - KUKS",
       "settings": {
-        "start_color": "#E7FBE3",
-        "end_color": "#FFFFFF",
+        "start_color": "#e7fbe3",
+        "end_color": "#ffffff",
         "height_desktop": 70,
         "height_mobile": 50,
         "fade_start": 5,
@@ -484,7 +484,19 @@
         "science_2"
       ],
       "settings": {
-        "background": "#FFFFFF"
+        "background": "#ffffff"
+      }
+    },
+    "kuks_gradient_divider_CUHzLW": {
+      "type": "kuks-gradient-divider",
+      "name": "Fondu de couleur - KUKS",
+      "settings": {
+        "start_color": "#ffffff",
+        "end_color": "#e7fbe3",
+        "height_desktop": 70,
+        "height_mobile": 50,
+        "fade_start": 5,
+        "angle": 180
       }
     },
     "kuks_ingredients": {
@@ -560,10 +572,22 @@
         "i6"
       ],
       "settings": {
-        "background": "#E7FBE3",
+        "background": "#e7fbe3",
         "heading": "Formulée avec des actifs issus de la science et du végétal",
         "intro": "Les bons ingrédients, aux bonnes concentrations, dans une seule routine.",
         "image": "shopify://shop_images/ImageChatGPT28sept.2026_15_47_35_1.png"
+      }
+    },
+    "kuks_gradient_divider_wQDTEV": {
+      "type": "kuks-gradient-divider",
+      "name": "Fondu de couleur - KUKS",
+      "settings": {
+        "start_color": "#e7fbe3",
+        "end_color": "#ffffff",
+        "height_desktop": 70,
+        "height_mobile": 50,
+        "fade_start": 5,
+        "angle": 180
       }
     },
     "kuks_timeline": {
@@ -675,8 +699,8 @@
       "type": "kuks-gradient-divider",
       "name": "Fondu de couleur - KUKS",
       "settings": {
-        "start_color": "#113D6B",
-        "end_color": "#FFFFFF",
+        "start_color": "#113d6b",
+        "end_color": "#ffffff",
         "height_desktop": 70,
         "height_mobile": 50,
         "fade_start": 5,
@@ -720,30 +744,6 @@
         "image": "shopify://shop_images/kuks-survey-couple.png",
         "subheading": "Statistiques de satisfaction",
         "note": ""
-      }
-    },
-    "kuks_gradient_divider_CUHzLW": {
-      "type": "kuks-gradient-divider",
-      "name": "Fondu de couleur - KUKS",
-      "settings": {
-        "start_color": "#ffffff",
-        "end_color": "#E7FBE3",
-        "height_desktop": 70,
-        "height_mobile": 50,
-        "fade_start": 5,
-        "angle": 180
-      }
-    },
-    "kuks_gradient_divider_wQDTEV": {
-      "type": "kuks-gradient-divider",
-      "name": "Fondu de couleur - KUKS",
-      "settings": {
-        "start_color": "#E7FBE3",
-        "end_color": "#FFFFFF",
-        "height_desktop": 70,
-        "height_mobile": 50,
-        "fade_start": 5,
-        "angle": 180
       }
     },
     "kuks_faq": {
@@ -823,12 +823,12 @@
     "kuks_science_duo",
     "kuks_gradient_divider_CUHzLW",
     "kuks_ingredients",
+    "kuks_gradient_divider_wQDTEV",
     "kuks_timeline",
     "kuks_gradient_divider",
     "kuks_numbers",
     "kuks_gradient_divider_nNd3LE",
     "kuks_survey",
-    "kuks_gradient_divider_wQDTEV",
     "kuks_faq",
     "kuks_guarantee"
   ]
