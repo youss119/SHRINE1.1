@@ -18,7 +18,7 @@
           {% endfor %}
         </video>
       {% elsif section.settings.poster != blank %}
-        {{ section.settings.poster | image_url: width:1200 | image_tag: loading:'lazy', widths:'420,700,900,1200', sizes:'(max-width:749px) 100vw, 52vw', alt:section.settings.heading }}
+        {{ section.settings.poster | image_url: width:1200 | image_tag: loading:'lazy', decoding:'async', fetchpriority:'low', widths:'420,700,900,1200', sizes:'(max-width:749px) 100vw, 52vw', alt:section.settings.heading }}
         {% if request.design_mode %}<span class="kuks-video-text__hint">Ajoute ici ta vidéo Shopify : autoplay, muette et en boucle.</span>{% endif %}
       {% elsif request.design_mode %}
         <div class="kuks-video-text__placeholder">Sélectionne une vidéo dans les réglages de la section.</div>
@@ -90,7 +90,7 @@
         if(entry.isIntersecting) loadVideo();
         else pauseVideo();
       });
-    },{rootMargin:'500px 0px',threshold:0.01});
+    },{rootMargin:'160px 0px',threshold:0.01});
     io.observe(root);
   }else{
     window.addEventListener('load',loadVideo,{once:true});
@@ -98,7 +98,7 @@
 
   document.addEventListener('visibilitychange',()=>{
     if(document.hidden) pauseVideo();
-    else if(root.getBoundingClientRect().top < window.innerHeight + 500) loadVideo();
+    else if(root.getBoundingClientRect().top < window.innerHeight + 160) loadVideo();
   });
 })();
 </script>

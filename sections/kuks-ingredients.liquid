@@ -6,7 +6,7 @@
     <div class="kuks-ingredients__layout">
       <div class="kuks-ingredients__visual">
         {% if section.settings.image != blank %}
-          {{ section.settings.image | image_url: width:1200 | image_tag: loading:'lazy', decoding:'async', widths:'420,700,900,1200', sizes:'(max-width:749px) 100vw, 48vw', alt:section.settings.heading }}
+          {{ section.settings.image | image_url: width:1200 | image_tag: loading:'lazy', decoding:'async', fetchpriority:'low', widths:'420,700,900,1200', sizes:'(max-width:749px) 100vw, 48vw', alt:section.settings.heading }}
         {% else %}
           <div class="kuks-ingredients__placeholder">Ajoutez votre visuel principal</div>
         {% endif %}
@@ -16,7 +16,7 @@
           <button type="button" class="kuks-ingredients__tab{% if forloop.first %} is-active{% endif %}" data-kuks-ing-tab="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
             <span class="kuks-ingredients__icon">
               {% if block.settings.image != blank %}
-                {{ block.settings.image | image_url: width:140 | image_tag: loading:'lazy', decoding:'async', widths:'70,100,140', alt:block.settings.title }}
+                {{ block.settings.image | image_url: width:140 | image_tag: loading:'lazy', decoding:'async', fetchpriority:'low', widths:'70,100,140', alt:block.settings.title }}
               {% else %}
                 {% case block.settings.icon_kind %}
                   {% when 'urea' %}<svg viewBox="0 0 48 48"><circle cx="24" cy="10" r="5"/><circle cx="12" cy="28" r="5"/><circle cx="36" cy="28" r="5"/><path d="M21 14 15 24M27 14l6 10M17 28h14"/></svg>
@@ -40,7 +40,7 @@
         <article class="kuks-ingredients__detail{% if forloop.first %} is-active{% endif %}" data-kuks-ing-panel="{{ forloop.index0 }}">
           <div class="kuks-ingredients__detail-icon">
             {% if block.settings.image != blank %}
-              {{ block.settings.image | image_url: width:180 | image_tag: loading:'lazy', decoding:'async', widths:'90,140,180', alt:block.settings.title }}
+              {{ block.settings.image | image_url: width:180 | image_tag: loading:'lazy', decoding:'async', fetchpriority:'low', widths:'90,140,180', alt:block.settings.title }}
             {% else %}<span>{{ block.settings.short }}</span>{% endif %}
           </div>
           <div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p></div>

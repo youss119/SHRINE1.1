@@ -5,7 +5,7 @@
       <article class="kuks-science__block" {{ block.shopify_attributes }}>
         {% if block.settings.image != blank %}
           <div class="kuks-science__media">
-            {{ block.settings.image | image_url: width:1100 | image_tag: loading:'lazy', decoding:'async', widths:'420,700,900,1100', sizes:'(max-width:749px) 100vw, 700px', alt:block.settings.heading }}
+            {{ block.settings.image | image_url: width:1100 | image_tag: loading:'lazy', decoding:'async', fetchpriority:'low', widths:'420,700,900,1100', sizes:'(max-width:749px) 100vw, 700px', alt:block.settings.heading }}
             {% if block.settings.overlay_text != blank %}<span class="kuks-science__overlay">{{ block.settings.overlay_text }}</span>{% endif %}
           </div>
         {% endif %}

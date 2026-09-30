@@ -7,7 +7,7 @@
       <div class="kuks-stories__track" data-track>
         {% for block in section.blocks %}
           <article class="kuks-stories__card{% if forloop.first %} is-active{% endif %}" data-card {{ block.shopify_attributes }}>
-            {% if block.settings.image != blank %}<div class="kuks-stories__media">{{ block.settings.image | image_url: width:1100 | image_tag: loading:'lazy', decoding:'async', widths:'420,700,900,1100', sizes:'(max-width:749px) 100vw, 680px', alt:block.settings.author }}</div>{% endif %}
+            {% if block.settings.image != blank %}<div class="kuks-stories__media">{{ block.settings.image | image_url: width:1100 | image_tag: loading:'lazy', decoding:'async', fetchpriority:'low', widths:'420,700,900,1100', sizes:'(max-width:749px) 100vw, 680px', alt:block.settings.author }}</div>{% endif %}
             <div class="kuks-stories__body">
               <div class="kuks-stories__stars">{% for i in (1..5) %}<span class="{% if i > block.settings.rating %}is-empty{% endif %}">★</span>{% endfor %}</div>
               <h3>{{ block.settings.title }}</h3>

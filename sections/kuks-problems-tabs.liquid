@@ -8,7 +8,7 @@
     </div>
     {% for block in section.blocks %}
       <article class="kuks-problems__panel{% if forloop.first %} is-active{% endif %}" data-panel="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
-        {% if block.settings.image != blank %}{{ block.settings.image | image_url: width:1000 | image_tag: loading:'lazy', decoding:'async', widths:'420,700,1000', sizes:'(max-width:749px) 100vw, 680px', alt:block.settings.title }}{% endif %}
+        {% if block.settings.image != blank %}{{ block.settings.image | image_url: width:1000 | image_tag: loading:'lazy', decoding:'async', fetchpriority:'low', widths:'420,700,1000', sizes:'(max-width:749px) 100vw, 680px', alt:block.settings.title }}{% endif %}
         <h3>{{ block.settings.title }}</h3>
         <p>{{ block.settings.text }}</p>
       </article>

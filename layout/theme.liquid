@@ -7,6 +7,22 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
+{% comment %}KUKS_PRODUCT_LCP_PRELOAD{% endcomment %}
+    {% if request.page_type == 'product' and product != blank %}
+      {% assign kuks_lcp_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media %}
+      {% if kuks_lcp_media.preview_image != blank %}
+        <link
+          rel="preload"
+          as="image"
+          href="{{ kuks_lcp_media.preview_image | image_url: width: 750 }}"
+          imagesrcset="{{ kuks_lcp_media.preview_image | image_url: width: 360 }} 360w, {{ kuks_lcp_media.preview_image | image_url: width: 540 }} 540w, {{ kuks_lcp_media.preview_image | image_url: width: 750 }} 750w, {{ kuks_lcp_media.preview_image | image_url: width: 900 }} 900w, {{ kuks_lcp_media.preview_image | image_url: width: 1100 }} 1100w"
+          imagesizes="(max-width: 749px) 100vw, 50vw"
+          fetchpriority="high"
+        >
+      {% endif %}
+    {% endif %}
+
+
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     {% liquid
       assign is_rtl = false
@@ -21,7 +37,7 @@
     %}
 
     <script src="{{ 'main.js' | asset_url }}" defer="defer" data-defer="true" data-country-list-function="{{ settings.country_list_function }}" data-country-list="{{ settings.country_list }}" data-country-list-error="{{ settings.country_invalid_error_msg }}" data-animations-type="{{ settings.animations_type }}"></script>
-    <script src="{{ 'secondary.js' | asset_url }}" defer="defer" data-defer="true" data-is-rtl="{{ is_rtl }}"></script>
+    <script src="{{ 'secondary.js' | asset_url }}" defer="defer" fetchpriority="low" data-defer="true" data-is-rtl="{{ is_rtl }}"></script>
     
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -486,6 +502,26 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+    <style>
+      /* KUKS_BELOW_FOLD_PERF */
+      @supports (content-visibility:auto) {
+        .kuks-change,
+        .kuks-video-text,
+        .kuks-science,
+        .kuks-problems,
+        .kuks-timeline,
+        .kuks-numbers,
+        .kuks-survey,
+        .kuks-ingredients,
+        .kuks-social,
+        .kuks-stories,
+        .kuks-testimonials-section,
+        .kuks-guarantee {
+          content-visibility:auto;
+          contain-intrinsic-size:auto 850px;
+        }
+      }
+    </style>
   </head>
 
   <body class="gradient template-{{ request.page_type | handle }} link-btns--{{ settings.link_btn_hover }} action-btns--{{ settings.action_btn_hover }}"{% if is_rtl %} data-rtl="true"{% endif %}>

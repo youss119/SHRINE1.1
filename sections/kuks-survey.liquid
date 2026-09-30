@@ -5,7 +5,7 @@
     <p class="kuks-survey__intro">{{ section.settings.intro }}</p>
 
     {% if section.settings.image != blank %}
-      {{ section.settings.image | image_url: width: 1000 | image_tag: loading:'lazy', decoding:'async', widths:'420,700,1000', sizes:'(max-width:749px) 100vw, 700px', alt:section.settings.heading }}
+      {{ section.settings.image | image_url: width: 1000 | image_tag: loading:'lazy', decoding:'async', fetchpriority:'low', widths:'420,700,1000', sizes:'(max-width:749px) 100vw, 700px', alt:section.settings.heading }}
     {% endif %}
 
     <h3>{{ section.settings.subheading }}</h3>
