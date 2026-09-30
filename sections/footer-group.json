@@ -17,7 +17,7 @@
         "1c647602-cc00-4009-a058-976435c8ee9e": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "Liens rapides",
             "menu": "footer",
             "width_desktop": 4,
             "width_mobile": "1"
@@ -26,10 +26,10 @@
         "24f208fd-0898-43eb-af23-d74f8420ab37": {
           "type": "email_signup",
           "settings": {
-            "heading": "Subscribe to our emails",
-            "subtext": "<p>Join our email list for exclusive offers and the latest news.</p>",
+            "heading": "Inscrivez-vous à nos e-mails",
+            "subtext": "<p>Rejoignez notre liste de diffusion pour profiter d’offres exclusives et recevoir nos dernières actualités.</p>",
             "button_type": "solid",
-            "button_label": "Sign up",
+            "button_label": "S’inscrire",
             "button_style_secondary": false,
             "width_desktop": 4,
             "width_mobile": "2"
@@ -49,7 +49,7 @@
         "payment_enable": true,
         "enabled_payment_types": "",
         "show_policy": false,
-        "branding_text": "Powered by <a href=\"https://shrinesolutions.com/\" target=\"_blank\" title=\"https://shrinesolutions.com/\">Shrine</a>",
+        "branding_text": "",
         "margin_top": 0,
         "padding_top": 32,
         "padding_bottom": 20,
