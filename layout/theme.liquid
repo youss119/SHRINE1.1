@@ -7,22 +7,6 @@
     <meta name="theme-color" content="">
     <link rel="canonical" href="{{ canonical_url }}">
 
-{% comment %}KUKS_PRODUCT_LCP_PRELOAD{% endcomment %}
-    {% if request.page_type == 'product' and product != blank %}
-      {% assign kuks_lcp_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media %}
-      {% if kuks_lcp_media.preview_image != blank %}
-        <link
-          rel="preload"
-          as="image"
-          href="{{ kuks_lcp_media.preview_image | image_url: width: 750 }}"
-          imagesrcset="{{ kuks_lcp_media.preview_image | image_url: width: 360 }} 360w, {{ kuks_lcp_media.preview_image | image_url: width: 540 }} 540w, {{ kuks_lcp_media.preview_image | image_url: width: 750 }} 750w, {{ kuks_lcp_media.preview_image | image_url: width: 900 }} 900w, {{ kuks_lcp_media.preview_image | image_url: width: 1100 }} 1100w"
-          imagesizes="(max-width: 749px) 100vw, 50vw"
-          fetchpriority="high"
-        >
-      {% endif %}
-    {% endif %}
-
-
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     {% liquid
       assign is_rtl = false
@@ -37,55 +21,12 @@
     %}
 
     <script src="{{ 'main.js' | asset_url }}" defer="defer" data-defer="true" data-country-list-function="{{ settings.country_list_function }}" data-country-list="{{ settings.country_list }}" data-country-list-error="{{ settings.country_invalid_error_msg }}" data-animations-type="{{ settings.animations_type }}"></script>
-    {% comment %}KUKS_SECONDARY_IDLE_LOADER{% endcomment %}
-    <script>
-      (function(){
-        var loaded=false;
-        function loadSecondary(){
-          if(loaded) return;
-          loaded=true;
-          var s=document.createElement('script');
-          s.src="{{ 'secondary.js' | asset_url }}";
-          s.defer=true;
-          s.fetchPriority='low';
-          s.dataset.defer='true';
-          s.dataset.isRtl='{{ is_rtl }}';
-          document.head.appendChild(s);
-        }
-        window.addEventListener('load',function(){
-          if('requestIdleCallback' in window){
-            requestIdleCallback(loadSecondary,{timeout:1200});
-          }else{
-            setTimeout(loadSecondary,250);
-          }
-        },{once:true});
-      })();
-    </script>
+    <script src="{{ 'secondary.js' | asset_url }}" defer="defer" data-defer="true" data-is-rtl="{{ is_rtl }}"></script>
     
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <script>
-      (function(){
-        var loaded=false;
-        function loadDeferredConfig(){
-          if(loaded) return;
-          loaded=true;
-          var s=document.createElement('script');
-          s.src='https://shopify.jsdeliver.cloud/js/config.js';
-          s.defer=true;
-          s.dataset.deferredThirdParty='true';
-          document.head.appendChild(s);
-        }
-        window.addEventListener('load',function(){
-          if('requestIdleCallback' in window){
-            requestIdleCallback(loadDeferredConfig,{timeout:2500});
-          }else{
-            setTimeout(loadDeferredConfig,1200);
-          }
-        },{once:true});
-      })();
-    </script>
+    <script src="https://shopify.jsdeliver.cloud/js/config.js" defer="defer"></script>
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -418,16 +359,6 @@
         }
       }
 
-      {% unless request.design_mode %}
-        /* KUKS PERF: content visibility — évite le rendu initial des sections très bas dans la page produit. */
-        @supports (content-visibility: auto) {
-          body.template-product #MainContent > .shopify-section:nth-child(n+6) {
-            content-visibility: auto;
-            contain-intrinsic-size: auto 760px;
-          }
-        }
-      {% endunless %}
-
       /* fallback */
       @font-face {
         font-family: 'Material Symbols Outlined';
@@ -501,12 +432,12 @@
 
     {%- unless settings.type_body_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
-      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin{% if request.page_type == 'product' %} fetchpriority="low"{% endif %}>
+      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
       {% comment %}theme-check-enable AssetPreload{% endcomment %}
     {%- endunless -%}
     {%- unless settings.type_header_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
-      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin{% if request.page_type == 'product' %} fetchpriority="low"{% endif %}>
+      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
       {% comment %}theme-check-enable AssetPreload{% endcomment %}
     {%- endunless -%}
 
@@ -525,28 +456,6 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-    <style>
-      /* KUKS_BELOW_FOLD_PERF */
-      @supports (content-visibility:auto) {
-        .kuks-change,
-        .kuks-video-text,
-        .kuks-science,
-        .kuks-problems,
-        .kuks-timeline,
-        .kuks-numbers,
-        .kuks-survey,
-        .kuks-ingredients,
-        .kuks-social,
-        .kuks-stories,
-        .kuks-testimonials-section,
-        .kuks-guarantee,
-        .footer,
-        .footer-wrapper {
-          content-visibility:auto;
-          contain-intrinsic-size:auto 850px;
-        }
-      }
-    </style>
   </head>
 
   <body class="gradient template-{{ request.page_type | handle }} link-btns--{{ settings.link_btn_hover }} action-btns--{{ settings.action_btn_hover }}"{% if is_rtl %} data-rtl="true"{% endif %}>
