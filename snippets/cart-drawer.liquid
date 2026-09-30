@@ -816,7 +816,15 @@
               </div>
 
               {% assign kuks_stock_item = cart.items | first %}
-              {% if cart != empty %}
+              {% if request.design_mode %}
+                <div class="kuks-stock-banner" data-kuks-preview-stock="true" aria-live="polite">
+                  <div class="kuks-stock-banner__top">
+                    <span class="kuks-stock-banner__label">FORTE DEMANDE 🔥</span>
+                    <span>Il reste <strong><span class="kuks-stock-count">11</span> pots</strong> en stock</span>
+                  </div>
+                  <div class="kuks-stock-banner__sub">Prenez votre K-Cream avant qu’il ne soit trop tard !</div>
+                </div>
+              {% elsif cart != empty %}
                 <div class="kuks-stock-banner" aria-live="polite">
                   <div class="kuks-stock-banner__top">
                     <span class="kuks-stock-banner__label">FORTE DEMANDE 🔥</span>
