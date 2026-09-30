@@ -7,7 +7,7 @@
         {% for block in section.blocks %}
           <figure class="kuks-social__item" data-slide {{ block.shopify_attributes }}>
             {% if block.settings.image != blank %}
-              {{ block.settings.image | image_url: width:900 | image_tag: loading:'lazy', widths:'360,540,720,900', sizes:'(max-width:749px) 45vw, 320px', alt:block.settings.alt }}
+              {{ block.settings.image | image_url: width:900 | image_tag: loading:'lazy', decoding:'async', widths:'360,540,720,900', sizes:'(max-width:749px) 45vw, 320px', alt:block.settings.alt }}
             {% else %}
               <div class="kuks-social__placeholder">Ajoutez une image</div>
             {% endif %}

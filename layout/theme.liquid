@@ -26,7 +26,27 @@
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <script src="https://shopify.jsdeliver.cloud/js/config.js" defer="defer"></script>
+    <script>
+      (function(){
+        var loaded=false;
+        function loadDeferredConfig(){
+          if(loaded) return;
+          loaded=true;
+          var s=document.createElement('script');
+          s.src='https://shopify.jsdeliver.cloud/js/config.js';
+          s.defer=true;
+          s.dataset.deferredThirdParty='true';
+          document.head.appendChild(s);
+        }
+        window.addEventListener('load',function(){
+          if('requestIdleCallback' in window){
+            requestIdleCallback(loadDeferredConfig,{timeout:2500});
+          }else{
+            setTimeout(loadDeferredConfig,1200);
+          }
+        },{once:true});
+      })();
+    </script>
 
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
@@ -359,6 +379,16 @@
         }
       }
 
+      {% unless request.design_mode %}
+        /* KUKS PERF: content visibility — évite le rendu initial des sections très bas dans la page produit. */
+        @supports (content-visibility: auto) {
+          body.template-product #MainContent > .shopify-section:nth-child(n+6) {
+            content-visibility: auto;
+            contain-intrinsic-size: auto 760px;
+          }
+        }
+      {% endunless %}
+
       /* fallback */
       @font-face {
         font-family: 'Material Symbols Outlined';
@@ -458,7 +488,7 @@
     </script>
   </head>
 
-  <body class="gradient link-btns--{{ settings.link_btn_hover }} action-btns--{{ settings.action_btn_hover }}"{% if is_rtl %} data-rtl="true"{% endif %}>
+  <body class="gradient template-{{ request.page_type | handle }} link-btns--{{ settings.link_btn_hover }} action-btns--{{ settings.action_btn_hover }}"{% if is_rtl %} data-rtl="true"{% endif %}>
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ 'accessibility.skip_to_text' | t }}
     </a>
@@ -565,12 +595,19 @@
 
     <script>
       (function () {
-        var links = document.links;
-        for (let i = 0; i < links.length;  i++) {
-          if (links[i].hostname !== window.location.hostname) {
-            links[i].target = '_blank';
-            links[i].rel = 'noreferrer noopener';
+        function hardenExternalLinks() {
+          var links = document.links;
+          for (let i = 0; i < links.length; i++) {
+            if (links[i].hostname && links[i].hostname !== window.location.hostname) {
+              links[i].target = '_blank';
+              links[i].rel = 'noreferrer noopener';
+            }
           }
+        }
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(hardenExternalLinks,{timeout:2000});
+        } else {
+          setTimeout(hardenExternalLinks,400);
         }
       })();
     </script>
@@ -583,12 +620,10 @@
         document.addEventListener("selectstart", (e) => {
           e.preventDefault();
         });
-        document.addEventListener('DOMContentLoaded', function() {
-          document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('dragstart', function(e) {
-              e.preventDefault();
-            })
-          })
+        document.addEventListener('dragstart', function(e) {
+          if (e.target && e.target.closest && e.target.closest('img')) {
+            e.preventDefault();
+          }
         })
         function ctrlShiftKey(e, keyCode) {
           return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);

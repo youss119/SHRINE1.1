@@ -34,7 +34,7 @@
                   {{ block.settings.avatar
                     | image_url: width: 240
                     | image_tag:
-                      loading: 'lazy',
+                      loading:'lazy', decoding:'async',
                       widths: '88,132,176,240',
                       alt: block.settings.name
                   }}

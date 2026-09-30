@@ -3,7 +3,20 @@
   <div class="kuks-video-text__inner">
     <div class="kuks-video-text__media">
       {% if section.settings.video != blank %}
-        {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false, playsinline: true, preload: 'metadata' }}
+        {% assign kuks_video_poster = section.settings.poster | default: section.settings.video.preview_image %}
+        <video
+          data-kuks-lazy-video
+          muted
+          loop
+          playsinline
+          preload="none"
+          disablepictureinpicture
+          {% if kuks_video_poster != blank %}poster="{{ kuks_video_poster | image_url: width: 1200 }}"{% endif %}
+        >
+          {% for source in section.settings.video.sources %}
+            <source data-src="{{ source.url }}" type="{{ source.mime_type }}">
+          {% endfor %}
+        </video>
       {% elsif section.settings.poster != blank %}
         {{ section.settings.poster | image_url: width:1200 | image_tag: loading:'lazy', widths:'420,700,900,1200', sizes:'(max-width:749px) 100vw, 52vw', alt:section.settings.heading }}
         {% if request.design_mode %}<span class="kuks-video-text__hint">Ajoute ici ta vidéo Shopify : autoplay, muette et en boucle.</span>{% endif %}
@@ -43,7 +56,51 @@
 }
 </style>
 <script>
-(()=>{const root=document.getElementById('kuks-video-text-{{ section.id }}');if(!root)return;const v=root.querySelector('video');if(v){v.muted=true;v.setAttribute('muted','');v.setAttribute('playsinline','');const p=v.play();if(p&&p.catch)p.catch(()=>{})}})();
+(()=>{
+  const root=document.getElementById('kuks-video-text-{{ section.id }}');
+  if(!root)return;
+  const v=root.querySelector('[data-kuks-lazy-video]');
+  if(!v)return;
+
+  let loaded=false;
+  const loadVideo=()=>{
+    if(!loaded){
+      v.querySelectorAll('source[data-src]').forEach(source=>{
+        source.src=source.dataset.src;
+        source.removeAttribute('data-src');
+      });
+      v.load();
+      loaded=true;
+    }
+    v.muted=true;
+    const p=v.play();
+    if(p&&p.catch)p.catch(()=>{});
+  };
+
+  const pauseVideo=()=>{ if(loaded && !v.paused) v.pause(); };
+
+  if(window.Shopify && Shopify.designMode){
+    loadVideo();
+    return;
+  }
+
+  if('IntersectionObserver' in window){
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting) loadVideo();
+        else pauseVideo();
+      });
+    },{rootMargin:'500px 0px',threshold:0.01});
+    io.observe(root);
+  }else{
+    window.addEventListener('load',loadVideo,{once:true});
+  }
+
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden) pauseVideo();
+    else if(root.getBoundingClientRect().top < window.innerHeight + 500) loadVideo();
+  });
+})();
 </script>
 {% schema %}
 {"name":"Vidéo + texte - KUKS","settings":[{"type":"color","id":"background","label":"Couleur du fond","default":"#ffffff"},{"type":"video","id":"video","label":"Vidéo Shopify"},{"type":"image_picker","id":"poster","label":"Image d’attente"},{"type":"text","id":"eyebrow","label":"Petit surtitre","default":"UNE ROUTINE SIMPLE À INTÉGRER"},{"type":"textarea","id":"heading","label":"Titre","default":"Une application simple, directement chez vous"},{"type":"richtext","id":"text","label":"Texte","default":"<p>Appliquez une fine couche sur les zones ciblées et laissez la routine agir progressivement au fil des utilisations.</p><p>Cette section est entièrement modifiable : vidéo, texte et couleur de fond.</p>"},{"type":"textarea","id":"small_text","label":"Petit texte","default":"Vidéo en lecture automatique, sans son et en boucle."}],"presets":[{"name":"Vidéo + texte - KUKS"}]}
