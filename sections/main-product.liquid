@@ -1205,22 +1205,26 @@
   #kuks-scroll-cta-{{ section.id }}[hidden]{display:none!important}
   #kuks-scroll-cta-{{ section.id }}{
     position:fixed;
-    left:0;
-    right:0;
-    bottom:0;
+    left:50%;
+    right:auto;
+    bottom:calc(10px + env(safe-area-inset-bottom,0px));
     z-index:2147482000;
+    width:min(calc(100% - 28px),560px);
     margin:0;
-    padding:0 12px calc(10px + env(safe-area-inset-bottom,0px));
-    background:transparent;
-    border:0;
-    box-shadow:none;
-    -webkit-backdrop-filter:none;
-    backdrop-filter:none;
+    padding:0;
+    transform:translateX(-50%);
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
     pointer-events:none;
   }
   #kuks-scroll-cta-{{ section.id }} .kuks-scroll-cta__inner{
-    width:min(100%,560px);
-    margin:0 auto;
+    width:100%;
+    margin:0;
+    padding:0;
+    background:transparent!important;
     pointer-events:none;
   }
   #kuks-scroll-cta-{{ section.id }} .kuks-scroll-cta__button{
@@ -1247,7 +1251,7 @@
   }
   #kuks-scroll-cta-{{ section.id }} .kuks-scroll-cta__button:active{transform:scale(.995)}
   @media (min-width:750px){
-    #kuks-scroll-cta-{{ section.id }}{padding-top:0;padding-bottom:12px}
+    #kuks-scroll-cta-{{ section.id }}{bottom:14px;width:min(calc(100% - 36px),560px)}
     #kuks-scroll-cta-{{ section.id }} .kuks-scroll-cta__button{min-height:56px;font-size:18px}
   }
 </style>

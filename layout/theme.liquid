@@ -37,7 +37,30 @@
     %}
 
     <script src="{{ 'main.js' | asset_url }}" defer="defer" data-defer="true" data-country-list-function="{{ settings.country_list_function }}" data-country-list="{{ settings.country_list }}" data-country-list-error="{{ settings.country_invalid_error_msg }}" data-animations-type="{{ settings.animations_type }}"></script>
-    <script src="{{ 'secondary.js' | asset_url }}" defer="defer" fetchpriority="low" data-defer="true" data-is-rtl="{{ is_rtl }}"></script>
+    {% comment %}KUKS_SECONDARY_IDLE_LOADER{% endcomment %}
+    <script>
+      (function(){
+        var loaded=false;
+        function loadSecondary(){
+          if(loaded) return;
+          loaded=true;
+          var s=document.createElement('script');
+          s.src="{{ 'secondary.js' | asset_url }}";
+          s.defer=true;
+          s.fetchPriority='low';
+          s.dataset.defer='true';
+          s.dataset.isRtl='{{ is_rtl }}';
+          document.head.appendChild(s);
+        }
+        window.addEventListener('load',function(){
+          if('requestIdleCallback' in window){
+            requestIdleCallback(loadSecondary,{timeout:1200});
+          }else{
+            setTimeout(loadSecondary,250);
+          }
+        },{once:true});
+      })();
+    </script>
     
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -364,7 +387,7 @@
         {% endif %}
       }
 
-      {% if settings.enable_load_animations %}
+      {% if settings.enable_load_animations and settings.section_animation_type != 'none' %}
         .animate-section {
           --animation-duration: {{ settings.animation_duration }}ms;
           --init-delay: {{ settings.animation_init_delay }}ms;
@@ -642,11 +665,13 @@
             }
           }
         }
-        if ('requestIdleCallback' in window) {
-          requestIdleCallback(hardenExternalLinks,{timeout:2000});
-        } else {
-          setTimeout(hardenExternalLinks,400);
-        }
+        window.addEventListener('load', function(){
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(hardenExternalLinks,{timeout:2500});
+          } else {
+            setTimeout(hardenExternalLinks,500);
+          }
+        }, {once:true});
       })();
     </script>
 
