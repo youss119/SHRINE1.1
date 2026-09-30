@@ -478,12 +478,12 @@
 
     {%- unless settings.type_body_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
-      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
+      <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin{% if request.page_type == 'product' %} fetchpriority="low"{% endif %}>
       {% comment %}theme-check-enable AssetPreload{% endcomment %}
     {%- endunless -%}
     {%- unless settings.type_header_font.system? -%}
       {% comment %}theme-check-disable AssetPreload{% endcomment %}
-      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
+      <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin{% if request.page_type == 'product' %} fetchpriority="low"{% endif %}>
       {% comment %}theme-check-enable AssetPreload{% endcomment %}
     {%- endunless -%}
 
@@ -516,7 +516,9 @@
         .kuks-social,
         .kuks-stories,
         .kuks-testimonials-section,
-        .kuks-guarantee {
+        .kuks-guarantee,
+        .footer,
+        .footer-wrapper {
           content-visibility:auto;
           contain-intrinsic-size:auto 850px;
         }
