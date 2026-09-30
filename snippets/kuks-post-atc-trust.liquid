@@ -34,30 +34,30 @@
     <div class="kuks-lab-proof__avatars" aria-label="Images personnalisables">
       <span class="kuks-lab-proof__avatar">
         {% if section.settings.kuks_lab_image_1 != blank %}
-          {{ section.settings.kuks_lab_image_1 | image_url: width: 96 | image_tag: loading: 'lazy', alt: '' }}
+          {{ section.settings.kuks_lab_image_1 | image_url: width: 96 | image_tag: loading: 'lazy', alt: 'Preuve laboratoire 1' }}
         {% else %}
-          <span class="kuks-lab-proof__placeholder">LAB</span>
+          <img src="https://cdn.shopify.com/s/files/1/1085/1844/1285/files/kuks-lab-proof-1.png?v=1790728404" alt="Preuve laboratoire 1" loading="lazy" width="96" height="96">
         {% endif %}
       </span>
       <span class="kuks-lab-proof__avatar">
         {% if section.settings.kuks_lab_image_2 != blank %}
-          {{ section.settings.kuks_lab_image_2 | image_url: width: 96 | image_tag: loading: 'lazy', alt: '' }}
+          {{ section.settings.kuks_lab_image_2 | image_url: width: 96 | image_tag: loading: 'lazy', alt: 'Preuve laboratoire 2' }}
         {% else %}
-          <span class="kuks-lab-proof__placeholder">40%</span>
+          <img src="https://cdn.shopify.com/s/files/1/1085/1844/1285/files/kuks-lab-proof-2.png?v=1790728410" alt="Preuve laboratoire 2" loading="lazy" width="96" height="96">
         {% endif %}
       </span>
       <span class="kuks-lab-proof__avatar">
         {% if section.settings.kuks_lab_image_3 != blank %}
-          {{ section.settings.kuks_lab_image_3 | image_url: width: 96 | image_tag: loading: 'lazy', alt: '' }}
+          {{ section.settings.kuks_lab_image_3 | image_url: width: 96 | image_tag: loading: 'lazy', alt: 'Preuve laboratoire 3' }}
         {% else %}
-          <span class="kuks-lab-proof__placeholder">2%</span>
+          <img src="https://cdn.shopify.com/s/files/1/1085/1844/1285/files/kuks-lab-proof-3.png?v=1790728415" alt="Preuve laboratoire 3" loading="lazy" width="96" height="96">
         {% endif %}
       </span>
     </div>
 
     <div class="kuks-lab-proof__copy">
       <strong>{{ section.settings.kuks_lab_title | default: 'TESTÉ EN LABORATOIRE' }}</strong>
-      <span>{{ section.settings.kuks_lab_text | default: 'Formule à 40 % d’urée + 2 % d’acide salicylique' }}</span>
+      <span>{{ section.settings.kuks_lab_text | default: 'Formule kératolytique concentrée pour les zones épaisses et rugueuses' }}</span>
     </div>
 
     <span class="kuks-lab-proof__badge" aria-hidden="true">
