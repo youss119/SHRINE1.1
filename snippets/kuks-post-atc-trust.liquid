@@ -30,9 +30,42 @@
     {{ 'paypal' | payment_type_svg_tag }}
   </div>
 
-  <div class="kuks-value-box">
-    <span>Une séance de cryothérapie : 250 €.</span>
-    <span>Un seul pot pour tout votre corps : 39,90 €.</span>
+  <div class="kuks-lab-proof" aria-label="Informations de formulation" style="--kuks-lab-bg: {{ section.settings.kuks_lab_bg | default: '#EDF5FB' }}; --kuks-lab-border: {{ section.settings.kuks_lab_border | default: '#B7CEE5' }};">
+    <div class="kuks-lab-proof__avatars" aria-label="Images personnalisables">
+      <span class="kuks-lab-proof__avatar">
+        {% if section.settings.kuks_lab_image_1 != blank %}
+          {{ section.settings.kuks_lab_image_1 | image_url: width: 96 | image_tag: loading: 'lazy', alt: '' }}
+        {% else %}
+          <span class="kuks-lab-proof__placeholder">LAB</span>
+        {% endif %}
+      </span>
+      <span class="kuks-lab-proof__avatar">
+        {% if section.settings.kuks_lab_image_2 != blank %}
+          {{ section.settings.kuks_lab_image_2 | image_url: width: 96 | image_tag: loading: 'lazy', alt: '' }}
+        {% else %}
+          <span class="kuks-lab-proof__placeholder">40%</span>
+        {% endif %}
+      </span>
+      <span class="kuks-lab-proof__avatar">
+        {% if section.settings.kuks_lab_image_3 != blank %}
+          {{ section.settings.kuks_lab_image_3 | image_url: width: 96 | image_tag: loading: 'lazy', alt: '' }}
+        {% else %}
+          <span class="kuks-lab-proof__placeholder">2%</span>
+        {% endif %}
+      </span>
+    </div>
+
+    <div class="kuks-lab-proof__copy">
+      <strong>{{ section.settings.kuks_lab_title | default: 'TESTÉ EN LABORATOIRE' }}</strong>
+      <span>{{ section.settings.kuks_lab_text | default: 'Formule à 40 % d’urée + 2 % d’acide salicylique' }}</span>
+    </div>
+
+    <span class="kuks-lab-proof__badge" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9"></circle>
+        <path d="M8 12.2l2.5 2.5L16.5 9"></path>
+      </svg>
+    </span>
   </div>
 
   <div class="kuks-shipping-line">
@@ -271,6 +304,101 @@
 
   #MainProduct-{{ section.id }} .kuks-value-box span{
     display:block;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-lab-proof{
+    width:100%;
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr) 19px;
+    align-items:center;
+    gap:10px;
+    padding:9px 11px;
+    border:1px solid var(--kuks-lab-border);
+    border-radius:11px;
+    background:linear-gradient(135deg,var(--kuks-lab-bg) 0%,#f7fbff 100%);
+    color:#113d6b;
+    box-shadow:0 2px 8px rgba(17,61,107,.05);
+  }
+
+  #MainProduct-{{ section.id }} .kuks-lab-proof__avatars{
+    display:flex;
+    align-items:center;
+    min-width:70px;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-lab-proof__avatar{
+    position:relative;
+    display:grid;
+    place-items:center;
+    width:30px;
+    height:30px;
+    margin-left:-7px;
+    overflow:hidden;
+    border:2px solid #fff;
+    border-radius:50%;
+    background:#dceaf6;
+    box-shadow:0 1px 4px rgba(17,61,107,.12);
+  }
+
+  #MainProduct-{{ section.id }} .kuks-lab-proof__avatar:first-child{margin-left:0}
+
+  #MainProduct-{{ section.id }} .kuks-lab-proof__avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-lab-proof__placeholder{
+    display:grid;
+    place-items:center;
+    width:100%;
+    height:100%;
+    color:#113d6b;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:7px;
+    font-weight:800;
+    letter-spacing:-.2px;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-lab-proof__copy{
+    min-width:0;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-lab-proof__copy strong{
+    display:block;
+    margin:0 0 2px;
+    color:#113d6b;
+    font-size:11.2px;
+    line-height:1.1;
+    font-weight:800;
+    letter-spacing:.12px;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-lab-proof__copy span{
+    display:block;
+    color:#4b6785;
+    font-size:9.6px;
+    line-height:1.25;
+    font-weight:550;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-lab-proof__badge{
+    display:grid;
+    place-items:center;
+    width:19px;
+    height:19px;
+    color:#113d6b;
+  }
+
+  #MainProduct-{{ section.id }} .kuks-lab-proof__badge svg{
+    width:19px;
+    height:19px;
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
   }
 
   #MainProduct-{{ section.id }} .kuks-shipping-line{
