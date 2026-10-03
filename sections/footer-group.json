@@ -40,6 +40,7 @@
         "1c647602-cc00-4009-a058-976435c8ee9e",
         "24f208fd-0898-43eb-af23-d74f8420ab37"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "accent-1",
         "enable_follow_on_shop": false,

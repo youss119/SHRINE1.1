@@ -11,76 +11,9 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "goda-trust-bar": {
-      "type": "goda-trust-bar",
-      "settings": {
-        "left_text": "Livraison offerte",
-        "center_text": "Déjà +95 000 clients",
-        "right_text": "Retours faciles",
-        "right_subtext": "60 jours",
-        "background": "#000000",
-        "text_color": "#ffffff"
-      }
-    },
-    "2c2ec774-3430-481f-b927-e9c035b9d24e": {
-      "type": "horizontal-ticker",
-      "blocks": {
-        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-0": {
-          "type": "text",
-          "settings": {
-            "title": "WELCOME!"
-          }
-        },
-        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-1": {
-          "type": "text",
-          "settings": {
-            "title": "SITEWIDE SALE"
-          }
-        },
-        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-2": {
-          "type": "text",
-          "settings": {
-            "title": "USE CODE X FOR X% OFF!"
-          }
-        }
-      },
-      "block_order": [
-        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-0",
-        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-1",
-        "sections--18060430639399__2c2ec774-3430-481f-b927-e9c035b9d24e-1679250655d32e639c-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "visibility": "always-display",
-        "speed": 3,
-        "direction": "normal",
-        "stop_on_hover": false,
-        "mobile_spacing": 60,
-        "desktop_spacing": 100,
-        "color_scheme": "accent-1",
-        "mobile_text_size": 16,
-        "desktop_text_size": 18,
-        "italic_text": false,
-        "uppercase_text": false,
-        "bold_text": false,
-        "mobile_image_height": 26,
-        "desktop_image_height": 40,
-        "mobile_reviews_width": 300,
-        "desktop_reviews_width": 400,
-        "hidden_products": "",
-        "enable_specific_display": false,
-        "displayed_products": "",
-        "mobile_padding_top": 12,
-        "mobile_padding_bottom": 12,
-        "desktop_padding_top": 16,
-        "desktop_padding_bottom": 16,
-        "custom_colors_background": "#ffffff",
-        "custom_gradient_background": "",
-        "custom_colors_text": "#2e2a39"
-      }
-    },
     "header": {
       "type": "header",
+      "disabled": true,
       "settings": {
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": false,
@@ -104,24 +37,9 @@
         "padding_top": 20,
         "padding_bottom": 20
       }
-    },
-    "promo-countdown-bar": {
-      "type": "promo-countdown-bar",
-      "settings": {
-        "heading": "2 ACHETÉS = 1 OFFERT 🎁",
-        "subheading": "Commandez maintenant : jusqu’à -50 % + cadeaux offerts",
-        "timer_hours": 7,
-        "padding_top": 8,
-        "padding_bottom": 8,
-        "background": "#113d6b",
-        "text_color": "#ffffff"
-      }
     }
   },
   "order": [
-    "goda-trust-bar",
-    "2c2ec774-3430-481f-b927-e9c035b9d24e",
-    "header",
-    "promo-countdown-bar"
+    "header"
   ]
 }
