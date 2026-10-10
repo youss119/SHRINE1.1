@@ -1,0 +1,247 @@
+{{ 'kcream-adv2.css' | asset_url | stylesheet_tag }}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+{% liquid
+  assign adv2_product = section.settings.product
+  if adv2_product == blank
+    assign adv2_product = all_products['sk-renewal-40-creme-keratolytique-avancee-pour-les-keratoses-seborrheiques-rugueuses-et-surelevees']
+  endif
+  assign adv2_url = adv2_product.url
+  if adv2_url == blank
+    assign adv2_url = '/products/sk-renewal-40-creme-keratolytique-avancee-pour-les-keratoses-seborrheiques-rugueuses-et-surelevees'
+  endif
+%}
+{%- capture adv2_buy_url -%}{{ adv2_url | escape }}{%- endcapture -%}
+{%- capture adv2_product_image -%}
+  {% if adv2_product.featured_image != blank %}
+    {{ adv2_product.featured_image | image_url: width: 360 | image_tag: class: 'kcream-adv2__jar', loading: 'lazy', widths: '180, 300, 360', sizes: '(max-width: 640px) 180px, 150px', alt: 'Pot K CREAM de KUKS Beauty' }}
+  {% endif %}
+{%- endcapture -%}
+{%- capture adv2_product_card -%}
+  <section class="kcream-adv2__product-card kcream-adv2__reveal" aria-label="K CREAM, formule présentée dans l’article">
+    <div class="kcream-adv2__product-eyebrow">LA FORMULE PRÉSENTÉE DANS L’ARTICLE</div>
+    <h2>K CREAM</h2>
+    <div class="kcream-adv2__product-grid">
+      <div class="kcream-adv2__product-media">{{ adv2_product_image }}</div>
+      <p>Cette formule contient de l’urée à 40 % et de l’acide salicylique à 2 %. Elle est destinée au soin des zones de peau épaissie et rugueuse. Les résultats revendiqués dans la publicité d’origine ne constituent pas des preuves propres à K CREAM.</p>
+    </div>
+    <a class="kcream-adv2__button kcream-adv2__button--white" href="{{ adv2_buy_url }}">Consulter la fiche officielle K CREAM</a>
+  </section>
+{%- endcapture -%}
+{%- capture adv2_final_cta -%}
+  <section class="kcream-adv2__final kcream-adv2__reveal" aria-label="Découvrir K CREAM">
+    <h2>Traitez le problème pour ce qu’il est vraiment.</h2>
+    <p>Une approche pensée pour les zones de peau épaissie et rugueuse, à votre rythme.</p>
+    <a href="{{ adv2_buy_url }}" class="kcream-adv2__button kcream-adv2__button--white">Découvrir K CREAM sur le site officiel</a>
+  </section>
+{%- endcapture -%}
+{%- capture adv2_video_markup -%}
+  {% if section.settings.adv_video != blank %}
+    <figure class="kcream-adv2__figure kcream-adv2__figure--video kcream-adv2__reveal">
+      {{ section.settings.adv_video | video_tag: autoplay: true, loop: true, muted: true, controls: true, image_size: '720x', class: 'kcream-adv2__video' }}
+    </figure>
+  {% endif %}
+{%- endcapture -%}
+{% assign adv2_article = page.content %}
+{% assign adv2_article = adv2_article | replace: '[[ADV2_PRODUCT_CARD]]', adv2_product_card %}
+{% assign adv2_article = adv2_article | replace: '[[ADV2_FINAL_CTA]]', adv2_final_cta %}
+{% assign adv2_article = adv2_article | replace: '[[ADV2_VIDEO]]', adv2_video_markup %}
+{% for idx in (2..13) %}
+  {% if idx != 9 %}
+    {% assign setting_name = 'media_' | append: idx %}
+    {% assign photo = section.settings[setting_name] %}
+    {% assign marker = '[[ADV2_MEDIA_' | append: idx | append: ']]' %}
+    {% capture figure_html %}
+      {% if photo != blank %}
+        <figure class="kcream-adv2__figure kcream-adv2__reveal{% if idx == 2 %} kcream-adv2__figure--main{% endif %}">
+          {% if idx == 2 %}
+            {{ photo | image_url: width: 1440 | image_tag: class: 'kcream-adv2__image', loading: 'eager', preload: true, widths: '375, 550, 720, 960, 1440', sizes: '(max-width: 720px) 100vw, 720px' }}
+          {% else %}
+            {{ photo | image_url: width: 1440 | image_tag: class: 'kcream-adv2__image', loading: 'lazy', widths: '375, 550, 720, 960, 1440', sizes: '(max-width: 720px) 100vw, 720px' }}
+          {% endif %}
+        </figure>
+      {% endif %}
+    {% endcapture %}
+    {% assign adv2_article = adv2_article | replace: marker, figure_html %}
+  {% endif %}
+{% endfor %}
+<div class="kcream-adv2" data-kcream-adv2 style="--kcream-adv2-width:{{ section.settings.content_width }}px;--kcream-adv2-body-size:{{ section.settings.body_font_size }}px">
+  <div class="kcream-adv2__progress" aria-hidden="true"><span></span></div>
+  <header class="kcream-adv2__header">
+    <div class="kcream-adv2__header-inside">
+      <div class="kcream-adv2__brand">
+        <div class="kcream-adv2__brand-mark" aria-hidden="true">DR</div>
+        <div class="kcream-adv2__brand-copy"><strong>{{ section.settings.publication | escape }}</strong><small>{{ section.settings.publication_sub | escape }}</small></div>
+      </div>
+      <a class="kcream-adv2__header-link" href="#kcream-adv2-article">Lire l’article</a>
+    </div>
+  </header>
+  <main id="kcream-adv2-article" class="kcream-adv2__container">
+    <div class="kcream-adv2__hero">
+      <p class="kcream-adv2__kicker">{{ section.settings.eyebrow | escape }}</p>
+      <h1>{{ section.settings.headline | escape }}</h1>
+      <p class="kcream-adv2__deck">{{ section.settings.subtitle | escape }}</p>
+      <div class="kcream-adv2__author">
+        {% if section.settings.media_1 != blank %}
+          {{ section.settings.media_1 | image_url: width: 108 | image_tag: class: 'kcream-adv2__avatar', width: 54, height: 54, loading: 'eager' }}
+        {% else %}
+          <span class="kcream-adv2__avatar kcream-adv2__avatar--empty" aria-hidden="true">DR</span>
+        {% endif %}
+        <div><strong>{{ section.settings.author_name | escape }}</strong><small>{{ section.settings.author_bio | escape }}</small></div>
+      </div>
+    </div>
+    <article class="kcream-adv2__body">
+      {{ adv2_article }}
+    </article>
+    <footer class="kcream-adv2__editorial-footer"><span>{{ section.settings.publication | escape }}</span><span>{{ section.settings.publication_sub | escape }}</span></footer>
+  </main>
+  <div class="kcream-adv2__sticky" aria-label="Accès au produit"><a href="{{ adv2_buy_url }}">Découvrir K CREAM <span aria-hidden="true">→</span></a></div>
+</div>
+<script src="{{ 'kcream-adv2.js' | asset_url }}" defer></script>
+{% schema %}
+{
+  "name": "K CREAM — ADV 2",
+  "tag": "section",
+  "class": "kcream-adv2-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "publication",
+      "label": "Nom de la publication",
+      "default": "Revue de dermatologie"
+    },
+    {
+      "type": "text",
+      "id": "publication_sub",
+      "label": "Sous-titre de la publication",
+      "default": "Santé et longévité de la peau"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Surtitre",
+      "default": "AVIS D’EXPERT"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Titre principal",
+      "default": "La plupart des gens ne traitent jamais ces taches. Et c’est précisément là le problème."
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Sous-titre",
+      "default": "Un dermatologue possédant plus de 20 ans d’expérience vous explique ce qui se passe réellement dans votre peau et pourquoi on vous a dit que ce n’était rien."
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Signature source (à vérifier)",
+      "default": "Dermatologue diplômé — identité et qualifications à vérifier"
+    },
+    {
+      "type": "text",
+      "id": "author_bio",
+      "label": "Description de l’auteur",
+      "default": "Plus de 20 ans d’expérience en pratique clinique et en recherche — information non vérifiée"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Véritable produit K CREAM"
+    },
+    {
+      "type": "range",
+      "id": "content_width",
+      "label": "Largeur du conteneur",
+      "min": 600,
+      "max": 840,
+      "step": 10,
+      "unit": "px",
+      "default": 720
+    },
+    {
+      "type": "range",
+      "id": "body_font_size",
+      "label": "Taille du texte ordinateur",
+      "min": 17,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "image_picker",
+      "id": "media_1",
+      "label": "01 — Portrait auteur"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_2",
+      "label": "02 — Consultation (hero)"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_3",
+      "label": "03 — Photo au miroir"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_4",
+      "label": "04 — Dos"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_5",
+      "label": "05 — Carol près de la fenêtre"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_6",
+      "label": "06 — Main en gros plan"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_7",
+      "label": "07 — Personne au bureau"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_8",
+      "label": "08 — Schéma dermatologique"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_10",
+      "label": "10 — Comparaison Avant/Après"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_11",
+      "label": "11 — Denise"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_12",
+      "label": "12 — Pauline"
+    },
+    {
+      "type": "image_picker",
+      "id": "media_13",
+      "label": "13 — Femme près de la fenêtre"
+    },
+    {
+      "type": "video",
+      "id": "adv_video",
+      "label": "Vidéo illustrative (après image 07)"
+    }
+  ],
+  "presets": [
+    {
+      "name": "K CREAM — ADV 2"
+    }
+  ]
+}
+{% endschema %}
